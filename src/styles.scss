@@ -1,4 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+html {
+  overflow-x: hidden;
+}
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  background: #c5343a2b;
+}
 .popover {
   position: absolute;
   top: 0;
@@ -17,12 +26,6 @@
   position: absolute;
 }
 
-/* You can add global styles to this file, and also import other style files */
-html {
-  overflow-x: hidden;
-}
-body {
-  font-family: Verdana, Geneva, sans-serif;
-  font-size: 14px;
-  background: #c5343a2b;
+.modal {
+  --bs-modal-width: 650px;
 }
