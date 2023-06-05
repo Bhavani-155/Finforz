@@ -16,3 +16,13 @@
 .tooltip-arrow {
   position: absolute;
 }
+
+/* You can add global styles to this file, and also import other style files */
+html {
+  overflow-x: hidden;
+}
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  background: #c5343a2b;
+}

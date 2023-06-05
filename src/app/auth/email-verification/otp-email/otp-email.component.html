@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col-sm-12 mt-2 text-center">
+    <div class="title">Please verify your Email Address & Mobile Number</div>
+
+    <div class="btn-grp">
+      <button class="btn btn-active">Email Verify</button>
+      <button class="btn btn-right">Mobile Verify</button>
+    </div>
+
+    <p class="msg">OTP sent to xyz@gmail.com</p>
+
+    <form action="" class="mt-5">
+      <input
+        class="otp mx-2"
+        type="text"
+        (keyup)="tabChange(1)"
+        maxlength="1"
+      />
+      <input
+        class="otp mx-2"
+        type="text"
+        (keyup)="tabChange(2)"
+        maxlength="1"
+      />
+      <input
+        class="otp mx-2"
+        type="text"
+        (keyup)="tabChange(3)"
+        maxlength="1"
+      />
+      <input
+        class="otp mx-2"
+        type="text"
+        (keyup)="tabChange(4)"
+        maxlength="1"
+      />
+      <input
+        class="otp mx-2"
+        type="text"
+        (keyup)="tabChange(5)"
+        maxlength="1"
+      />
+      <input
+        class="otp mx-2"
+        type="text"
+        (keyup)="tabChange(6)"
+        maxlength="1"
+      />
+    </form>
+    <div class="resend-content">
+      <p class="m-4">
+        Didn’t receive your OTP? wait <span class="timer"> 00:45</span>
+      </p>
+    </div>
+
+    <div><p class="resend-btn">Resend OTP</p></div>
+    <div class="footer">
+      <button class="btn btn-primary btn-block mt-4 mb-4 customBtn">
+        Verify
+      </button>
+      <p class="cancel">Cancel</p>
+    </div>
+  </div>
+</div>

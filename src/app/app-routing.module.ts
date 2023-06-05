@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [];
-
+import { SignupComponent } from './auth/signup/signup.component';
+import { OtpEmailComponent } from './auth/email-verification/otp-email/otp-email.component';
+const routes: Routes = [
+  { path: 'signUp', component: SignupComponent },
+  { path: 'email-verify', component: OtpEmailComponent },
+];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
