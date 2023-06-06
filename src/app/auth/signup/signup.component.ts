@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { fa42Group } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-signup',
