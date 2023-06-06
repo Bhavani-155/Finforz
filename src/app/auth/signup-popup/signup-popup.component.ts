@@ -19,15 +19,5 @@ export class SignupPopupComponent implements OnInit {
   openModal() {
     this.modalRef = this.modalService.show(ModalContentComponent);
   }
-  // modalRef?: BsModalRef;
-  // constructor(private modalService: BsModalService) {}
-  // @ViewChild('myModalTemplate') myModalTemplate!: TemplateRef<any>;
-
-  // ngOnInit() {
-  //   this.openModalOnLoad();
-  // }
-
-  // openModalOnLoad() {
-  //   this.modalService.show(this.myModalTemplate);
-  // }
+  
 }

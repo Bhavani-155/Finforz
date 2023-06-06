@@ -3,8 +3,7 @@
   <button
     type="button"
     class="btn-close close pull-righ close-btn"
-    aria-label="Close"
-  >
+    aria-label="Close" (click)="doHide()">
     <span aria-hidden="true" class="visually-hidden">&times;</span>
   </button>
 </div>
@@ -25,14 +24,14 @@
   <div class="mt-3">
     <h6 class="mt-1 mb-2">Existing Clients</h6>
     <span
-      >Keen to open <span>another account?</span> Want to
-      <span>activate foreign share trading service?</span> <b>STOP!</b> Log on
+      >Keen to open <span class="red-clr">another account?</span> Want to
+      <span class="red-clr">activate foreign share trading service</span>? <b>STOP!</b> Log on
       to your dashboard and share across a few more details. You’ll be done in 5
       minutes.</span
     >
   </div>
   <div class="mt-4">* Terms and conditions apply.</div>
   <div class="text-center mt-4">
-    <button type="button" class="btn btn-primary">OK</button>
+    <button type="button" class="btn btn-primary" (click)="navigate()">OK</button>
   </div>
 </div>
