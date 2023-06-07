@@ -9,7 +9,7 @@ import { StepperService } from 'src/app/service/stepper.service';
 export class SignupComponent {
   constructor(public stepperService: StepperService) {}
 
-  next(): void {
-    this.stepperService.next();
-  }
+  // next(): void {
+  //   this.stepperService.next();
+  // }
 }
