@@ -13,6 +13,8 @@ export class StepperService {
     this.barWidth = this.currentStep * 10; // Assuming each step is 10% progress
     if (this.currentStep === 2) {
       this.subTitle = 'Verification';
+    } else {
+      this.subTitle = 'Basic Info';
     }
   }
 }
