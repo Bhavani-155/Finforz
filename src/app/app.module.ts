@@ -11,6 +11,7 @@ import { AlertModule } from 'ngx-bootstrap/alert';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { SignupPopupComponent } from './auth/signup-popup/signup-popup.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { RegistrationComponent } from './auth/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     SignupComponent,
     OtpEmailComponent,
     SignupPopupComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,
