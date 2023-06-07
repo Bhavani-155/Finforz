@@ -11,7 +11,7 @@ export class StepperService {
   next(): void {
     if (this.currentStep < 2) {
       this.currentStep++;
-      this.barWidth = this.currentStep * 20; // Assuming each step is 10% progress
+      this.barWidth = this.currentStep * 10; // Assuming each step is 50% progress
       if (this.currentStep === 2) {
         this.subTitle = 'Verification';
       }
