@@ -10,6 +10,10 @@ body {
   font-family: Verdana, Geneva, sans-serif;
   font-size: 14px;
   background: #c5343a2b;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 .popover {
   position: absolute;
