@@ -80,7 +80,7 @@ body {
   max-width: 100%;
   box-sizing: border-box;
   padding: 25px 25px 10px 25px;
-  margin: 3% auto 0;
+  margin: 6% auto 0;
   position: relative;
 
   z-index: 1;
@@ -134,12 +134,16 @@ body {
       }
     }
   }
+  .otp {
+    padding: 15px 0 !important;
+  }
   input {
     &[type="text"],
     &[type="email"],
     &[type="password"] {
       width: 100%;
-      padding: 15px 0px;
+      padding: 20px 10px 20px 15px;
+
       height: 35px;
       border: 1px solid $grey;
       box-sizing: border-box;
