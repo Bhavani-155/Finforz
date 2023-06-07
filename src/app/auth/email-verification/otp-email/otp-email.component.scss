@@ -64,12 +64,14 @@ form input:is(:focus, :hover) {
   margin: 22px 0;
   position: relative;
 }
-
-.btn-active {
-  color: #fff;
-  height: 45px;
+.btn-active
+{
   background: #e4293e;
   border-radius: 5px;
+  color: #fff;
+}
+.btn-left {
+  height: 45px;
   position: absolute;
   left: 7px;
   font-size: 14px;
