@@ -1,1 +1,58 @@
-<p>registration works!</p>
+    <div class="form_wrapper">
+    <div class="did-floating-label-content mt-4">
+      <input class="did-floating-input" type="text" placeholder=" " />
+      <label class="did-floating-label">NRIC</label>
+    </div>
+
+    <div class="did-floating-label-content mt-4">
+      <input class="did-floating-input" type="text" placeholder=" " />
+      <label class="did-floating-label">Full Name</label>
+    </div>
+
+    <div class="did-floating-label-content">
+      <select
+        class="did-floating-input"
+        onclick="this.setAttribute('value', this.value);"
+        value=""
+      >
+        <option value="2">Singapore</option>
+
+        <option value="1">Indian</option>
+        <option value="3">USA</option>
+      </select>
+      <div class="select_arrow"></div>
+      <label class="did-floating-label">Select Nationality</label>
+    </div>
+
+    <div class="did-floating-label-content">
+      <select
+        class="did-floating-input"
+        onclick="this.setAttribute('value', this.value);"
+        value=""
+      >
+        <option>NRIC</option>
+        <option>Passport</option>
+      </select>
+      <div class="select_arrow"></div>
+      <label class="did-floating-label">Select Id Type</label>
+    </div>
+
+    <div class="did-floating-label-content mt-4">
+      <input class="did-floating-input" type="text" placeholder=" " />
+      <label class="did-floating-label">Mobile Number</label>
+    </div>
+
+    <div class="did-floating-label-content mt-4">
+      <input class="did-floating-input" type="text" placeholder=" " />
+      <label class="did-floating-label">Email Address</label>
+    </div>
+
+    <div class="checkbox_option">
+      <input type="checkbox" id="cb1" />
+      <label for="cb1">I agree with terms and conditions</label>
+    </div>
+
+    <!-- Rest of the Step 1 form fields -->
+
+    <input class="button" type="submit" (click)="next()" value="Next" />
+</div>
