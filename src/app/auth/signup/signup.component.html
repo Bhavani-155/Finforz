@@ -2,15 +2,19 @@
   <div class="col-lg-6 col-sm-12">
     <div id="wrap">
       <h2>Account Opening</h2>
-      <p>{{ subTitle }}</p>
+      <p>{{ stepperService.subTitle }}</p>
     </div>
   </div>
   <div class="reg-form col-lg-6 col-sm-12">
     <div class="form_wrapper">
       <div class="form_container">
         <div class="row clearfix">
-          <div class="progress" [style.width]="barwidth + '%'"></div>
-          <div class="" *ngIf="step1">
+          <div
+            class="progress"
+            [style.width]="stepperService.barWidth + '%'"
+          ></div>
+          <div class="" *ngIf="stepperService.currentStep === 1">
+            <!-- Step 1 content -->
             <div class="did-floating-label-content mt-4">
               <input class="did-floating-input" type="text" placeholder=" " />
               <label class="did-floating-label">NRIC</label>
@@ -64,9 +68,14 @@
               <label for="cb1">I agree with terms and conditions</label>
             </div>
 
+            <!-- Rest of the Step 1 form fields -->
+
             <input class="button" type="submit" (click)="next()" value="Next" />
           </div>
-          <div *ngIf="step2"><app-otp-email></app-otp-email></div>
+          <div *ngIf="stepperService.currentStep === 2">
+            <app-otp-email></app-otp-email>
+            <!-- Step 2 content -->
+          </div>
         </div>
       </div>
     </div>
