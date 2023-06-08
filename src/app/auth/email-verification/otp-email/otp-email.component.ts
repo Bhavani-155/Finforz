@@ -11,6 +11,8 @@ export class OtpEmailComponent implements OnInit {
   timeLeft: number = 60;
   currentTab:any ='email';
   display: any;
+  isTabChanged: boolean = false;
+  isVerified: boolean = false;
   constructor(public stepperService: StepperService){}
   ngOnInit() {
     this.timer(2);
@@ -29,14 +31,18 @@ export class OtpEmailComponent implements OnInit {
   }
   verifyOTP()
  {
+  this.isVerified = true;
   this.changeTab('mobile');
  }
  changeTab(tab:any)
  {
   this.currentTab = tab;
   this.timer(2);
+  this.isTabChanged = true;
  }
 timer(minute:any) {
+  this.display = '';
+  var timer : any;
   let seconds: number = minute * 60;
   console.log(minute,seconds);
   let textSec: any = "0";
@@ -44,8 +50,12 @@ timer(minute:any) {
 
   const prefix = minute < 10 ? "0" : "";
 
-  const timer = setInterval(() => {
+   timer = setInterval(() => {
     seconds--;
+    if (seconds == 0 || this.isTabChanged) {
+      clearInterval(timer);
+      this.isTabChanged = false;
+    }
     if (statSec != 0) statSec--;
     else statSec = 59;
 
@@ -54,10 +64,6 @@ timer(minute:any) {
     } else textSec = statSec; 
 
     this.display = `${prefix}${Math.floor(seconds / 60)}:${textSec}`;
-
-    if (seconds == 0) {
-      clearInterval(timer);
-    }
   }, 1000);
 }
 }
