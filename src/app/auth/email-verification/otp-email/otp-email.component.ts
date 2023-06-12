@@ -10,18 +10,31 @@ export class OtpEmailComponent implements OnInit {
 
   timeLeft: number = 60;
   currentTab:any ='email';
-  display: any;
+  display: any = '00:00';
   isTabChanged: boolean = false;
   isVerified: boolean = false;
+  time: any;
+  canResend: boolean = false;
   constructor(public stepperService: StepperService){}
   ngOnInit() {
     this.timer(2);
   }
-  tabChange(val: any) {
+  tabChange(val: any,listner?:any) {
     let ele: any = document.getElementsByClassName('otp');
-    if (ele[val - 1].value != '' && ele[val - 1].value) {
+    if(listner == 'backspace')
+    {
+      if(ele[val - 1].value != '' && ele[val - 1].value)
+      {
+        ele[val - 1].value = '';
+      }else
+      {
+        ele[val-2].focus();
+      }
+    }
+    else if (ele[val - 1].value != '' && ele[val - 1].value) {
       ele[val].focus();
-    } else if (ele[val - 1].value && ele[val - 1].value == '') {
+    } 
+    else if (ele[val - 1].value && ele[val - 1].value == '') {
       ele[val - 2].focus();
     }
   }
@@ -32,17 +45,16 @@ export class OtpEmailComponent implements OnInit {
   verifyOTP()
  {
   this.isVerified = true;
-  this.changeTab('mobile');
+  clearInterval(this.time);
+  this.timer(2);
+  // this.changeTab('mobile');
  }
  changeTab(tab:any)
  {
   this.currentTab = tab;
-  this.timer(2);
   this.isTabChanged = true;
  }
 timer(minute:any) {
-  this.display = '';
-  var timer : any;
   let seconds: number = minute * 60;
   console.log(minute,seconds);
   let textSec: any = "0";
@@ -50,11 +62,11 @@ timer(minute:any) {
 
   const prefix = minute < 10 ? "0" : "";
 
-   timer = setInterval(() => {
+   this.time = setInterval(() => {
     seconds--;
-    if (seconds == 0 || this.isTabChanged) {
-      clearInterval(timer);
-      this.isTabChanged = false;
+    if (seconds == 0) {
+      this.canResend = true;
+      clearInterval(this.time);
     }
     if (statSec != 0) statSec--;
     else statSec = 59;
@@ -65,5 +77,16 @@ timer(minute:any) {
 
     this.display = `${prefix}${Math.floor(seconds / 60)}:${textSec}`;
   }, 1000);
+}
+otpChange(event:any,position:any)
+{
+  let ele: any = document.getElementsByClassName('otp');
+  let val = event.data;
+  if(ele[position - 1].value && ele[position - 1].value != '')
+  {
+    ele[position - 1].value = '';
+  }
+  ele[position - 1].value = val;
+  this.tabChange(position);
 }
 }
