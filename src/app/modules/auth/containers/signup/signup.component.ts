@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StepperService } from 'src/app/service/stepper.service';
+import { StepperService } from 'src/app/modules/auth/services/stepper.service';
 
 @Component({
   selector: 'app-signup',
