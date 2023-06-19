@@ -11,8 +11,8 @@ import { AlertModule } from 'ngx-bootstrap/alert';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { SignupPopupComponent } from './modules/auth/containers/registration/signup-popup/signup-popup.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { RegistrationComponent } from './modules/auth/containers/registration/signup-details/basic-details/registration.component';
 import { basicInfoComponent } from './modules/auth/containers/registration/signup-details/email-verification/otp-email/basic-info.component';
+import { RegistrationComponent } from './modules/auth/containers/registration/signup-details/basic-details/registration.component';
 
 @NgModule({
   declarations: [
