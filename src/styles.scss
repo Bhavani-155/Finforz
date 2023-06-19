@@ -603,10 +603,33 @@ select::-ms-expand {
   margin-right: 0;
   background-position: center;
 }
+.success-tick {
+  background: transparent url(./assets/img/success-tick.png) no-repeat;
+  height: 200px;
+  background-size: auto 75px;
+  margin-right: 0;
+  background-position: center;
+}
 .success-icon {
   color: green;
   font-size: 3rem;
 }
 .mt-30 {
   margin-top: 30% !important;
+}
+.mt-22 {
+  margin-top: 22% !important;
+}
+.customBtn {
+  align-items: center;
+  padding: 8px 30px;
+  width: 300px;
+  border: 0;
+  background: #e62b40;
+  border-radius: 5px;
+  margin: 0 auto;
+  display: block;
+}
+.text-center {
+  text-align: center;
 }

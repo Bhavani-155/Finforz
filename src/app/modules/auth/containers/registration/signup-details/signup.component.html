@@ -20,6 +20,9 @@
             <app-otp-email></app-otp-email>
             <!-- Step 2 content -->
           </div>
+          <div *ngIf="stepperService.currentStep === 3">
+            <app-basic-info></app-basic-info>
+          </div>
         </div>
       </div>
     </div>
