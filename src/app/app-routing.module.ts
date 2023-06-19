@@ -5,6 +5,7 @@ import { OtpEmailComponent } from './modules/auth/containers/registration/signup
 import { SignupPopupComponent } from './modules/auth/containers/registration/signup-popup/signup-popup.component';
 import { basicInfoComponent } from './modules/auth/containers/registration/signup-details/email-verification/otp-email/basic-info.component';
 const routes: Routes = [
+  { path: '', component: SignupPopupComponent },
   { path: 'popup', component: SignupPopupComponent },
   { path: 'signUp', component: SignupComponent },
   { path: 'email-verify', component: OtpEmailComponent },
