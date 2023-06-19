@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { StepperService } from 'src/app/modules/auth/services/stepper.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class OtpEmailComponent implements OnInit {
   isVerified: boolean = false;
   time: any;
   canResend: boolean = false;
-  constructor(public stepperService: StepperService) {}
+  constructor(public stepperService: StepperService,public router: Router) {}
   ngOnInit() {
     this.timer(2);
   }
@@ -39,6 +40,10 @@ export class OtpEmailComponent implements OnInit {
     this.isVerified = true;
     clearInterval(this.time);
     this.timer(2);
+    if(this.currentTab == 'mobile')
+    {
+      this.next();
+    }
     // this.changeTab('mobile');
   }
   changeTab(tab: any) {
@@ -77,5 +82,8 @@ export class OtpEmailComponent implements OnInit {
     }
     ele[position - 1].value = val;
     this.tabChange(position);
+  }
+  next() {
+    this.stepperService.next(3);
   }
 }
