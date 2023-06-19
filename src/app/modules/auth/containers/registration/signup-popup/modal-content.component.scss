@@ -1,0 +1,28 @@
+.close-btn {
+    font-size: 10px;
+  }
+  ul {
+    list-style: none;
+  }
+  
+  ul li:before {
+    content: "✓ ";
+  }
+  .red-clr
+  {
+    color: red;
+  }
+  .modal-body
+  {
+    font-size: 12px !important;
+    line-height: 1.85;
+  }
+  h6
+  {
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .btn-primary
+  {
+    font-size: 12px !important;
+  }

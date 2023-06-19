@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col-sm-12 mt-2 text-center">
+    <div class="title">Please verify your Email Address & Mobile Number</div>
+
+    <div class="btn-grp">
+      <button class="btn btn-left" [ngClass]="{'btn-active': currentTab === 'email'}" (click)="changeTab('email')">Email Verify</button>
+      <button class="btn btn-right" [ngClass]="{'btn-active': currentTab === 'mobile'}" (click)="changeTab('mobile')" [disabled]="!isVerified">Mobile Verify</button>
+    </div>
+    <div *ngIf="!isVerified && currentTab == 'email' || currentTab == 'mobile'">
+    <p class="msg" *ngIf="currentTab === 'email'">OTP sent to xyz@gmail.com</p>
+    <p class="msg" *ngIf="currentTab === 'mobile'">OTP sent to 8098043139</p>
+    <form action="" class="mt-2">
+      <input
+        class="otp mx-2"
+        type="number"
+        (keydown.backspace)="tabChange(1,'backspace')"
+        (input)="otpChange($event,1)" onpaste="return false"
+      />
+      <input
+        class="otp mx-2"
+        type="number"
+        (input)="otpChange($event,2)" (keydown.backspace)="tabChange(2,'backspace')" onpaste="return false"
+      />
+      <input
+        class="otp mx-2"
+        type="number"
+        (input)="otpChange($event,3)" (keydown.backspace)="tabChange(3,'backspace')" onpaste="return false"
+      />
+      <input
+        class="otp mx-2"
+        type="number"
+        (input)="otpChange($event,4)" (keydown.backspace)="tabChange(4,'backspace')" onpaste="return false"
+      />
+      <input
+        class="otp mx-2"
+        type="number"
+        (input)="otpChange($event,5)" (keydown.backspace)="tabChange(5,'backspace')" onpaste="return false"
+      />
+      <input
+        class="otp mx-2"
+        type="number"
+        (input)="otpChange($event,6)" (keydown.backspace)="tabChange(6,'backspace')" onpaste="return false"
+      />
+    </form>
+    <div class="resend-content">
+      <p class="m-2">
+        Didn’t receive your OTP? wait <span class="timer"> {{display}} </span>
+      </p>
+    </div>
+
+    <div class="mt-4" ><p [ngClass]="display == '00:00' ? 'resend-btn' :  'disableButton resend-btn'" >Resend OTP</p></div>
+    <div class="footer">
+      <button class="btn btn-primary btn-block mt-4 mb-4 customBtn" (click)="verifyOTP()">
+        Verify
+      </button>
+      <p class="cancel" (click)="prev()">Cancel</p>
+    </div>
+  </div>
+  <div class="mt-30" *ngIf="isVerified && currentTab == 'email'">
+     <i class="bi-check-circle success-icon"></i>
+    <p class="mt-4">Email OTP Verified Successfully !...</p>
+  </div>
+  </div>
+</div>
