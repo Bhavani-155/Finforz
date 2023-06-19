@@ -603,11 +603,10 @@ select::-ms-expand {
   margin-right: 0;
   background-position: center;
 }
-.success-tick
-{
+.success-tick {
   background: transparent url(./assets/img/success-tick.png) no-repeat;
   height: 200px;
-  background-size: auto 100px;
+  background-size: auto 75px;
   margin-right: 0;
   background-position: center;
 }
@@ -631,7 +630,6 @@ select::-ms-expand {
   margin: 0 auto;
   display: block;
 }
-.text-center
-{
+.text-center {
   text-align: center;
 }

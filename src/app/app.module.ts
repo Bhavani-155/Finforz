@@ -12,6 +12,8 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { SignupPopupComponent } from './modules/auth/containers/registration/signup-popup/signup-popup.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { basicInfoComponent } from './modules/auth/containers/registration/signup-details/email-verification/otp-email/basic-info.component';
+import { ManualDocumentUploadComponent } from './modules/auth/containers/registration/signup-details/document-verification/manual-document-upload/manual-document-upload.component';
+import { SingpassComponent } from './modules/auth/containers/registration/signup-details/document-verification/singpass/singpass.component';
 import { RegistrationComponent } from './modules/auth/containers/registration/signup-details/basic-details/registration.component';
 
 @NgModule({
@@ -22,6 +24,8 @@ import { RegistrationComponent } from './modules/auth/containers/registration/si
     SignupPopupComponent,
     RegistrationComponent,
     basicInfoComponent,
+    ManualDocumentUploadComponent,
+    SingpassComponent,
   ],
   imports: [
     BrowserModule,
