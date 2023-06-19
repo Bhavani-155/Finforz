@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SignupComponent } from './modules/auth/containers/registration/signup-details/signup.component';
-import { OtpEmailComponent } from './modules/auth/containers/registration/signup-details/email-verification/otp-email/otp-email.component';
+import { OtpEmailComponent } from './modules/auth/containers/registration/signup-details/otp-verification/otp-email.component';
 import { SignupPopupComponent } from './modules/auth/containers/registration/signup-popup/signup-popup.component';
-import { basicInfoComponent } from './modules/auth/containers/registration/signup-details/email-verification/otp-email/basic-info.component';
+import { basicInfoComponent } from './modules/auth/containers/registration/signup-details/otp-verification/basic-info.component';
 const routes: Routes = [
   { path: '', component: SignupPopupComponent },
   { path: 'popup', component: SignupPopupComponent },
