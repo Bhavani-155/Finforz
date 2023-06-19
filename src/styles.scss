@@ -633,3 +633,26 @@ select::-ms-expand {
 .text-center {
   text-align: center;
 }
+.cmn-clr
+{
+  color: $red;
+}
+.menu-bar {
+  background: transparent url(./assets/img/burger.png) no-repeat;
+  height: 20px;
+  background-size: auto 15px;
+}
+.content{
+font-size: 12px;
+}
+.cmn-head
+{
+  font-weight: 700 !important;
+  font-size: 16px;
+}
+.tab-switch
+{
+  border-bottom: 4px solid #ED1A3B;
+  border-radius: 4px;
+  line-height: 0px;
+}
