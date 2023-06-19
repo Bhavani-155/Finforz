@@ -12,6 +12,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { SignupPopupComponent } from './modules/auth/containers/registration/signup-popup/signup-popup.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { RegistrationComponent } from './modules/auth/containers/registration/registration.component';
+import { basicInfoComponent } from './modules/auth/containers/registration/signup-details/email-verification/otp-email/basic-info.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { RegistrationComponent } from './modules/auth/containers/registration/re
     OtpEmailComponent,
     SignupPopupComponent,
     RegistrationComponent,
+    basicInfoComponent
   ],
   imports: [
     BrowserModule,
