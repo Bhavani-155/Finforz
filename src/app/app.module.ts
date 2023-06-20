@@ -18,6 +18,8 @@ import { RegistrationComponent } from './modules/auth/containers/registration/si
 import { SingpassLoginComponent } from './modules/auth/containers/registration/signup-details/document-verification/singpass/singpass-login.component';
 import { IonicModule } from '@ionic/angular';
 import { BiometricComponent } from './modules/auth/containers/biometric/biometric.component';
+import { DocumentHomeComponent } from './modules/auth/containers/registration/signup-details/document-verification/document-home/document-home.component';
+import { PersonalInfoComponent } from './modules/auth/containers/registration/signup-details/document-verification/document-home/personal-info/personal-info.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,9 @@ import { BiometricComponent } from './modules/auth/containers/biometric/biometri
     SingpassComponent,
     SingpassLoginComponent,
     BiometricComponent,
+    SingpassLoginComponent,
+    DocumentHomeComponent,
+    PersonalInfoComponent,
   ],
   imports: [
     BrowserModule,
