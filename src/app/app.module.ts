@@ -16,6 +16,7 @@ import { ManualDocumentUploadComponent } from './modules/auth/containers/registr
 import { SingpassComponent } from './modules/auth/containers/registration/signup-details/document-verification/singpass/singpass.component';
 import { RegistrationComponent } from './modules/auth/containers/registration/signup-details/basic-details/registration.component';
 import { DocumentHomeComponent } from './modules/auth/containers/registration/signup-details/document-verification/document-home/document-home.component';
+import { SingpassModelComponent } from './modules/auth/containers/registration/signup-details/document-verification/singpass-model/singpass-model.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { DocumentHomeComponent } from './modules/auth/containers/registration/si
     ManualDocumentUploadComponent,
     SingpassComponent,
     DocumentHomeComponent,
+    SingpassModelComponent,
   ],
   imports: [
     BrowserModule,
