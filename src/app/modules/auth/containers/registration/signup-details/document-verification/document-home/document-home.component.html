@@ -2,40 +2,64 @@
   <p class="title">Choose account opening method</p>
 
   <div class="main-content">
-    <div class="row">
+    <div
+      [ngClass]="
+        activeSingpass ? 'row active singPassLogin' : 'row singPassLogin'
+      "
+      (click)="clickEvent('singpass')"
+    >
       <div>
         <img
           class="logo"
           src="../../../../../../../../assets/icons/singpass-logo.png"
         />
-        <p>Verify instantly</p>
-        <p>You will be redirected to the SingPass website</p>
+        <p class="content">Verify instantly</p>
+        <p class="sub-content">
+          You will be redirected to the SingPass website
+        </p>
       </div>
     </div>
     <div class="row">
-      <hr />
+      <div class="hr">
+        <span class="hr-content">
+          Or Register With
+          <!--Padding is optional-->
+        </span>
+      </div>
+      <!-- <hr />
+      <div class="hr-content">Or Register With</div> -->
     </div>
-    <div class="row">
+    <div
+      [ngClass]="
+        activeManual
+          ? 'row active manual singPassLogin'
+          : 'row singPassLogin manual'
+      "
+      (click)="clickEvent('manual')"
+    >
       <div>
-        <p>Verify by document upload and selfie</p>
-        <span>Take 3-5 mins</span>
+        <p class="content">Verify by document upload and selfie</p>
+        <span class="sub-content">Take 3-5 mins</span>
       </div>
     </div>
-    <div class="row">
+    <div class="row footer">
       <p>
         Customers who have a singpass account can verify instantly by clicking
-        the 'Verify instantly' button, if they do not, they use the 'Verify by
-        document upload and selfie' option
+        the <b>'Verify instantly'</b> button, if they do not, they use the
+        <b>'Verify by document upload and selfie'</b> option
       </p>
     </div>
     <div class="row">
-      <div class="col-sm-12 col-md-6 col-lg-6">
-        <button class="btn btn-primary btn-block mt-4 mb-4 customBtn">
+      <div class="col-6">
+        <button class="btn btn-primary mt-4 mb-4 customBtn later">
           Complete Later
         </button>
       </div>
-      <div class="col-sm-12 col-md-6 col-lg-6">
-        <button class="btn btn-primary btn-block mt-4 mb-4 customBtn" (click)="next()">
+      <div class="col-6">
+        <button
+          class="btn btn-primary mt-4 mb-4 customBtn"
+          (click)="openModal()"
+        >
           Next Step <i class="bi bi-arrow-right-short"></i>
         </button>
       </div>
