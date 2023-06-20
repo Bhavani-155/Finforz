@@ -6,10 +6,10 @@ import { StepperService } from 'src/app/modules/auth/services/stepper.service';
   templateUrl: './basic-info.component.html',
 })
 export class basicInfoComponent implements OnInit {
-  constructor(public stepperService:StepperService){}
-    ngOnInit(){
-    }
-    next() {
-      this.stepperService.next(5);
-    }
+  ngOnInit() {}
+  constructor(public stepperService: StepperService) {}
+
+  next() {
+    this.stepperService.next(4);
+  }
 }
