@@ -15,6 +15,7 @@ import { basicInfoComponent } from './modules/auth/containers/registration/signu
 import { ManualDocumentUploadComponent } from './modules/auth/containers/registration/signup-details/document-verification/manual-document-upload/manual-document-upload.component';
 import { SingpassComponent } from './modules/auth/containers/registration/signup-details/document-verification/singpass/singpass.component';
 import { RegistrationComponent } from './modules/auth/containers/registration/signup-details/basic-details/registration.component';
+import { SingpassLoginComponent } from './modules/auth/containers/registration/signup-details/document-verification/singpass/singpass-login.component';
 import { IonicModule } from '@ionic/angular';
 import { BiometricComponent } from './modules/auth/containers/biometric/biometric.component';
 
@@ -28,6 +29,7 @@ import { BiometricComponent } from './modules/auth/containers/biometric/biometri
     basicInfoComponent,
     ManualDocumentUploadComponent,
     SingpassComponent,
+    SingpassLoginComponent,
     BiometricComponent,
   ],
   imports: [
