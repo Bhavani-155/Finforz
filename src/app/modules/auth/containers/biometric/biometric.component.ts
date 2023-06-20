@@ -1,27 +1,20 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AvailableResult, NativeBiometric } from 'capacitor-native-biometric';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+
 @Component({
-  selector: 'app-modal-content',
-  templateUrl: 'modal-content.component.html',
-  styleUrls: ['./modal-content.component.scss'],
+  selector: 'app-biometric',
+  templateUrl: './biometric.component.html',
+  styleUrls: ['./biometric.component.scss']
 })
-export class ModalContentComponent {
-  modalRef!: BsModalRef;
-  @Output() onHide = new EventEmitter<void>();
-  constructor(private router: Router,private modalService: BsModalService,private bsModalRef: BsModalRef){
-    this.checkCredential();
-  }
+export class BiometricComponent {
   
-  navigate()
-  {
-    this.doHide();
-    this.router.navigateByUrl('/signUp');
+  constructor(private router: Router) {
+    this.setCredential('Manoj', 'password');
+    this.checkCredential()
   }
-  doHide() {
-    this.bsModalRef.hide();
-  }
+    
+
 
   setCredential(username:any, password:any) {
     // Save user's credentials
@@ -65,7 +58,7 @@ export class ModalContentComponent {
               //     // Authentication successful
              console.log('SUCCESS!!');
              this.router.navigate(['/popup']);
-             localStorage.setItem('username', 'manoj');
+             localStorage.setItem('username', 'sathish');
               //     // this.login(credentials.username, credentials.password);
             })
             .catch((err) => {
@@ -76,5 +69,4 @@ export class ModalContentComponent {
       }
     });
   }
-
 }
