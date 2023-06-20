@@ -2,15 +2,15 @@ import { Component } from '@angular/core';
 import { StepperService } from 'src/app/modules/auth/services/stepper.service';
 
 @Component({
-  selector: 'app-document-home',
-  templateUrl: './document-home.component.html',
-  styleUrls: ['./document-home.component.scss']
+  selector: 'app-personal-info',
+  templateUrl: './personal-info.component.html',
+  styleUrls: ['./personal-info.component.scss']
 })
-export class DocumentHomeComponent {
-
+export class PersonalInfoComponent {
   constructor(public stepperService : StepperService){}
 
   next() {
     this.stepperService.next(5);
   }
 }
+
