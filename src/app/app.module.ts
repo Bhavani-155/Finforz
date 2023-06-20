@@ -15,11 +15,9 @@ import { basicInfoComponent } from './modules/auth/containers/registration/signu
 import { ManualDocumentUploadComponent } from './modules/auth/containers/registration/signup-details/document-verification/manual-document-upload/manual-document-upload.component';
 import { SingpassComponent } from './modules/auth/containers/registration/signup-details/document-verification/singpass/singpass.component';
 import { RegistrationComponent } from './modules/auth/containers/registration/signup-details/basic-details/registration.component';
-<<<<<<< HEAD
 import { SingpassLoginComponent } from './modules/auth/containers/registration/signup-details/document-verification/singpass/singpass-login.component';
-=======
-import { DocumentHomeComponent } from './modules/auth/containers/registration/signup-details/document-verification/document-home/document-home.component';
->>>>>>> 26c62145eee188d7844ee6cf24e9578c6192e1a9
+import { IonicModule } from '@ionic/angular';
+import { BiometricComponent } from './modules/auth/containers/biometric/biometric.component';
 
 @NgModule({
   declarations: [
@@ -31,11 +29,8 @@ import { DocumentHomeComponent } from './modules/auth/containers/registration/si
     basicInfoComponent,
     ManualDocumentUploadComponent,
     SingpassComponent,
-<<<<<<< HEAD
-    SingpassLoginComponent
-=======
-    DocumentHomeComponent,
->>>>>>> 26c62145eee188d7844ee6cf24e9578c6192e1a9
+    SingpassLoginComponent,
+    BiometricComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +41,7 @@ import { DocumentHomeComponent } from './modules/auth/containers/registration/si
     AlertModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
+    IonicModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

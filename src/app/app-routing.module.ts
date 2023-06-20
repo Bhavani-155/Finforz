@@ -4,8 +4,9 @@ import { SignupComponent } from './modules/auth/containers/registration/signup-d
 import { OtpEmailComponent } from './modules/auth/containers/registration/signup-details/otp-verification/otp-email.component';
 import { SignupPopupComponent } from './modules/auth/containers/registration/signup-popup/signup-popup.component';
 import { SingpassLoginComponent } from './modules/auth/containers/registration/signup-details/document-verification/singpass/singpass-login.component';
+import { BiometricComponent } from './modules/auth/containers/biometric/biometric.component';
 const routes: Routes = [
-  { path: '', component: SignupPopupComponent },
+  { path: '', component:  SignupPopupComponent},
   { path: 'popup', component: SignupPopupComponent },
   { path: 'signUp', component: SignupComponent },
   { path: 'email-verify', component: OtpEmailComponent },
