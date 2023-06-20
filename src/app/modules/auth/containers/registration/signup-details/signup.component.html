@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-lg-6 col-sm-12">
     <div id="wrap">
-      <h2>{{stepperService.title}}</h2>
+      <h2>{{ stepperService.title }}</h2>
       <p>{{ stepperService.subTitle }}</p>
     </div>
   </div>
@@ -27,6 +27,7 @@
           </div>
           <div *ngIf="stepperService.currentStep === 5">
             <app-singpass-login></app-singpass-login>
+          </div>
         </div>
       </div>
     </div>

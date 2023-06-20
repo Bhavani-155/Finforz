@@ -20,6 +20,7 @@ import { IonicModule } from '@ionic/angular';
 import { BiometricComponent } from './modules/auth/containers/biometric/biometric.component';
 import { DocumentHomeComponent } from './modules/auth/containers/registration/signup-details/document-verification/document-home/document-home.component';
 import { SingpassModelComponent } from './modules/auth/containers/registration/signup-details/document-verification/singpass-model/singpass-model.component';
+import { UserMenuComponent } from './modules/user/user-menu/user-menu.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { SingpassModelComponent } from './modules/auth/containers/registration/s
     SingpassLoginComponent,
     DocumentHomeComponent,
     SingpassModelComponent,
+    UserMenuComponent,
   ],
   imports: [
     BrowserModule,

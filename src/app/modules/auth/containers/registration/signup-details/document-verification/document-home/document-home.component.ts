@@ -1,6 +1,8 @@
 import { SingpassModelComponent } from './../singpass-model/singpass-model.component';
 import { Component } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { StepperService } from 'src/app/modules/auth/services/stepper.service';
+
 @Component({
   selector: 'app-document-home',
   templateUrl: './document-home.component.html',
@@ -9,7 +11,10 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 export class DocumentHomeComponent {
   activeSingpass: boolean = false;
   activeManual: boolean = false;
-  constructor(private modalService: BsModalService) {}
+  constructor(
+    private modalService: BsModalService,
+    public stepperService: StepperService
+  ) {}
 
   openModal() {
     const modalRef: BsModalRef = this.modalService.show(SingpassModelComponent);
@@ -25,6 +30,15 @@ export class DocumentHomeComponent {
     } else {
       this.activeManual = !this.activeManual;
       this.activeSingpass = false;
+    }
+  }
+
+  next() {
+    if (this.activeSingpass) {
+      this.openModal();
+    }
+    if (this.activeManual) {
+      this.stepperService.next(6);
     }
   }
 }
