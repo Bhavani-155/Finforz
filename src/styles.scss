@@ -624,6 +624,14 @@ select::-ms-expand {
   background-size: auto 130px;
   background-position: center;
 }
+.camera-logo {
+  background: transparent url(./assets/icons/camera.png) no-repeat;
+  height: 30px;
+  width: 100%;
+  background-size: auto 30px;
+  margin-right: 0;
+  background-position: center;
+}
 .success-icon {
   color: green;
   font-size: 3rem;
@@ -673,4 +681,13 @@ font-size: 12px;
 
 .document .title {
   color: $red_font;
+}
+.camera-bg
+{
+  position: absolute;
+width: 215px;
+height: 195.26px;
+left: 957px;
+top: 583px;
+background: #FFF2F2;
 }

@@ -14,7 +14,8 @@
             [style.width]="stepperService.barWidth + '%'"
           ></div>
           <div *ngIf="stepperService.currentStep === 1">
-            <app-registration></app-registration>
+            <!-- <app-registration></app-registration> -->
+            <app-manual-document-upload></app-manual-document-upload>
           </div>
           <div *ngIf="stepperService.currentStep === 2">
             <app-otp-email></app-otp-email>
