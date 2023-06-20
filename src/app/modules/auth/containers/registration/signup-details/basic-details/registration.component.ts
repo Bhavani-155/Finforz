@@ -9,6 +9,6 @@ import { StepperService } from 'src/app/modules/auth/services/stepper.service';
 export class RegistrationComponent {
   constructor(public stepperService: StepperService) {}
   next(): void {
-    this.stepperService.next(4);
+    this.stepperService.next(2);
   }
 }

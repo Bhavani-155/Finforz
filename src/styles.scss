@@ -2,6 +2,8 @@ $red: #e4293e;
 $black: #000000;
 $grey: #cccccc;
 $red_font: #c1272d;
+$light_gray: #757575;
+
 /* You can add global styles to this file, and also import other style files */
 html {
   overflow-x: hidden;
@@ -9,7 +11,7 @@ html {
 body {
   font-family: Verdana, Geneva, sans-serif;
   font-size: 14px;
-  background: #c5343a2b;
+  background: #c5343a2b !important;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -614,6 +616,18 @@ select::-ms-expand {
   margin-right: 0;
   background-position: center;
 }
+.menu-bar {
+  background: transparent url(./assets/img/burger.png) no-repeat;
+  height: 20px;
+  background-size: auto 15px;
+}
+.qr-code {
+  background: transparent url(./assets/img/bi_qr-code.png) no-repeat;
+  height: 160px;
+  width: 332px;
+  background-size: auto 130px;
+  background-position: center;
+}
 .success-icon {
   color: green;
   font-size: 3rem;
@@ -634,8 +648,27 @@ select::-ms-expand {
   display: block;
   font-size: 12px;
 }
-.text-center {
-  text-align: center;
+// .text-center {
+//   text-align: center;
+// }
+.cmn-clr {
+  color: $red;
+}
+.clr-gray {
+  color: $light_gray;
+}
+
+.content-fs {
+  font-size: 12px;
+}
+.cmn-head {
+  font-weight: 700 !important;
+  font-size: 16px;
+}
+.tab-switch {
+  border-bottom: 4px solid #ed1a3b;
+  border-radius: 4px;
+  line-height: 0px;
 }
 
 .document .title {

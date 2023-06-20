@@ -13,6 +13,7 @@ export class DocumentHomeComponent {
 
   openModal() {
     const modalRef: BsModalRef = this.modalService.show(SingpassModelComponent);
+
     modalRef.content.closeModalEvent.subscribe(() => {
       modalRef.hide();
     });

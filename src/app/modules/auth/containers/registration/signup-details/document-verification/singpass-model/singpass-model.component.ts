@@ -1,5 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  Renderer2,
+} from '@angular/core';
+import { BsModalRef } from 'ngx-bootstrap/modal';
 @Component({
   selector: 'app-singpass-model',
   templateUrl: './singpass-model.component.html',
@@ -7,7 +14,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class SingpassModelComponent {
   @Output() closeModalEvent = new EventEmitter();
+  constructor(public bsModalRef: BsModalRef, private renderer: Renderer2) {}
 
+  ngOnInit(): void {}
   closeModal() {
     this.closeModalEvent.emit();
   }
