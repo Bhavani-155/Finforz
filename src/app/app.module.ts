@@ -20,6 +20,7 @@ import { IonicModule } from '@ionic/angular';
 import { DocumentHomeComponent } from './registration/signup-details/document-verification/document-home/document-home.component';
 import { SingpassModelComponent } from './registration/signup-details/document-verification/singpass-model/singpass-model.component';
 import { FormsModule } from '@angular/forms';
+import { SwipeModule } from './registration/swipe/swipe.module';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { FormsModule } from '@angular/forms';
     ModalModule.forRoot(),
     IonicModule.forRoot(),
     FormsModule,
+    SwipeModule
   ],
   providers: [],
   bootstrap: [AppComponent],
