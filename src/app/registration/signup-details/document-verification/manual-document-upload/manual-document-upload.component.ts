@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./manual-document-upload.component.scss']
 })
 export class ManualDocumentUploadComponent {
-
+  docFront:any = 'File Name';
+  docBack:any = 'File Name';
 }

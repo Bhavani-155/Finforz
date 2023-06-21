@@ -150,7 +150,7 @@ body {
     &[type="password"] {
       width: 100%;
       padding: 20px 10px 20px 15px;
-
+      font-weight: 600;
       height: 35px;
       border: 1px solid $grey;
       box-sizing: border-box;
@@ -469,7 +469,7 @@ body {
   margin-bottom: 20px;
 }
 .did-floating-label {
-  color: #1e4c82;
+  color: #757575;
   font-size: 13px;
   font-weight: normal;
   position: absolute;
@@ -628,6 +628,14 @@ select::-ms-expand {
   background-size: auto 130px;
   background-position: center;
 }
+.camera-logo {
+  background: transparent url(./assets/icons/camera.png) no-repeat;
+  height: 166px;
+  width: 100%;
+  background-size: auto 140px;
+  margin-right: 0;
+  background-position: center;
+}
 .success-icon {
   color: green;
   font-size: 3rem;
@@ -648,9 +656,39 @@ select::-ms-expand {
   display: block;
   font-size: 12px;
 }
-// .text-center {
-//   text-align: center;
-// }
+.cancelBtn {
+  align-items: center;
+  padding: 8px 30px;
+  border: 0;
+  border: 1px solid #e62b40;
+  border-radius: 5px;
+  color: #e62b40;
+  margin: 0 auto;
+  display: block;
+  font-size: 12px;
+}
+.cancelBtn-small {
+  align-items: center;
+  padding: 1px 10px;
+    border: 0;
+    border: 1px solid #e62b40;
+    border-radius: 3px;
+    color: #e62b40;
+    margin: 0 auto;
+    display: block;
+    font-size: 10px;
+    opacity: 0.7;
+}
+.smallBtn {
+  align-items: center;
+  padding: 6px 16px;
+    border: 0;
+    background: #e62b40;
+    border-radius: 0;
+    margin: 0 auto;
+    display: block;
+    font-size: 8px;
+}
 .cmn-clr {
   color: $red;
 }
@@ -663,7 +701,7 @@ select::-ms-expand {
 }
 .cmn-head {
   font-weight: 700 !important;
-  font-size: 16px;
+  font-size: 14px;
 }
 .tab-switch {
   border-bottom: 4px solid #ed1a3b;
@@ -674,4 +712,33 @@ select::-ms-expand {
 .document .title {
   color: $red_font;
   margin: 5px 0 30px 0;
+}
+.camera-bg
+{
+width: 215px;
+height: 195.26px;
+background: #FFF2F2;
+margin: 0 auto;
+}
+input[type='file'] {
+  opacity:0    
+}
+// input[type='file'] {
+//   color: rgba(0, 0, 0, 0);
+//     padding: 6px 16px;
+//     font-size: 8px;
+// }
+.input-bn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+.margin-auto
+{
+  margin: 0 auto !important;
+}
+.col-rgt
+{
+  right: 28px;
+  position: absolute;
 }

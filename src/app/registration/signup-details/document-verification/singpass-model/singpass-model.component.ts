@@ -7,6 +7,7 @@ import {
   Renderer2,
 } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
+import { StepperService } from 'src/app/services/stepper.service';
 @Component({
   selector: 'app-singpass-model',
   templateUrl: './singpass-model.component.html',

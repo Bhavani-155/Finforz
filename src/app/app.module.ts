@@ -19,6 +19,7 @@ import { SingpassLoginComponent } from './registration/signup-details/document-v
 import { IonicModule } from '@ionic/angular';
 import { DocumentHomeComponent } from './registration/signup-details/document-verification/document-home/document-home.component';
 import { SingpassModelComponent } from './registration/signup-details/document-verification/singpass-model/singpass-model.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { SingpassModelComponent } from './registration/signup-details/document-v
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
     IonicModule.forRoot(),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
