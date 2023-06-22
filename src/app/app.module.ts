@@ -20,8 +20,9 @@ import { IonicModule } from '@ionic/angular';
 import { DocumentHomeComponent } from './registration/signup-details/document-verification/document-home/document-home.component';
 import { SingpassModelComponent } from './registration/signup-details/document-verification/singpass-model/singpass-model.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MenuComponent } from './menu/menu.component';
+import { IonicStorageModule } from '@ionic/storage-angular';
 import { SwipeModule } from './registration/swipe/swipe.module';
-import { PersonalInformationComponent } from './registration/signup-details/personal-information/personal-information.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { PersonalInformationComponent } from './registration/signup-details/pers
     SingpassLoginComponent,
     DocumentHomeComponent,
     SingpassModelComponent,
-    PersonalInformationComponent
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +50,8 @@ import { PersonalInformationComponent } from './registration/signup-details/pers
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
     IonicModule.forRoot(),
+    IonicStorageModule.forRoot(),
+    
     FormsModule,
     SwipeModule,
     FormsModule,
