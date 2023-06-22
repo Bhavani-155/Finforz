@@ -23,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { SwipeModule } from './registration/swipe/swipe.module';
+import { PersonalInformationComponent } from './registration/signup-details/personal-information/personal-information.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { SwipeModule } from './registration/swipe/swipe.module';
     DocumentHomeComponent,
     SingpassModelComponent,
     MenuComponent,
+    PersonalInformationComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,6 @@ import { SwipeModule } from './registration/swipe/swipe.module';
     ModalModule.forRoot(),
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
-    
     FormsModule,
     SwipeModule,
     FormsModule,

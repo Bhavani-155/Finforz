@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./personal-information.component.scss']
 })
 export class PersonalInformationComponent {
-
+  next()
+  {
+    
+  }
 }
