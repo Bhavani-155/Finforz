@@ -23,8 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { SwipeModule } from './registration/swipe/swipe.module';
-import { PersonalInfoComponent } from './registration/signup-details/document-verification/document-home/personal-info/personal-info.component';
 import { PersonalInformationComponent } from './registration/signup-details/personal-information/personal-information.component';
+import { FinancialInformationComponent } from './registration/signup-details/basic-details/financial-information/financial-information.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +43,7 @@ import { PersonalInformationComponent } from './registration/signup-details/pers
     SingpassModelComponent,
     MenuComponent,
     PersonalInformationComponent,
+    FinancialInformationComponent,
   ],
   imports: [
     BrowserModule,
