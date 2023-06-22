@@ -1,3 +1,4 @@
+<ion-content appSwipe (swipeLeft)="onSwipeLeft($event)" (swipeRight)="onSwipeRight($event)">
 <div class="row">
   <div class="col-lg-6 col-sm-12">
     <div id="wrap">
@@ -13,7 +14,7 @@
             class="progress"
             [style.width]="stepperService.barWidth + '%'"
           ></div>
-          <div *ngIf="stepperService.currentStep === 1">
+          <div *ngIf="stepperService.currentStep === 1" >
             <app-registration></app-registration>
           </div>
           <div *ngIf="stepperService.currentStep === 2">
@@ -32,7 +33,11 @@
         <div *ngIf="stepperService.currentStep === 6">
            <app-manual-document-upload></app-manual-document-upload>
       </div>
+      <div *ngIf="stepperService.currentStep === 7">
+        <app-personal-information></app-personal-information>
+      </div>
       </div>
     </div>
   </div>
 </div>
+</ion-content>
