@@ -19,7 +19,7 @@ import { SingpassLoginComponent } from './registration/signup-details/document-v
 import { IonicModule } from '@ionic/angular';
 import { DocumentHomeComponent } from './registration/signup-details/document-verification/document-home/document-home.component';
 import { SingpassModelComponent } from './registration/signup-details/document-verification/singpass-model/singpass-model.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SwipeModule } from './registration/swipe/swipe.module';
 import { PersonalInformationComponent } from './registration/signup-details/personal-information/personal-information.component';
 
@@ -50,7 +50,9 @@ import { PersonalInformationComponent } from './registration/signup-details/pers
     ModalModule.forRoot(),
     IonicModule.forRoot(),
     FormsModule,
-    SwipeModule
+    SwipeModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

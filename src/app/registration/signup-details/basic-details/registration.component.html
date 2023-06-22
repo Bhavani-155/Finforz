@@ -2,9 +2,18 @@
   <div class="logo-signup"></div>
   <div class="for-mobile">Account Opening</div>
 </div>
+
+<form [formGroup]="registerForm">
 <div class="did-floating-label-content mt-4">
-  <input class="did-floating-input" type="text" placeholder=" " />
+  <input class="did-floating-input" formControlName='nric' type="text" placeholder=" " />
   <label class="did-floating-label">NRIC</label>
+
+  <!-- <ng-container *ngIf="registerForm.get('nric')?.touched">
+    <div class="error-msg" *ngIf="registerForm?.get('nric').hasError('invalidOnlySpace')"> Enter a valid NRIC</div>
+    <div class="error-msg" *ngIf="registerForm?.get('nric').hasError('required')">NRIC Required</div>
+
+  </ng-container> -->
+
 </div>
 
 <div class="did-floating-label-content mt-4">
@@ -58,3 +67,5 @@
 <!-- Rest of the Step 1 form fields -->
 
 <input class="button" type="submit" (click)="next()" value="Next" />
+
+</form>
