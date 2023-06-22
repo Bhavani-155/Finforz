@@ -1,6 +1,8 @@
 $red: #e4293e;
 $black: #000000;
 $grey: #cccccc;
+$red_font: #c1272d;
+$light_gray: #757575;
 
 /* You can add global styles to this file, and also import other style files */
 html {
@@ -9,12 +11,16 @@ html {
 body {
   font-family: Verdana, Geneva, sans-serif;
   font-size: 14px;
-  background: #c5343a2b;
+  background: #c5343a2b !important;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   box-sizing: border-box;
   height: 100%;
+}
+.singPassLogin,
+.manual {
+  cursor: pointer;
 }
 .popover {
   position: absolute;
@@ -144,7 +150,8 @@ body {
     &[type="password"] {
       width: 100%;
       padding: 20px 10px 20px 15px;
-
+      font-weight: 400;
+      color: #000000;
       height: 35px;
       border: 1px solid $grey;
       box-sizing: border-box;
@@ -433,7 +440,7 @@ body {
     opacity: 1;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .form_wrapper {
     .col_half {
       width: 100%;
@@ -463,8 +470,8 @@ body {
   margin-bottom: 20px;
 }
 .did-floating-label {
-  color: #1e4c82;
-  font-size: 13px;
+  color: #757575;
+  font-size: 11px;
   font-weight: normal;
   position: absolute;
   pointer-events: none;
@@ -576,8 +583,7 @@ select::-ms-expand {
 .for-mobile {
   display: none;
 }
-
-@media (min-width: 320px) and (max-width: 480px) {
+@media screen and (max-width: 550px) {
   .reg-form {
     padding-right: inherit !important;
     padding-left: inherit !important;
@@ -603,10 +609,133 @@ select::-ms-expand {
   margin-right: 0;
   background-position: center;
 }
+.success-tick {
+  background: transparent url(./assets/img/success-tick.png) no-repeat;
+  height: 200px;
+  background-size: auto 75px;
+  margin-right: 0;
+  background-position: center;
+}
+.menu-bar {
+  background: transparent url(./assets/img/burger.png) no-repeat;
+  height: 20px;
+  background-size: auto 15px;
+}
+.qr-code {
+  background: transparent url(./assets/img/bi_qr-code.png) no-repeat;
+  height: 160px;
+  width: 332px;
+  background-size: auto 130px;
+  background-position: center;
+}
+.camera-logo {
+  background: transparent url(./assets/icons/camera.png) no-repeat;
+  height: 166px;
+  width: 100%;
+  background-size: auto 140px;
+  margin-right: 0;
+  background-position: center;
+}
 .success-icon {
   color: green;
   font-size: 3rem;
 }
 .mt-30 {
   margin-top: 30% !important;
+}
+.mt-22 {
+  margin-top: 22% !important;
+}
+.customBtn {
+  align-items: center;
+  padding: 8px 30px;
+  border: 0;
+  background: #e62b40;
+  border-radius: 5px;
+  margin: 0 auto;
+  display: block;
+  font-size: 12px;
+}
+.cancelBtn {
+  align-items: center;
+  padding: 8px 30px;
+  border: 0;
+  border: 1px solid #e62b40;
+  border-radius: 5px;
+  color: #e62b40;
+  margin: 0 auto;
+  display: block;
+  font-size: 12px;
+}
+.cancelBtn-small {
+  align-items: center;
+  padding: 1px 10px;
+  border: 0;
+  border: 1px solid #e62b40;
+  border-radius: 3px;
+  color: #e62b40;
+  margin: 0 auto;
+  display: block;
+  font-size: 10px;
+  opacity: 0.7;
+}
+.smallBtn {
+  align-items: center;
+  padding: 6px 16px;
+  border: 0;
+  background: #e62b40;
+  border-radius: 0;
+  margin: 0 auto;
+  display: block;
+  font-size: 8px;
+}
+.cmn-clr {
+  color: $red;
+}
+.clr-gray {
+  color: $light_gray;
+}
+
+.content-fs {
+  font-size: 12px;
+}
+.cmn-head {
+  font-weight: 700 !important;
+  font-size: 14px;
+}
+.tab-switch {
+  border-bottom: 4px solid #ed1a3b;
+  border-radius: 4px;
+  line-height: 0px;
+}
+
+.document .title {
+  color: $red_font;
+  margin: 5px 0 30px 0;
+}
+.camera-bg {
+  width: 215px;
+  height: 195.26px;
+  background: #fff2f2;
+  margin: 0 auto;
+}
+input[type="file"] {
+  opacity: 0;
+}
+// input[type='file'] {
+//   color: rgba(0, 0, 0, 0);
+//     padding: 6px 16px;
+//     font-size: 8px;
+// }
+.input-bn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+.margin-auto {
+  margin: 0 auto !important;
+}
+.col-rgt {
+  right: 28px;
+  position: absolute;
 }

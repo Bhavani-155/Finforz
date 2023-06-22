@@ -1,0 +1,65 @@
+<div class="document mt-2 text-center">
+  <p class="title">Choose account opening method</p>
+
+  <div class="main-content">
+    <div
+      [ngClass]="
+        activeSingpass ? 'row active singPassLogin' : 'row singPassLogin'
+      "
+      (click)="clickEvent('singpass')"
+    >
+      <div>
+        <img
+          class="logo"
+          src="../../../../../../../../assets/icons/singpass-logo.png"
+        />
+        <p class="content">Verify instantly</p>
+        <p class="sub-content">
+          You will be redirected to the SingPass website
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="hr">
+        <span class="hr-content">
+          Or Register With
+          <!--Padding is optional-->
+        </span>
+      </div>
+      <!-- <hr />
+      <div class="hr-content">Or Register With</div> -->
+    </div>
+    <div
+      [ngClass]="
+        activeManual
+          ? 'row active manual singPassLogin'
+          : 'row singPassLogin manual'
+      "
+      (click)="clickEvent('manual')"
+    >
+      <div>
+        <p class="content">Verify by document upload and selfie</p>
+        <span class="sub-content">Take 3-5 mins</span>
+      </div>
+    </div>
+    <div class="row footer">
+      <p>
+        Customers who have a singpass account can verify instantly by clicking
+        the <b>'Verify instantly'</b> button, if they do not, they use the
+        <b>'Verify by document upload and selfie'</b> option
+      </p>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <button class="btn  mt-4 mb-4 cancelBtn-small later">
+          Complete Later
+        </button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-primary mt-4 mb-4 customBtn" (click)="next()">
+          Next Step <i class="bi bi-arrow-right-short"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

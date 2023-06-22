@@ -3,15 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignupComponent } from './modules/auth/containers/registration/signup-details/signup.component';
-import { OtpEmailComponent } from './modules/auth/containers/registration/signup-details/email-verification/otp-email/otp-email.component';
+import { SignupComponent } from './registration/signup-details/signup.component';
+import { OtpEmailComponent } from './registration/signup-details/otp-verification/otp-email.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
-import { SignupPopupComponent } from './modules/auth/containers/registration/signup-popup/signup-popup.component';
+import { SignupPopupComponent } from './registration/signup-popup/signup-popup.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { RegistrationComponent } from './modules/auth/containers/registration/registration.component';
+import { basicInfoComponent } from './registration/signup-details/otp-verification/basic-info.component';
+import { ManualDocumentUploadComponent } from './registration/signup-details/document-verification/manual-document-upload/manual-document-upload.component';
+import { SingpassComponent } from './registration/signup-details/document-verification/singpass/singpass.component';
+import { RegistrationComponent } from './registration/signup-details/basic-details/registration.component';
+import { SingpassLoginComponent } from './registration/signup-details/document-verification/singpass/singpass-login.component';
+import { IonicModule } from '@ionic/angular';
+import { DocumentHomeComponent } from './registration/signup-details/document-verification/document-home/document-home.component';
+import { SingpassModelComponent } from './registration/signup-details/document-verification/singpass-model/singpass-model.component';
+import { FormsModule } from '@angular/forms';
+import { SwipeModule } from './registration/swipe/swipe.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +29,13 @@ import { RegistrationComponent } from './modules/auth/containers/registration/re
     OtpEmailComponent,
     SignupPopupComponent,
     RegistrationComponent,
+    basicInfoComponent,
+    ManualDocumentUploadComponent,
+    SingpassComponent,
+    SingpassLoginComponent,
+    SingpassLoginComponent,
+    DocumentHomeComponent,
+    SingpassModelComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +46,9 @@ import { RegistrationComponent } from './modules/auth/containers/registration/re
     AlertModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
+    IonicModule.forRoot(),
+    FormsModule,
+    SwipeModule
   ],
   providers: [],
   bootstrap: [AppComponent],
