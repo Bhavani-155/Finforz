@@ -17,4 +17,8 @@ constructor(private stepperService : StepperService){}
   {
     this.stepperService.next(1);
   }
+  next()
+  {
+    this.stepperService.next(7);
+  }
 }

@@ -5,4 +5,9 @@ import { Component } from '@angular/core';
   templateUrl: './personal-information.component.html',
   styleUrls: ['./personal-information.component.scss'],
 })
-export class PersonalInformationComponent {}
+export class PersonalInformationComponent {
+  next()
+  {
+    
+  }
+}
