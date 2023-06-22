@@ -2,6 +2,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AvailableResult, NativeBiometric } from 'capacitor-native-biometric';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { Storage } from '@ionic/storage';
 @Component({
   selector: 'app-modal-content',
   templateUrl: 'modal-content.component.html',
@@ -10,8 +12,18 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 export class ModalContentComponent {
   modalRef!: BsModalRef;
   @Output() onHide = new EventEmitter<void>();
-  constructor(private router: Router,private modalService: BsModalService,private bsModalRef: BsModalRef){
-    this.checkCredential();
+ 
+  constructor(private router: Router,
+    private modalService: BsModalService,
+    private bsModalRef: BsModalRef,
+    private localStorageService: LocalStorageService,
+    private storage: Storage) {
+    this.storage.create();
+    let isBiometric = this.localStorageService.getValue('isBiometric');
+    if (isBiometric) {
+      this.setCredential('manoj', 'password')
+      this.checkCredential();
+    }
   }
   
   navigate()
