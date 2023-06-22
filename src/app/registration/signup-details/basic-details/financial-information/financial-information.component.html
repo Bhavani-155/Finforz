@@ -1,0 +1,82 @@
+<div>
+    <h4 class="font-red">Financial Information</h4>
+  </div>
+  <div class="did-floating-label-content mt-4">
+    <input class="did-floating-input" type="text" placeholder=" " />
+    <label class="did-floating-label h-font-xs">Name of Your Employer</label>
+  </div>
+  <div class="did-floating-label-content mt-4">
+    <input class="did-floating-input" type="text" placeholder=" " />
+    <label class="did-floating-label h-font-xs">Address of Employer</label>
+  </div>
+  <div class="did-floating-label-content">
+    <select
+      class="did-floating-input"
+      onclick="this.setAttribute('value', this.value);"
+      value=""
+    >
+      <option value="2">Marketing</option>
+  
+      <option value="1">IT Sector</option>
+      <option value="3">Medical</option>
+    </select>
+    <div class="select_arrow"></div>
+    <label class="did-floating-label h-font-xs">Employment Sector</label>
+  </div>
+ 
+  <div class="did-floating-label-content mt-4">
+    <input class="did-floating-input" type="text" placeholder=" " />
+    <label class="did-floating-label h-font-xs">Monthly Income</label>
+  </div>
+  <h4 class="font-red">Financial Assessment</h4>
+ 
+  <div class="did-floating-label-content">
+    <select
+      class="did-floating-input"
+      onclick="this.setAttribute('value', this.value);"
+      value=""
+    >
+      <option value="2">Yes</option>
+  
+      <option value="1">No</option>
+    </select>
+    <div class="select_arrow"></div>
+    <label class="did-floating-label h-font-xs">Are you a US resident, citizen or green card holder?</label>
+  </div>
+  
+  <div class="did-floating-label-content">
+    <select
+      class="did-floating-input"
+      onclick="this.setAttribute('value', this.value);"
+      value=""
+    >
+      <option>India</option>
+      <option>Singapore</option>
+      <option>USA</option>
+    </select>
+    <div class="select_arrow"></div>
+    <label class="did-floating-label h-font-xs">Select your country/ region of residence </label>
+  </div>
+  <div class="did-floating-label-content mt-4">
+    <input class="did-floating-input" type="text" placeholder=" " />
+    <label class="did-floating-label h-font-xs">Taxpayer Identification Number (TIN)</label>
+  </div>
+  <div class="did-floating-label-content">
+    <select
+      class="did-floating-input"
+      onclick="this.setAttribute('value', this.value);"
+      value=""
+    >
+      <option>1XXXX23</option>
+      <option>1XXXX24</option>
+      <option>1XXXX25</option>
+    </select>
+    <div class="select_arrow"></div>
+    <label class="did-floating-label h-font-xs">Please select the reason code if TIN is not available </label>
+  </div>
+  
+  <!-- Rest of the Step 1 form fields -->
+  <button class="btn btn-primary mt-4 mb-4 customBtn width-100" (click)="next()">
+    Next Step <i class="bi bi-arrow-right-short"></i>
+  </button>
+  
