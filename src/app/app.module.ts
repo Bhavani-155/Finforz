@@ -23,6 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { SwipeModule } from './registration/swipe/swipe.module';
+import { PersonalInfoComponent } from './registration/signup-details/document-verification/document-home/personal-info/personal-info.component';
+import { PersonalInformationComponent } from './registration/signup-details/personal-information/personal-information.component';
 
 @NgModule({
   declarations: [
@@ -35,10 +37,12 @@ import { SwipeModule } from './registration/swipe/swipe.module';
     ManualDocumentUploadComponent,
     SingpassComponent,
     SingpassLoginComponent,
+
     SingpassLoginComponent,
     DocumentHomeComponent,
     SingpassModelComponent,
     MenuComponent,
+    PersonalInformationComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,11 +55,11 @@ import { SwipeModule } from './registration/swipe/swipe.module';
     ModalModule.forRoot(),
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
-    
+
     FormsModule,
     SwipeModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

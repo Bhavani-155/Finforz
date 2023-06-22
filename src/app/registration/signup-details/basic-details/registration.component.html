@@ -7,68 +7,71 @@
 </div>
 
 <form [formGroup]="registerForm">
-<div class="did-floating-label-content mt-4">
-  <input class="did-floating-input" formControlName='nric' type="text" placeholder=" " />
-  <label class="did-floating-label">NRIC</label>
+  <div class="did-floating-label-content mt-4">
+    <input
+      class="did-floating-input h-font-sm"
+      formControlName="nric"
+      type="text"
+      placeholder=" "
+    />
+    <label class="did-floating-label h-font-sm">NRIC</label>
 
-  <!-- <ng-container *ngIf="registerForm.get('nric')?.touched">
+    <!-- <ng-container *ngIf="registerForm.get('nric')?.touched">
     <div class="error-msg" *ngIf="registerForm?.get('nric').hasError('invalidOnlySpace')"> Enter a valid NRIC</div>
     <div class="error-msg" *ngIf="registerForm?.get('nric').hasError('required')">NRIC Required</div>
 
   </ng-container> -->
+  </div>
 
-</div>
+  <div class="did-floating-label-content mt-4">
+    <input class="did-floating-input h-font-sm" type="text" placeholder=" " />
+    <label class="did-floating-label h-font-sm">Full Name</label>
+  </div>
 
-<div class="did-floating-label-content mt-4">
-  <input class="did-floating-input" type="text" placeholder=" " />
-  <label class="did-floating-label">Full Name</label>
-</div>
+  <div class="did-floating-label-content">
+    <select
+      class="did-floating-input h-font-sm"
+      onclick="this.setAttribute('value', this.value);"
+      value=""
+    >
+      <option value="2">Singapore</option>
 
-<div class="did-floating-label-content">
-  <select
-    class="did-floating-input"
-    onclick="this.setAttribute('value', this.value);"
-    value=""
-  >
-    <option value="2">Singapore</option>
+      <option value="1">Indian</option>
+      <option value="3">USA</option>
+    </select>
+    <div class="select_arrow"></div>
+    <label class="did-floating-label h-font-sm">Select Nationality</label>
+  </div>
 
-    <option value="1">Indian</option>
-    <option value="3">USA</option>
-  </select>
-  <div class="select_arrow"></div>
-  <label class="did-floating-label">Select Nationality</label>
-</div>
+  <div class="did-floating-label-content">
+    <select
+      class="did-floating-input h-font-sm"
+      onclick="this.setAttribute('value', this.value);"
+      value=""
+    >
+      <option>NRIC</option>
+      <option>Passport</option>
+    </select>
+    <div class="select_arrow"></div>
+    <label class="did-floating-label h-font-sm">Select Id Type</label>
+  </div>
 
-<div class="did-floating-label-content">
-  <select
-    class="did-floating-input"
-    onclick="this.setAttribute('value', this.value);"
-    value=""
-  >
-    <option>NRIC</option>
-    <option>Passport</option>
-  </select>
-  <div class="select_arrow"></div>
-  <label class="did-floating-label">Select Id Type</label>
-</div>
+  <div class="did-floating-label-content mt-4">
+    <input class="did-floating-input h-font-sm" type="text" placeholder=" " />
+    <label class="did-floating-label h-font-sm">Mobile Number</label>
+  </div>
 
-<div class="did-floating-label-content mt-4">
-  <input class="did-floating-input" type="text" placeholder=" " />
-  <label class="did-floating-label">Mobile Number</label>
-</div>
+  <div class="did-floating-label-content mt-4">
+    <input class="did-floating-input h-font-sm" type="text" placeholder=" " />
+    <label class="did-floating-label h-font-sm">Email Address</label>
+  </div>
 
-<div class="did-floating-label-content mt-4">
-  <input class="did-floating-input" type="text" placeholder=" " />
-  <label class="did-floating-label">Email Address</label>
-</div>
+  <div class="checkbox_option">
+    <input type="checkbox" id="cb1" />
+    <label for="cb1 h-font-sm">I agree with terms and conditions</label>
+  </div>
 
-<div class="checkbox_option">
-  <input type="checkbox" id="cb1" />
-  <label for="cb1">I agree with terms and conditions</label>
-</div>
+  <!-- Rest of the Step 1 form fields -->
 
-<!-- Rest of the Step 1 form fields -->
-
-<input class="button" type="submit" (click)="next()" value="Next" />
-
+  <input class="button h-font-sm" type="submit" (click)="next()" value="Next" />
 </form>
