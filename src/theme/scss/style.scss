@@ -1,0 +1,119 @@
+@import "./bootstrap/type";
+
+@media screen and (max-width: 550px) {
+  .reg-form {
+    padding-right: inherit !important;
+    padding-left: inherit !important;
+  }
+  .form_wrapper {
+    margin: 0;
+    width: auto;
+    height: 100vh;
+  }
+  .for-mobile {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .form_wrapper {
+    .col_half {
+      width: 100%;
+      float: none;
+    }
+  }
+  .bottom_row {
+    .col_half {
+      width: 50%;
+      float: left;
+    }
+  }
+  .form_container {
+    .row {
+      .col_half.last {
+        border-left: none;
+      }
+    }
+  }
+  .remember_me {
+    padding-bottom: 20px;
+  }
+  .h-font-xs {
+    font-size: 10px;
+  }
+
+  .h-font-sm {
+    font-size: 12px;
+  }
+
+  .h-font-md {
+    font-size: 16px;
+  }
+
+  .h-font-lg {
+    font-size: 17px;
+  }
+
+  .h-font-xl {
+    font-size: 22px;
+  }
+
+  .notes-font {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .h-font-xs {
+    font-size: 11px;
+  }
+
+  .h-font-sm {
+    font-size: 14px;
+  }
+
+  .h-font-md {
+    font-size: 18px;
+  }
+
+  .h-font-lg {
+    font-size: 22px;
+  }
+
+  .h-font-xl {
+    font-size: 30px;
+  }
+
+  .notes-font {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 992px) {
+  .h-font-xs {
+    font-size: 12px;
+  }
+
+  .h-font-sm {
+    font-size: 16px;
+  }
+
+  .h-font-md {
+    font-size: 18px;
+  }
+
+  .h-font-lg {
+    font-size: 22px;
+  }
+
+  .h-font-xl {
+    font-size: 30px;
+  }
+
+  .note-font {
+    font-size: 14px;
+  }
+}
