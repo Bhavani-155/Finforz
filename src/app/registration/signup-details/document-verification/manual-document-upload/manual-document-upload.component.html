@@ -1,13 +1,14 @@
 <div>
     <div class="row mb-5 mt-3">
-      <div class="col-12 cmn-head">
-        Manual Documents Upload
-    </div>
+      <!-- <div class="col-12 cmn-head">
+       
+    </div> -->
+    <h4 class="col-12"> Manual Documents Upload</h4>
       <div class="col-sm-12 content-fs mt-2">[ Supports Passport, Nationality Id, Address Proof ] </div>
     </div>
     <div class="did-floating-label-content margin-auto">
         <input class="did-floating-input margin-auto" type="text" [(ngModel)]="docFront" placeholder="File Name"  />
-        <label class="did-floating-label">Upload Clear Copy of Front Page</label>
+        <label class="did-floating-label h-font-xs">Upload Clear Copy of Front Page</label>
         <button class="btn btn-primary btn-block smallBtn input-bn" (click)="fileFront.click()">
           Choose file
       </button>
@@ -15,14 +16,14 @@
     </div>
     <div class="did-floating-label-content margin-auto">
       <input class="did-floating-input margin-auto" type="text" placeholder="File Name" [(ngModel)]="docBack" />
-      <label class="did-floating-label">Upload Clear Copy of Back Page</label>
+      <label class="did-floating-label h-font-xs">Upload Clear Copy of Back Page</label>
       <button class="btn btn-primary btn-block smallBtn input-bn" (click)="fileBack.click()">
         Choose file
     </button>
     <input type="file" #fileBack>
   </div>
     <div class="row">
-        <div class="col-6 cmn-head">
+        <div class="col-6 h-font-sm">
            Face ID verification
         </div>
         <div class="col-6">
