@@ -8,7 +8,7 @@ import { StepperService } from 'src/app/services/stepper.service';
   styleUrls: ['./document-home.component.scss'],
 })
 export class DocumentHomeComponent {
-  activeSingpass: boolean = false;
+  activeSingpass: boolean = true;
   activeManual: boolean = false;
   constructor(
     private modalService: BsModalService,

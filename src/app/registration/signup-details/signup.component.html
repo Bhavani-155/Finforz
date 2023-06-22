@@ -1,43 +1,48 @@
-<ion-content appSwipe (swipeLeft)="onSwipeLeft($event)" (swipeRight)="onSwipeRight($event)">
-<div class="row">
-  <div class="col-lg-6 col-sm-12">
-    <div id="wrap">
-      <h2>{{ stepperService.title }}</h2>
-      <p>{{ stepperService.subTitle }}</p>
+<ion-content
+  class="bg-style"
+  appSwipe
+  (swipeLeft)="onSwipeLeft($event)"
+  (swipeRight)="onSwipeRight($event)"
+>
+  <div class="row">
+    <div class="col-lg-6 col-sm-12">
+      <div id="wrap">
+        <h2>{{ stepperService.title }}</h2>
+        <p>{{ stepperService.subTitle }}</p>
+      </div>
     </div>
-  </div>
-  <div class="reg-form col-lg-6 col-sm-12">
-    <div class="form_wrapper">
-      <div class="form_container">
-        <div class="row clearfix">
-          <div
-            class="progress"
-            [style.width]="stepperService.barWidth + '%'"
-          ></div>
-          <div *ngIf="stepperService.currentStep === 1" >
-            <app-registration></app-registration>
+    <div class="reg-form col-lg-6 col-sm-12">
+      <div class="form_wrapper">
+        <div class="form_container">
+          <div class="row clearfix">
+            <div
+              class="progress"
+              [style.width]="stepperService.barWidth + '%'"
+            ></div>
+            <div *ngIf="stepperService.currentStep === 1">
+              <app-registration></app-registration>
+            </div>
+            <div *ngIf="stepperService.currentStep === 2">
+              <app-otp-email></app-otp-email>
+            </div>
+            <div *ngIf="stepperService.currentStep === 3">
+              <app-basic-info></app-basic-info>
+            </div>
+            <div *ngIf="stepperService.currentStep === 4">
+              <app-document-home></app-document-home>
+            </div>
+            <div *ngIf="stepperService.currentStep === 5">
+              <app-singpass-login></app-singpass-login>
+            </div>
           </div>
-          <div *ngIf="stepperService.currentStep === 2">
-            <app-otp-email></app-otp-email>
+          <div *ngIf="stepperService.currentStep === 6">
+            <app-manual-document-upload></app-manual-document-upload>
           </div>
-          <div *ngIf="stepperService.currentStep === 3">
-            <app-basic-info></app-basic-info>
-          </div>
-          <div *ngIf="stepperService.currentStep === 4">
-            <app-document-home></app-document-home>
-          </div>
-          <div *ngIf="stepperService.currentStep === 5">
-            <app-singpass-login></app-singpass-login>
+          <div *ngIf="stepperService.currentStep === 7">
+            <app-personal-information></app-personal-information>
           </div>
         </div>
-        <div *ngIf="stepperService.currentStep === 6">
-           <app-manual-document-upload></app-manual-document-upload>
-      </div>
-      <div *ngIf="stepperService.currentStep === 7">
-        <app-personal-information></app-personal-information>
-      </div>
       </div>
     </div>
   </div>
-</div>
 </ion-content>

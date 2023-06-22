@@ -8,7 +8,9 @@ $light_gray: #757575;
 html {
   overflow-x: hidden;
 }
-body {
+
+body,
+.body {
   font-family: Verdana, Geneva, sans-serif;
   font-size: 14px;
   background: #c5343a2b !important;
@@ -17,7 +19,9 @@ body {
   overflow-x: hidden;
   box-sizing: border-box;
   height: 100%;
+  --ion-background-color: #c5343a2b;
 }
+
 .singPassLogin,
 .manual {
   cursor: pointer;
