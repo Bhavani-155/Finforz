@@ -31,7 +31,12 @@ export class StepperService {
     {
       this.title = 'Manual Document';
       this.subTitle = 'Verification';
-    }else {
+    }else if(this.currentStep === 6) 
+    {
+      this.title = 'Account opening';
+      this.subTitle = 'Personal Information';
+    }
+    else {
       this.title = 'Account Information';
       this.subTitle = 'Basic Info';
     }

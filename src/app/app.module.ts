@@ -19,9 +19,10 @@ import { SingpassLoginComponent } from './registration/signup-details/document-v
 import { IonicModule } from '@ionic/angular';
 import { DocumentHomeComponent } from './registration/signup-details/document-verification/document-home/document-home.component';
 import { SingpassModelComponent } from './registration/signup-details/document-verification/singpass-model/singpass-model.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
 import { IonicStorageModule } from '@ionic/storage-angular';
+import { SwipeModule } from './registration/swipe/swipe.module';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,9 @@ import { IonicStorageModule } from '@ionic/storage-angular';
     IonicStorageModule.forRoot(),
     
     FormsModule,
+    SwipeModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
