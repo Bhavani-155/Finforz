@@ -1,14 +1,14 @@
 <div class="row">
   <div class="col-sm-12 mt-2 text-center">
-    <div class="title">Please verify your Email Address & Mobile Number</div>
+    <div class="cmn-head">Please verify your Email Address & Mobile Number</div>
 
     <div class="btn-grp">
       <button class="btn btn-left" [ngClass]="{'btn-active': currentTab === 'email'}" (click)="changeTab('email')">Email Verify</button>
       <button class="btn btn-right" [ngClass]="{'btn-active': currentTab === 'mobile'}" (click)="changeTab('mobile')" [disabled]="!isVerified">Mobile Verify</button>
     </div>
     <div *ngIf="!isVerified && currentTab == 'email' || currentTab == 'mobile'">
-    <p class="msg" *ngIf="currentTab === 'email'">OTP sent to xyz@gmail.com</p>
-    <p class="msg" *ngIf="currentTab === 'mobile'">OTP sent to 8098043139</p>
+    <p class="content-fs" *ngIf="currentTab === 'email'">OTP sent to xyz@gmail.com</p>
+    <p class="content-fs" *ngIf="currentTab === 'mobile'">OTP sent to 8098043139</p>
     <form action="" class="mt-2">
       <input
         class="otp mx-2"
