@@ -21,6 +21,7 @@ import { DocumentHomeComponent } from './registration/signup-details/document-ve
 import { SingpassModelComponent } from './registration/signup-details/document-verification/singpass-model/singpass-model.component';
 import { FormsModule } from '@angular/forms';
 import { SwipeModule } from './registration/swipe/swipe.module';
+import { PersonalInformationComponent } from './registration/signup-details/personal-information/personal-information.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { SwipeModule } from './registration/swipe/swipe.module';
     SingpassLoginComponent,
     DocumentHomeComponent,
     SingpassModelComponent,
+    PersonalInformationComponent
   ],
   imports: [
     BrowserModule,
