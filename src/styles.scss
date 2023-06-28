@@ -497,11 +497,19 @@ select.did-floating-select {
 select.did-floating-select::-ms-expand {
   display: none;
 }
-
+.response-20 .did-floating-input:not(:placeholder-shown) ~ .did-floating-label {
+  top: -20px;
+  font-size: 12px;
+}
+.top-34 .did-floating-input:not(:placeholder-shown) ~ .did-floating-label {
+  top: -34px;
+  font-size: 12px;
+}
 .did-floating-input:not(:placeholder-shown) ~ .did-floating-label {
   top: -8px;
   font-size: 12px;
 }
+
 .did-floating-select:not([value=""]):valid ~ .did-floating-label {
   top: -8px;
   font-size: 12px;
@@ -593,6 +601,14 @@ select::-ms-expand {
   background-position: center;
 }
 .camera-logo {
+  height: 166px;
+  width: 100%;
+  background-size: auto 140px;
+  margin-right: 0;
+  background-position: center;
+}
+.camera-img
+{
   background: transparent url(./assets/icons/camera.png) no-repeat;
   height: 166px;
   width: 100%;
