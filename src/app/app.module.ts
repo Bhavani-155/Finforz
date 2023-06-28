@@ -28,6 +28,7 @@ import { FinancialInformationComponent } from './registration/signup-details/bas
 import { PermanentAddressComponent } from './registration/signup-details/permanent-address/permanent-address.component';
 import { InvestmentKnowledgeComponent } from './registration/signup-details/basic-details/investment-knowledge/investment-knowledge.component';
 import { RegisterModule } from './registration/signup-details/basic-details/registration.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { RegisterModule } from './registration/signup-details/basic-details/regi
     BrowserModule,
     AppRoutingModule,
     RegisterModule,
+    HttpClientModule,
     // other imports
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
