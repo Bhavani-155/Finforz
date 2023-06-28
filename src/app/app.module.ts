@@ -26,6 +26,8 @@ import { SwipeModule } from './registration/swipe/swipe.module';
 import { PersonalInformationComponent } from './registration/signup-details/personal-information/personal-information.component';
 import { FinancialInformationComponent } from './registration/signup-details/basic-details/financial-information/financial-information.component';
 import { PermanentAddressComponent } from './registration/signup-details/permanent-address/permanent-address.component';
+import { InvestmentKnowledgeComponent } from './registration/signup-details/basic-details/investment-knowledge/investment-knowledge.component';
+import { RegisterModule } from './registration/signup-details/basic-details/registration.module';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -47,10 +49,12 @@ import { HttpClientModule } from '@angular/common/http';
     PersonalInformationComponent,
     FinancialInformationComponent,
     PermanentAddressComponent,
+    InvestmentKnowledgeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RegisterModule,
     HttpClientModule,
     // other imports
     BsDropdownModule.forRoot(),

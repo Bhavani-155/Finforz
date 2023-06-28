@@ -4,35 +4,43 @@
       <div class="col-sm-12 content-fs mt-2">[ Supports Passport, Nationality Id, Address Proof ] </div>
     </div>
     <div class="did-floating-label-content margin-auto">
-        <input class="did-floating-input margin-auto" type="text" [(ngModel)]="docFront" placeholder="File Name"  />
+        <input class="did-floating-input margin-auto" type="text" [(ngModel)]="docFront" placeholder="File Name" [disabled]="true"  />
         <label class="did-floating-label h-font-xs">Upload Clear Copy of Front Page</label>
         <button class="btn btn-primary btn-block smallBtn input-bn" (click)="fileFront.click()">
           Choose file
       </button>
-      <input type="file" #fileFront>
+      <input type="file" #fileFront (change)="onFileSelected($event,'docFront')">
     </div>
     <div class="did-floating-label-content margin-auto">
-      <input class="did-floating-input margin-auto" type="text" placeholder="File Name" [(ngModel)]="docBack" />
+      <input class="did-floating-input margin-auto" type="text" placeholder="File Name" [(ngModel)]="docBack" [disabled]="true" />
       <label class="did-floating-label h-font-xs">Upload Clear Copy of Back Page</label>
       <button class="btn btn-primary btn-block smallBtn input-bn" (click)="fileBack.click()">
         Choose file
     </button>
-    <input type="file" #fileBack>
+    <input type="file" #fileBack (change)="onFileSelected($event,'docBack')">
   </div>
     <div class="row">
         <h4 class="col-6"> Face ID verification </h4>
         <div class="col-6">
-            <button class="btn btn-primary btn-block smallBtn col-rgt">
+            <button class="btn btn-primary btn-block smallBtn col-rgt" (click)="startCamera()">
                 Open Camera
             </button>
         </div>
     </div>
     
         <div class="camera-bg mt-5 mb-2">
-            <div class="camera-logo"></div>
-            <button class="btn cancelBtn-small h-font-xs btn-block">
+            <div class="camera-img" *ngIf="!isCameraOpen"></div>
+            <video class="camera-logo" #videoElement *ngIf="isCameraOpen && !isPictureCaptured"></video>
+            <div class="text-center" *ngIf="isCameraOpen && !isPictureCaptured">
+              <i class="bi bi-circle" ></i>
+            </div>
+            <div  [hidden]="!isPictureCaptured">
+              <canvas class="camera-logo" #canvasElement ></canvas>
+            </div>
+           
+            <button *ngIf="isPictureCaptured" class="btn cancelBtn-small h-font-xs btn-block" (click)="captureAndSave()">
               Retake
-          </button>
+            </button>
         </div>
     <div class="row">
         <div class="col-6">

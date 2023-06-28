@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { StepperService } from 'src/app/services/stepper.service';
 
 @Component({
-  selector: 'app-financial-information',
-  templateUrl: './financial-information.component.html',
-  styleUrls: ['./financial-information.component.scss']
+  selector: 'app-investment-knowledge',
+  templateUrl: './investment-knowledge.component.html',
+  styleUrls: ['./investment-knowledge.component.scss']
 })
-export class FinancialInformationComponent {
+export class InvestmentKnowledgeComponent {
+
   constructor(private stepperService : StepperService){}
   next()
   {
@@ -14,6 +15,6 @@ export class FinancialInformationComponent {
   }
   back()
   {
-    this.stepperService.next(8);
+    this.stepperService.next(9);
   }
 }
