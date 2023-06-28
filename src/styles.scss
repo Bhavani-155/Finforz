@@ -498,12 +498,13 @@ select.did-floating-select::-ms-expand {
   display: none;
 }
 .response-20 .did-floating-input:not(:placeholder-shown) ~ .did-floating-label {
-  top: -20px;
+  top: -20px !important;
   font-size: 12px;
 }
-.top-34 .did-floating-input:not(:placeholder-shown) ~ .did-floating-label {
-  top: -34px;
+.response-35 .did-floating-input:not(:placeholder-shown) ~ .did-floating-label {
+  top: -34px !important;
   font-size: 12px;
+ 
 }
 .did-floating-input:not(:placeholder-shown) ~ .did-floating-label {
   top: -8px;
@@ -625,6 +626,14 @@ select::-ms-expand {
 }
 .mt-22 {
   margin-top: 22% !important;
+}
+.mT-14
+{
+  margin-top: 14% !important;
+}
+.mT-17
+{
+  margin-top: 17% !important;
 }
 .customBtn {
   align-items: center;
