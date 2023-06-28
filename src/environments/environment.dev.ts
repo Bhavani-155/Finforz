@@ -16,6 +16,10 @@ export const environment = {
   MYINFO_API_AUTHORISE: 'https://sandbox.api.myinfo.gov.sg/com/v3/authorise',
   MYINFO_API_TOKEN: 'https://sandbox.api.myinfo.gov.sg/com/v3/token',
   MYINFO_API_PERSON: 'https://sandbox.api.myinfo.gov.sg/com/v3/person',
+  ATTRIBUTES:
+    'uinfin,name,mobileno,email,regadd,dob,sex,race,residentialstatus,nationality,birthcountry,passportnumber,passportexpirydate,passtype,passstatus,passexpirydate',
+  PURPOSE: 'Rakutentrade Singapore',
+  STATE: '123',
 
   // TEST ENVIRONMENT (with PKI digital signature)
   // AUTH_LEVEL: 'L2',

@@ -35,16 +35,16 @@ export class SingpassModelComponent {
   clientSecret: any = environment.MYINFO_APP_CLIENT_SECRET;
   // redirect URL for your web application
   redirectUrl: any = environment.MYINFO_APP_REDIRECT_URL;
+
   // URLs for MyInfo APIs
   authLevel: any = environment.AUTH_LEVEL;
   authApiUrl: any = environment.MYINFO_API_AUTHORISE;
   tokenApiUrl: any = environment.MYINFO_API_TOKEN;
   personApiUrl = environment.MYINFO_API_PERSON;
 
-  attributes: any =
-    'uinfin,name,mobileno,email,regadd,dob,sex,race,residentialstatus,nationality,birthcountry,passportnumber,passportexpirydate,passtype,passstatus,passexpirydate';
-  purpose: any = 'Rakutentrade Singapore';
-  state: any = '123';
+  attributes: any = environment.ATTRIBUTES;
+  purpose: any = environment.PURPOSE;
+  state: any = environment.STATE;
 
   ngOnInit(): void {}
   closeModal() {
