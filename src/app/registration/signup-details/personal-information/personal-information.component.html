@@ -1,98 +1,95 @@
 <div>
- <h4 class="font-red">Personal Information</h4>
-  </div>
-  <div class="did-floating-label-content mt-4">
-    <input class="did-floating-input" type="text" placeholder=" " />
-    <label class="did-floating-label h-font-xs">Address</label>
-  </div>
- 
-  <div class="did-floating-label-content">
-    <select
-      class="did-floating-input"
-      onclick="this.setAttribute('value', this.value);"
-      value=""
-    >
-      <option value="2">Central Region</option>
-  
-      <option value="1">East Region</option>
-      <option value="3">North Region</option>
-    </select>
-    <div class="select_arrow"></div>
-    <label class="did-floating-label h-font-xs">State</label>
-  </div>
-  
-  <div class="did-floating-label-content">
-    <select
-      class="did-floating-input"
-      onclick="this.setAttribute('value', this.value);"
-      value=""
-    >
-      <option>Tengah</option>
-      <option>Tampines</option>
-      <option>Seletar</option>
-    </select>
-    <div class="select_arrow"></div>
-    <label class="did-floating-label h-font-xs">City</label>
-  </div>
-  
-  <div class="did-floating-label-content mt-4">
-    <input class="did-floating-input" type="text" placeholder=" " />
-    <label class="did-floating-label h-font-xs">Postal/ZipCode</label>
-  </div>
-  
-  <div class="did-floating-label-content">
-    <select
-      class="did-floating-input"
-      onclick="this.setAttribute('value', this.value);"
-      value=""
-    >
-      <option>Yes</option>
-      <option>No</option>
-    </select>
-    <div class="select_arrow"></div>
-    <label class="did-floating-label h-font-xs">Mailing address is the same as permanent address</label>
-  </div>
-  <div class="did-floating-label-content mt-4">
-    <input class="did-floating-input" type="text" placeholder=" " />
-    <label class="did-floating-label h-font-xs">Address</label>
-  </div>
- 
-  <div class="did-floating-label-content">
-    <select
-      class="did-floating-input"
-      onclick="this.setAttribute('value', this.value);"
-      value=""
-    >
-      <option value="2">Central Region</option>
-  
-      <option value="1">East Region</option>
-      <option value="3">North Region</option>
-    </select>
-    <div class="select_arrow"></div>
-    <label class="did-floating-label h-font-xs">State</label>
-  </div>
-  
-  <div class="did-floating-label-content">
-    <select
-      class="did-floating-input"
-      onclick="this.setAttribute('value', this.value);"
-      value=""
-    >
-      <option>Tengah</option>
-      <option>Tampines</option>
-      <option>Seletar</option>
-    </select>
-    <div class="select_arrow"></div>
-    <label class="did-floating-label h-font-xs">City</label>
-  </div>
-  
-  <div class="did-floating-label-content mt-4">
-    <input class="did-floating-input" type="text" placeholder=" " />
-    <label class="did-floating-label h-font-xs">Postal/ZipCode</label>
-  </div>
-  
-  <!-- Rest of the Step 1 form fields -->
-  <button class="btn btn-primary mt-4 mb-4 customBtn width-100" (click)="next()">
+  <h4 class="font-red">Personal Information</h4>
+</div>
+
+<div class="did-floating-label-content mt-4">
+  <input class="did-floating-input" type="text" placeholder=" " />
+  <label class="did-floating-label h-font-xs">Title</label>
+</div>
+<div class="did-floating-label-content mt-4">
+  <input
+    class="did-floating-input"
+    type="text"
+    placeholder=" "
+    [ngModel]="formValues.name"
+  />
+  <label class="did-floating-label h-font-xs">First Name</label>
+</div>
+<div class="did-floating-label-content mt-4">
+  <input class="did-floating-input" type="text" placeholder=" " />
+  <label class="did-floating-label h-font-xs">Family Name</label>
+</div>
+<div class="did-floating-label-content mt-4">
+  <input
+    class="did-floating-input"
+    type="date"
+    [(ngModel)]="formValues.dob"
+    placeholder=" "
+  />
+  <label class="did-floating-label h-font-xs">Date of Birth</label>
+</div>
+<div class="did-floating-label-content">
+  <select
+    class="did-floating-input"
+    onclick="this.setAttribute('value', this.value);"
+    [(ngModel)]="formValues.sex"
+  >
+    <option value="1">Female</option>
+    <option value="2">Male</option>
+  </select>
+  <div class="select_arrow"></div>
+  <label class="did-floating-label h-font-xs">Gender</label>
+</div>
+
+<div class="did-floating-label-content">
+  <input
+    class="did-floating-input"
+    type="text"
+    [(ngModel)]="formValues.uinfin"
+    placeholder=" "
+  />
+  <label class="did-floating-label h-font-xs"
+    >NRIC / Identification Document No. (Passport)</label
+  >
+</div>
+
+<div class="did-floating-label-content mt-4">
+  <input
+    class="did-floating-input"
+    type="text"
+    [(ngModel)]="formValues.mobileno"
+    placeholder=" "
+  />
+  <label class="did-floating-label h-font-xs">Mobile Number</label>
+</div>
+
+<div class="did-floating-label-content mt-4">
+  <input
+    class="did-floating-input"
+    type="text"
+    [(ngModel)]="formValues.email"
+    placeholder=" "
+  />
+  <label class="did-floating-label h-font-xs">Email Address</label>
+</div>
+
+<!-- Rest of the Step 1 form fields -->
+<!-- <button class="btn btn-primary mt-4 mb-4 customBtn h-font-xs width-100" (click)="next()">
     Next Step <i class="bi bi-arrow-right-short"></i>
-  </button>
-  
+  </button> -->
+<div class="row">
+  <div class="col-6">
+    <button class="btn btn-block mt-4 mb-4 cancelBtn" (click)="back()">
+      Complete Later
+    </button>
+  </div>
+  <div class="col-6">
+    <button
+      class="btn btn-primary btn-block mt-4 mb-4 customBtn h-font-xs"
+      (click)="next()"
+    >
+      Next Step
+      <i class="bi bi-arrow-right-short"></i>
+    </button>
+  </div>
+</div>

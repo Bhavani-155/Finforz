@@ -50,10 +50,10 @@
 
     <div class="mt-4" ><p [ngClass]="display == '00:00' ? 'resend-btn' :  'disableButton resend-btn'" >Resend OTP</p></div>
     <div class="footer">
-      <button class="btn btn-primary btn-block mt-4 mb-4 customBtn" (click)="verifyOTP()">
+      <button class="btn btn-primary btn-block mt-4 mb-4 customBtn h-font-xs" (click)="verifyOTP()">
         Verify
       </button>
-      <p class="cancel" (click)="prev()">Cancel</p>
+      <p class="cancel h-font-xs" (click)="prev()">Cancel</p>
     </div>
   </div>
   <div class="mt-30" *ngIf="isVerified && currentTab == 'email'">

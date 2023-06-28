@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { StepperService } from 'src/app/services/stepper.service';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.dev';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -43,7 +43,7 @@ export class SingpassModelComponent {
 
   attributes: any =
     'uinfin,name,mobileno,email,regadd,dob,sex,race,residentialstatus,nationality,birthcountry,passportnumber,passportexpirydate,passtype,passstatus,passexpirydate';
-  purpose: any = 'demonstrating Rakutentrade';
+  purpose: any = 'Rakutentrade Singapore';
   state: any = '123';
 
   ngOnInit(): void {}
