@@ -26,13 +26,13 @@ ul li:before {
 @media screen and (max-width: 550px) {
   ::ng-deep {
     .modal-dialog {
-      height: 100vh;
+      // height: 100vh;
       width: 100%;
       margin: 0 auto;
     }
 
     .modal-content {
-      height: 100vh;
+      // height: 100vh;
       border-radius: 0;
     }
   }
