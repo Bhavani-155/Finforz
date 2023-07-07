@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package com.ascertain.rtsg.testapp;
 
 import com.getcapacitor.BridgeActivity;
 
