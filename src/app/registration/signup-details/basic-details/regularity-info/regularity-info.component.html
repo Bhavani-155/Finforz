@@ -1,0 +1,80 @@
+<div>
+    <h4 class="red">Regularity Information</h4>
+</div>
+<div class="grey-bold mt-3">Are you involved in the  business of or employed by the following activities or employers?
+</div>
+<ul class="grey">
+    <li>Money changers, remittance agents or pawn brokers</li>
+    <li>Online e-money issuers and/or digital wallet  providers</li>
+    <li>Sale of precious art work, precious metals, stones/jewellery, 
+        precious watches</li>
+    <li>Arms or weapon dealing</li>
+    <li>Night clubs</li>
+</ul>
+<div class="did-floating-label-content response-35">
+    <select
+      class="did-floating-input"
+      onclick="this.setAttribute('value', this.value);"
+      value=""
+    >
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+    <div class="select_arrow"></div>
+  </div>
+<div class="did-floating-label-content response-20 mT-14">
+    <select
+      class="did-floating-input"
+      onclick="this.setAttribute('value', this.value);"
+      value=""
+    >
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+    <div class="select_arrow"></div>
+    <label class="did-floating-label h-font-xs ">Are you or an immediate family member affiliated with or work for a US registered broker-dealer or FINRA? </label>
+  </div>
+  <div class="did-floating-label-content response-35 mT-17">
+    <select
+      class="did-floating-input"
+      onclick="this.setAttribute('value', this.value);"
+      value=""
+    >
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+    <div class="select_arrow"></div>
+    <label class="did-floating-label h-font-xs ">
+        Are you or an immediate family currently or formally a politically exposed person or a public official or are you a close associate of such person? 
+    </label>
+  </div>
+  <div class="did-floating-label-content response-35 mT-17">
+    <select
+      class="did-floating-input"
+      onclick="this.setAttribute('value', this.value);"
+      value=""
+    >
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+    <div class="select_arrow"></div>
+    <label class="did-floating-label h-font-xs ">
+        Are you or an immediate family member a senior executive of or a 10% or greater share holder of a publicly traded company? 
+    </label>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <button class="btn btn-block mt-4 mb-4 cancelBtn" (click)="back()">
+        Complete Later
+      </button>
+    </div>
+    <div class="col-6">
+      <button
+        class="btn btn-primary btn-block mt-4 mb-4 customBtn h-font-xs"
+        (click)="next()"
+      >
+        Next Step
+        <i class="bi bi-arrow-right-short"></i>
+      </button>
+    </div>
+  </div>
