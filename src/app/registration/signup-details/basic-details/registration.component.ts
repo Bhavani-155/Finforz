@@ -9,6 +9,7 @@ import {
   ActivatedRoute,
 } from '@angular/router';
 import { ApiServices } from 'src/app/services/auth.service';
+
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -20,8 +21,11 @@ export class RegistrationComponent {
     public stepperService: StepperService,
     private fb: FormBuilder,
     private route: ActivatedRoute,
-    private apiServices: ApiServices
-  ) {}
+    private apiServices: ApiServices,
+   
+  ) {
+    
+  }
 
   registerForm: FormGroup;
 
