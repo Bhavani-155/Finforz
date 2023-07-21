@@ -23,12 +23,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { SwipeModule } from './registration/swipe/swipe.module';
-import { PersonalInformationComponent } from './registration/signup-details/personal-information/personal-information.component';
 import { FinancialInformationComponent } from './registration/signup-details/basic-details/financial-information/financial-information.component';
 import { PermanentAddressComponent } from './registration/signup-details/permanent-address/permanent-address.component';
 import { InvestmentKnowledgeComponent } from './registration/signup-details/basic-details/investment-knowledge/investment-knowledge.component';
 import { RegisterModule } from './registration/signup-details/basic-details/registration.module';
 import { HttpClientModule } from '@angular/common/http';
+import { PersonalInformationComponent } from './registration/signup-details/personal-information/personal-information.component';
 
 @NgModule({
   declarations: [
