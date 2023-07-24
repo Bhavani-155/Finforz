@@ -1,59 +1,105 @@
 <div>
-    <div class="row mb-5 mt-3">
-    <h4 class="col-12"> Manual Documents Upload</h4>
-      <div class="col-sm-12 content-fs mt-2">[ Supports Passport, Nationality Id, Address Proof ] </div>
+  <div class="row mb-4 mt-3">
+    <h4 class="col-12">Manual Documents Upload</h4>
+    <div class="col-sm-12 content-fs mt-2">
+      [ Supports Passport, Nationality Id, Address Proof ] 
     </div>
-    <div class="did-floating-label-content margin-auto">
-        <input class="did-floating-input margin-auto" type="text" [(ngModel)]="docFront" placeholder="File Name" [disabled]="true"  />
-        <label class="did-floating-label h-font-xs">Upload Clear Copy of Front Page</label>
-        <button class="btn btn-primary btn-block smallBtn input-bn" (click)="fileFront.click()">
-          Choose file
-      </button>
-      <input type="file" #fileFront (change)="onFileSelected($event,'docFront')">
-    </div>
-    <div class="did-floating-label-content margin-auto">
-      <input class="did-floating-input margin-auto" type="text" placeholder="File Name" [(ngModel)]="docBack" [disabled]="true" />
-      <label class="did-floating-label h-font-xs">Upload Clear Copy of Back Page</label>
-      <button class="btn btn-primary btn-block smallBtn input-bn" (click)="fileBack.click()">
-        Choose file
-    </button>
-    <input type="file" #fileBack (change)="onFileSelected($event,'docBack')">
   </div>
-  <span class="error-message h-font-xs">File Format: JPEG, PNG, PDF (File name in LOWER case only) (Max size: 5MB)</span>
-    <div class="row">
-        <h4 class="col-6"> Face ID verification </h4>
-        <div class="col-6">
-            <button class="btn btn-primary btn-block smallBtn col-rgt" (click)="startCamera()">
-                Open Camera
-            </button>
-        </div>
+  <div class="did-floating-label-content margin-auto">
+    <input
+      class="did-floating-input margin-auto"
+      type="text"
+      [(ngModel)]="docFront"
+      placeholder="File Name"
+      [disabled]="true"
+    />
+    <label class="did-floating-label h-font-xs"
+      >Upload Clear Copy of Front Page</label
+    >
+    <button
+      class="btn btn-primary btn-block smallBtn input-bn"
+      (click)="fileFront.click()"
+    >
+      Choose file
+    </button>
+    <input
+      type="file"
+      #fileFront
+      (change)="onFileSelected($event, 'docFront')"
+    />
+  </div>
+  <div class="did-floating-label-content">
+    <input
+      class="did-floating-input input-2"
+      type="text"
+      placeholder="File Name"
+      [(ngModel)]="docBack"
+      [disabled]="true"
+    />
+    <label class="did-floating-label h-font-xs"
+      >Upload Clear Copy of Back Page</label
+    >
+    <button
+      class="btn btn-primary btn-block smallBtn input-bn"
+      (click)="fileBack.click()"
+    >
+      Choose file
+    </button>
+    <input type="file" #fileBack (change)="onFileSelected($event, 'docBack')" />
+  </div>
+
+  <div class="error-message h-font-xs">
+    File Format: JPEG, PNG, PDF (File name in LOWER case only) (Max size: 5MB)
+  </div>
+
+  <div class="row">
+    <h4 class="col-6">Face ID verification</h4>
+    <div class="col-6">
+      <button
+        class="btn btn-primary btn-block smallBtn col-rgt"
+        (click)="startCamera()"
+      >
+        Open Camera
+      </button>
     </div>
-    
-        <div class="camera-bg mt-5 mb-2">
-            <div class="camera-img" *ngIf="!isCameraOpen"></div>
-            <video class="camera-logo" #videoElement *ngIf="isCameraOpen && !isPictureCaptured"></video>
-            <div class="text-center" *ngIf="isCameraOpen && !isPictureCaptured">
-              <i class="bi bi-circle" ></i>
-            </div>
-            <div  [hidden]="!isPictureCaptured">
-              <canvas class="camera-logo" #canvasElement ></canvas>
-            </div>
-           
-            <button *ngIf="isPictureCaptured" class="btn cancelBtn-small h-font-xs btn-block" (click)="captureAndSave()">
-              Retake
-            </button>
-        </div>
-    <div class="row">
-        <div class="col-6">
-          <button class="btn  btn-block mt-4 mb-4 cancelBtn" (click)="back()">
-            Complete Later
-          </button>
-        </div>
-        <div class="col-6">
-          <button class="btn btn-primary btn-block mt-4 mb-4 customBtn h-font-xs" (click)="next()">
-            Next Step 
-            <i class="bi bi-arrow-right-short"></i>
-          </button>
-        </div>
-      </div>
+  </div>
+
+  <div class="camera-bg mt-5 mb-2">
+    <div class="camera-img" *ngIf="!isCameraOpen"></div>
+    <video
+      class="camera-logo"
+      #videoElement
+      *ngIf="isCameraOpen && !isPictureCaptured"
+    ></video>
+    <div class="text-center" *ngIf="isCameraOpen && !isPictureCaptured">
+      <i class="bi bi-circle"></i>
+    </div>
+    <div [hidden]="!isPictureCaptured">
+      <canvas class="camera-logo" #canvasElement></canvas>
+    </div>
+
+    <button
+      *ngIf="isPictureCaptured"
+      class="btn cancelBtn-small h-font-xs btn-block"
+      (click)="captureAndSave()"
+    >
+      Retake
+    </button>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <button class="btn btn-block mt-4 mb-4 cancelBtn" (click)="back()">
+        Complete Later
+      </button>
+    </div>
+    <div class="col-6">
+      <button
+        class="btn btn-primary btn-block mt-4 mb-4 customBtn h-font-xs"
+        (click)="next()"
+      >
+        Next Step
+        <i class="bi bi-arrow-right-short"></i>
+      </button>
+    </div>
+  </div>
 </div>
