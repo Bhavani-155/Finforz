@@ -1,0 +1,78 @@
+<div>
+    <div class="d-flex">
+      <div class="logo-signup"></div>
+      <!-- <app-menu></app-menu> -->
+    </div>
+    <div class="for-mobile">Account Opening</div>
+  </div>
+  
+  <form [formGroup]="registerForm">
+    <div class="did-floating-label-content mt-4">
+      <input
+        class="did-floating-input h-font-xs"
+        formControlName="nric"
+        type="text"
+        placeholder=" "
+      />
+      <label class="did-floating-label h-font-xs">NRIC</label>
+  
+      <!-- <ng-container *ngIf="registerForm.get('nric')?.touched">
+      <div class="error-msg" *ngIf="registerForm?.get('nric').hasError('invalidOnlySpace')"> Enter a valid NRIC</div>
+      <div class="error-msg" *ngIf="registerForm?.get('nric').hasError('required')">NRIC Required</div>
+  
+    </ng-container> -->
+    </div>
+  
+    <div class="did-floating-label-content mt-4">
+      <input class="did-floating-input h-font-xs" type="text" placeholder=" " />
+      <label class="did-floating-label h-font-xs">Full Name</label>
+    </div>
+  
+    <div class="did-floating-label-content">
+      <select
+        class="did-floating-input h-font-xs"
+        onclick="this.setAttribute('value', this.value);"
+        value=""
+      >
+        <option value="2">Singapore</option>
+  
+        <option value="1">Indian</option>
+        <option value="3">USA</option>
+      </select>
+      <div class="select_arrow"></div>
+      <label class="did-floating-label h-font-xs">Select Nationality</label>
+    </div>
+  
+    <div class="did-floating-label-content">
+      <select
+        class="did-floating-input h-font-xs"
+        onclick="this.setAttribute('value', this.value);"
+        value=""
+      >
+        <option>NRIC</option>
+        <option>Passport</option>
+      </select>
+      <div class="select_arrow"></div>
+      <label class="did-floating-label h-font-xs">Select Id Type</label>
+    </div>
+  
+    <div class="did-floating-label-content mt-4">
+      <input class="did-floating-input h-font-xs" type="text" placeholder=" " />
+      <label class="did-floating-label h-font-xs">Mobile Number</label>
+    </div>
+  
+    <div class="did-floating-label-content mt-4">
+      <input class="did-floating-input h-font-xs" type="text" placeholder=" " />
+      <label class="did-floating-label h-font-xs">Email Address</label>
+    </div>
+  
+    <div class="checkbox_option">
+      <input type="checkbox" id="cb1" />
+      <label for="cb1" class="h-font-xs">I agree with terms and conditions</label>
+    </div>
+  
+    <!-- Rest of the Step 1 form fields -->
+  
+    <input class="button h-font-xs" type="submit" (click)="next()" value="Next" />
+  </form>
+  
