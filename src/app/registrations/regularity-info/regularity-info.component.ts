@@ -14,6 +14,6 @@ export class RegularityInfoComponent {
   }
   back()
   {
-    this.stepperService.next(10);
+    this.stepperService.next(1);
   }
 }

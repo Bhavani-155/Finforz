@@ -32,6 +32,12 @@ export class DocumentHomeComponent {
     }
   }
 
+  
+  back()
+  {
+    this.stepperService.next(1);
+  }
+
   next() {
     if (this.activeSingpass) {
       this.openModal();
