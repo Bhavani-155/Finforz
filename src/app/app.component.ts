@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions/ngx';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,23 @@ export class AppComponent {
   buttonshow: boolean = true;
   // firstFormGroup: FormGroup;
   // secondFormGroup: FormGroup;
+  constructor(
+    private permission: AndroidPermissions
+  ) {
+   this.initializeApp()
+  }
+  initializeApp(){
+    this.permission.checkPermission
+    (this.permission.PERMISSION.ACCESS_COARSE_LOCATION).then((result)=>{
+      if(!result.hasPermission){
+        this.permission.requestPermission
+        (this.permission.PERMISSION.ACCESS_COARSE_LOCATION);
+      }
+    },(err)=>{
+      this.permission.requestPermission
+      (this.permission.PERMISSION.ACCESS_COARSE_LOCATION);
+    })
+  }
   firstFormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
   });
