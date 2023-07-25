@@ -1,3 +1,5 @@
+@import "../../../theme/scss/styles-variables.scss";
+
 .title {
   font-weight: 600;
   font-size: 16px;
@@ -11,13 +13,13 @@ form input {
   height: 35px;
   border-radius: 5px;
   text-align: center;
-  border: 1px solid #e62b40;
+  border: 1px solid $light-red;
 }
 form input:is(:focus, :hover) {
-  border: 1px solid #e62b40;
+  border: 1px solid $light-red;
 }
 .resend-btn {
-  color: #e62b40;
+  color: $light-red;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -30,7 +32,7 @@ form input:is(:focus, :hover) {
 
 .timer,
 .cancel {
-  color: #e62b40;
+  color: $light-red;
   cursor: pointer;
 }
 
@@ -58,7 +60,7 @@ form input:is(:focus, :hover) {
 {
   background: #e4293e;
   border-radius: 5px;
-  color: #fff;
+  color: $white;
 }
 .btn-left {
   height: 45px;
