@@ -15,6 +15,7 @@ import { MenuComponent } from './menu/menu.component';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared-component/shared.module';
+import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions/ngx';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { SharedModule } from './shared/shared-component/shared.module';
     ReactiveFormsModule,
     SharedModule
   ],
-  providers: [],
+  providers: [AndroidPermissions],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
