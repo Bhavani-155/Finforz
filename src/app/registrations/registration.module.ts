@@ -14,6 +14,7 @@ import { RegularityInfoComponent } from './regularity-info/regularity-info.compo
 import { SignatureComponent } from './signature/signature.component';
 import { SharedModule } from '../shared/shared-component/shared.module';
 import { PasswordComponent } from './password/password.component';
+import { DeclarationComponent } from './declaration/declaration.component';
 // import { ModalContentComponent } from './signup-popup/modal-content.component';
 
 
@@ -30,6 +31,7 @@ import { PasswordComponent } from './password/password.component';
     RegularityInfoComponent,
     SignatureComponent,
     PasswordComponent,
+    DeclarationComponent,
   ],
   exports: [RegistrationRoutingModule,RegistrationComponent,SignupComponent],
   imports: [
