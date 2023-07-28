@@ -13,6 +13,7 @@ import { InvestmentKnowledgeComponent } from './investment-knowledge/investment-
 import { RegularityInfoComponent } from './regularity-info/regularity-info.component';
 import { SignatureComponent } from './signature/signature.component';
 import { SharedModule } from '../shared/shared-component/shared.module';
+import { PasswordComponent } from './password/password.component';
 // import { ModalContentComponent } from './signup-popup/modal-content.component';
 
 
@@ -28,6 +29,7 @@ import { SharedModule } from '../shared/shared-component/shared.module';
     InvestmentKnowledgeComponent,
     RegularityInfoComponent,
     SignatureComponent,
+    PasswordComponent,
   ],
   exports: [RegistrationRoutingModule,RegistrationComponent,SignupComponent],
   imports: [

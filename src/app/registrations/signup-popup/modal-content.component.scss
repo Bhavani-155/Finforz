@@ -22,6 +22,19 @@ ul li:before {
 .btn-primary {
   font-size: 12px !important;
 }
+.referral {
+  display: flex;
+  margin-left: 15px;
+}
+// form, input, optgroup, select 
+.referral2 {
+  margin: 10px !important;
+  font: inherit;
+  color: inherit;
+  height: 30px !important;
+  margin-left: 10px !important;
+  width: 50% !important;
+}
 
 @media screen and (max-width: 550px) {
   ::ng-deep {
@@ -36,4 +49,5 @@ ul li:before {
       border-radius: 0;
     }
   }
+ 
 }
