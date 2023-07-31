@@ -699,7 +699,14 @@ select::-ms-expand {
   background-size: auto 130px;
   background-position: center;
 }
-
+.upload
+{
+  background: transparent url(../../assets/img/upload.png) no-repeat;
+  height: 160px;
+  width: 332px;
+  background-size: auto 90px;
+  background-position: center;
+}
 .camera-logo {
   height: 166px;
   width: 100%;
@@ -862,6 +869,14 @@ input[type="file"] {
 }
 .f-black {
   color: $black;
+}
+.f-grey-1
+{
+  color: $grey-1;
+}
+.bg-grey-1
+{
+  background-color: $grey-1;
 }
 .error-message {
   color: $red;

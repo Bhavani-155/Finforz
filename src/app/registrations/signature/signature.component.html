@@ -1,14 +1,50 @@
-<div class="f-red mb-4">
+<div>
+<div>
+  <h4 class="f-red">Add Signature</h4>
+</div>
+<div class="h-font-xs f-red mb-3 mT-1">
     By accepting this disclosure, I understand that my handwritten signature has the same effect as the electronic signature below
 </div>
+<div class="container  mb-3">
+  <div class="row bg-grey-1">
+    <div>
+      <!-- Toggle Buttons -->
+      <div class="btn-group btn-group-toggle d-flex justify-content-center" data-toggle="buttons">
+        <label class="btn tgl-btn active mR-1" (click)="changeTab('draw')">
+          <input type="radio" name="toggleBox" id="showBox"> Draw
+        </label>
+        <label class="btn tgl-btn" (click)="changeTab('image')">
+          <input type="radio" name="toggleBox" id="hideBox"> Image
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
 
-<canvas  #signatureCanvas width="340" height="300"></canvas>
+<canvas [hidden]="selectedTab !== 'draw'" #signatureCanvas width="350" height="240"></canvas>
+<div  *ngIf="selectedTab == 'image'">
+<div class="img-Upload bg-grey-1">
+<div *ngIf="!selectedImage" class="upload"></div>
+<img [src]="selectedImage" *ngIf="selectedImage" class="preview-img">
+</div>
 
-
-<button class="btn cancelBtn-small mt-4 mb-4 p-2 h-font-xs width-100" (click)="next()">
-    Rewrite <i class="bi bi-arrow-right-short"></i>
+<button
+      class="btn btn-primary btn-block mt-2 h-font-sm"
+      (click)="fileFront.click()"
+    >
+      Choose file
+    </button>
+    <input
+      type="file"
+      #fileFront
+      (change)="onFileSelected($event)" accept="image/*"
+    />
+  </div>
+  <div class="btn-footer">
+<button *ngIf="selectedTab !== 'image'" class="btn cancelBtn-small mt-4 mb-4 p-2 h-font-xs width-100" (click)="clearSignature()">
+    Sign Again <i class="bi bi-arrow-right-short"></i>
   </button>
 <button class="btn btn-primary mt-4 mb-4 customBtn h-font-xs width-100" (click)="next()">
     Submit <i class="bi bi-arrow-right-short"></i>
-  </button>
-  
+  </button></div>
+</div>

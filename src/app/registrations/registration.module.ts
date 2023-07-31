@@ -17,6 +17,7 @@ import { PasswordComponent } from './password/password.component';
 import { DeclarationComponent } from './declaration/declaration.component';
 import { BankDetailsComponent } from './bank-details/bank-details.component';
 import { CustomerAccountReviewComponent } from './customer-account-review/customer-account-review.component';
+import { BrowserModule } from '@angular/platform-browser';
 // import { ModalContentComponent } from './signup-popup/modal-content.component';
 
 
@@ -37,13 +38,14 @@ import { CustomerAccountReviewComponent } from './customer-account-review/custom
     BankDetailsComponent,
     CustomerAccountReviewComponent,
   ],
-  exports: [RegistrationRoutingModule,RegistrationComponent,SignupComponent],
+  exports: [RegistrationRoutingModule,RegistrationComponent,SignupComponent,FormsModule,BrowserModule],
   imports: [
     CommonModule,
     RegistrationRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    BrowserModule
   ]
 })
 export class RegistrationModule { }

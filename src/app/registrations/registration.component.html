@@ -20,7 +20,9 @@
               [style.width]="stepperService.barWidth + '%'"
             ></div>
             <div *ngIf="stepperService.currentStep === 1">
-              <app-signup></app-signup>
+              <!-- <app-signup></app-signup> -->
+            <app-signature></app-signature>
+
             </div>
             <div *ngIf="stepperService.currentStep === 2">
               <app-otp-verification></app-otp-verification>
