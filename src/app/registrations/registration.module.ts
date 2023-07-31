@@ -15,6 +15,7 @@ import { SignatureComponent } from './signature/signature.component';
 import { SharedModule } from '../shared/shared-component/shared.module';
 import { PasswordComponent } from './password/password.component';
 import { DeclarationComponent } from './declaration/declaration.component';
+import { BankDetailsComponent } from './bank-details/bank-details.component';
 // import { ModalContentComponent } from './signup-popup/modal-content.component';
 
 
@@ -32,6 +33,7 @@ import { DeclarationComponent } from './declaration/declaration.component';
     SignatureComponent,
     PasswordComponent,
     DeclarationComponent,
+    BankDetailsComponent,
   ],
   exports: [RegistrationRoutingModule,RegistrationComponent,SignupComponent],
   imports: [
