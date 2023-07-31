@@ -873,7 +873,7 @@ $sides: (Top, Bottom, Left, Right);
 
 /* margin/padding class name --> pt-10, mt-10 */
 
-@for $i from 1 through 999 {
+@for $i from 1 through 100 {
 
   @each $side in $sides {
 
