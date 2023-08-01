@@ -10,6 +10,6 @@ export class CustomerAccountReviewComponent {
   constructor(private stepperService : StepperService){}
   next()
   {
-    this.stepperService.next(11);
+    this.stepperService.next(12);
   }
 }

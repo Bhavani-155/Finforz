@@ -18,6 +18,7 @@ import { DeclarationComponent } from './declaration/declaration.component';
 import { BankDetailsComponent } from './bank-details/bank-details.component';
 import { CustomerAccountReviewComponent } from './customer-account-review/customer-account-review.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { FinancialInformationComponent } from './financial-information/financial-information.component';
 // import { ModalContentComponent } from './signup-popup/modal-content.component';
 
 
@@ -37,6 +38,7 @@ import { BrowserModule } from '@angular/platform-browser';
     DeclarationComponent,
     BankDetailsComponent,
     CustomerAccountReviewComponent,
+    FinancialInformationComponent
   ],
   exports: [RegistrationRoutingModule,RegistrationComponent,SignupComponent,FormsModule,BrowserModule],
   imports: [
