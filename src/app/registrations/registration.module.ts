@@ -18,8 +18,9 @@ import { DeclarationComponent } from './declaration/declaration.component';
 import { BankDetailsComponent } from './bank-details/bank-details.component';
 import { CustomerAccountReviewComponent } from './customer-account-review/customer-account-review.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { QrUploadDocumentComponent } from './qr-upload-document/qr-upload-document.component';
 // import { ModalContentComponent } from './signup-popup/modal-content.component';
-
+import { QRCodeModule } from 'angularx-qrcode';
 
 @NgModule({
   declarations: [
@@ -37,15 +38,23 @@ import { BrowserModule } from '@angular/platform-browser';
     DeclarationComponent,
     BankDetailsComponent,
     CustomerAccountReviewComponent,
+    // QrUploadDocumentComponent,
   ],
-  exports: [RegistrationRoutingModule,RegistrationComponent,SignupComponent,FormsModule,BrowserModule],
+  exports: [
+    RegistrationRoutingModule,
+    RegistrationComponent,
+    SignupComponent,
+    FormsModule,
+    BrowserModule,
+  ],
   imports: [
     CommonModule,
     RegistrationRoutingModule,
     ReactiveFormsModule,
     FormsModule,
     SharedModule,
-    BrowserModule
-  ]
+    BrowserModule,
+    // QRCodeModule,
+  ],
 })
-export class RegistrationModule { }
+export class RegistrationModule {}
