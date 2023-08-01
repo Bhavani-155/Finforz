@@ -276,7 +276,7 @@ input[type='radio']:checked:before {
   label {
     margin-right: 1em;
     position: relative;
-
+    display: flex;
     &:before {
       content: "";
       display: inline-block;
