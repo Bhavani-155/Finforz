@@ -52,7 +52,15 @@
     >NRIC / Identification Document No. (Passport)</label
   >
 </div>
-
+<div class="did-floating-label-content mt-4">
+  <input
+    class="did-floating-input"
+    type="date"
+    [(ngModel)]="formValues.dob"
+    placeholder=" "
+  />
+  <label class="did-floating-label h-font-xs">Date of Expiry</label>
+</div>
 <div class="did-floating-label-content mt-4">
   <input
     class="did-floating-input"
@@ -72,11 +80,79 @@
   />
   <label class="did-floating-label h-font-xs">Email Address</label>
 </div>
+<div class="did-floating-label-content">
+  <select
+    class="did-floating-input"
+    onclick="this.setAttribute('value', this.value);"
+    [(ngModel)]="formValues.maritalStatus"
+  >
+    <option value="1">Single</option>
+    <option value="2">Married</option>
+  </select>
+  <div class="select_arrow"></div>
+  <label class="did-floating-label h-font-xs">Marital Status</label>
+</div>
+<div class="did-floating-label-content mt-4">
+  <input
+    class="did-floating-input"
+    type="text"
+    [(ngModel)]="formValues.spouseName"
+    placeholder=" "
+  />
+  <label class="did-floating-label h-font-xs">Name</label>
+</div>
+<div class="did-floating-label-content">
+  <select
+    class="did-floating-input"
+    onclick="this.setAttribute('value', this.value);"
+    [(ngModel)]="formValues.spouseNationality"
+  >
+    <option value="1">Singapore</option>
+    <option value="2">India</option>
+  </select>
+  <div class="select_arrow"></div>
+  <label class="did-floating-label h-font-xs">Nationality</label>
+</div>
+<div class="did-floating-label-content">
+  <select
+    class="did-floating-input"
+    onclick="this.setAttribute('value', this.value);"
+    [(ngModel)]="formValues.spouseDocType"
+  >
+    <option value="1">Passport</option>
+    <option value="2">NRIC</option>
+  </select>
+  <div class="select_arrow"></div>
+  <label class="did-floating-label h-font-xs">Document Type</label>
+</div>
+<div class="did-floating-label-content mt-4">
+  <input
+    class="did-floating-input"
+    type="text"
+    [(ngModel)]="formValues.spouseId"
+    placeholder=" "
+  />
+  <label class="did-floating-label h-font-xs">Identity No</label>
+</div>
+<div class="did-floating-label-content mt-4">
+  <input
+    class="did-floating-input"
+    type="date"
+    [(ngModel)]="formValues.spouseDoe"
+    placeholder=" "
+  />
+  <label class="did-floating-label h-font-xs">Date of Expiry</label>
+</div>
+<div class="did-floating-label-content mt-4">
+  <input
+    class="did-floating-input"
+    type="date"
+    [(ngModel)]="formValues.spouseDob"
+    placeholder=" "
+  />
+  <label class="did-floating-label h-font-xs">Date of Birth</label>
+</div>
 
-<!-- Rest of the Step 1 form fields -->
-<!-- <button class="btn btn-primary mt-4 mb-4 customBtn h-font-xs width-100" (click)="next()">
-    Next Step <i class="bi bi-arrow-right-short"></i>
-  </button> -->
 <div class="row">
   <div class="col-6">
     <button class="btn btn-block mt-4 mb-4 cancelBtn" (click)="back()">
