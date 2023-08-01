@@ -13,8 +13,9 @@ import { InvestmentKnowledgeComponent } from './investment-knowledge/investment-
 import { RegularityInfoComponent } from './regularity-info/regularity-info.component';
 import { SignatureComponent } from './signature/signature.component';
 import { SharedModule } from '../shared/shared-component/shared.module';
+import { QrUploadDocumentComponent } from './qr-upload-document/qr-upload-document.component';
 // import { ModalContentComponent } from './signup-popup/modal-content.component';
-
+import { QRCodeModule } from 'angularx-qrcode';
 
 @NgModule({
   declarations: [
@@ -28,14 +29,16 @@ import { SharedModule } from '../shared/shared-component/shared.module';
     InvestmentKnowledgeComponent,
     RegularityInfoComponent,
     SignatureComponent,
+    QrUploadDocumentComponent,
   ],
-  exports: [RegistrationRoutingModule,RegistrationComponent,SignupComponent],
+  exports: [RegistrationRoutingModule, RegistrationComponent, SignupComponent],
   imports: [
     CommonModule,
     RegistrationRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    SharedModule
-  ]
+    SharedModule,
+    QRCodeModule,
+  ],
 })
-export class RegistrationModule { }
+export class RegistrationModule {}
