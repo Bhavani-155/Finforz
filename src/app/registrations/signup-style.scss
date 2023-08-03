@@ -822,7 +822,6 @@ input[type="file"] {
 .width-100 {
   width: 100%;
 }
-
 .font-red {
   color: $font_red !important;
 }
@@ -832,3 +831,8 @@ input[type="file"] {
   font-size: 12px;
   margin: 10px 0 20px 0;
 }
+
+.alter-input{
+  height: 65px !important;
+}
+

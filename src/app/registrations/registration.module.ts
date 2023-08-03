@@ -13,6 +13,14 @@ import { InvestmentKnowledgeComponent } from './investment-knowledge/investment-
 import { RegularityInfoComponent } from './regularity-info/regularity-info.component';
 import { SignatureComponent } from './signature/signature.component';
 import { SharedModule } from '../shared/shared-component/shared.module';
+import {WebcamModule} from 'ngx-webcam';
+import { Camera } from '@capacitor/camera';
+import { CameraPlugin } from '@capacitor/camera';
+
+import { CameraOptions,CameraResultType } from '@capacitor/camera';
+import { RouteReuseStrategy } from '@angular/router';
+
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 // import { ModalContentComponent } from './signup-popup/modal-content.component';
 
 
@@ -35,7 +43,10 @@ import { SharedModule } from '../shared/shared-component/shared.module';
     RegistrationRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    SharedModule
-  ]
+    SharedModule,
+    WebcamModule,
+    IonicModule.forRoot(),
+  ],  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
 })
 export class RegistrationModule { }

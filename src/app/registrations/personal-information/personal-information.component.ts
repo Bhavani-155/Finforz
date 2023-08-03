@@ -24,6 +24,8 @@ export class PersonalInformationComponent {
   authCodeForPersonAPI: any;
   personData: any = [];
   formValues: any = {};
+  floatdata:boolean=true;
+  alterdata:boolean=true;
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
       if (params['singpass']) {
