@@ -13,6 +13,14 @@ import { InvestmentKnowledgeComponent } from './investment-knowledge/investment-
 import { RegularityInfoComponent } from './regularity-info/regularity-info.component';
 import { SignatureComponent } from './signature/signature.component';
 import { SharedModule } from '../shared/shared-component/shared.module';
+import {WebcamModule} from 'ngx-webcam';
+import { Camera } from '@capacitor/camera';
+import { CameraPlugin } from '@capacitor/camera';
+
+import { CameraOptions,CameraResultType } from '@capacitor/camera';
+import { RouteReuseStrategy } from '@angular/router';
+
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { PasswordComponent } from './password/password.component';
 import { DeclarationComponent } from './declaration/declaration.component';
 import { BankDetailsComponent } from './bank-details/bank-details.component';
@@ -47,7 +55,12 @@ import { FinancialInformationComponent } from './financial-information/financial
     ReactiveFormsModule,
     FormsModule,
     SharedModule,
-    BrowserModule
-  ]
+    WebcamModule,
+    BrowserModule,
+    IonicModule.forRoot(),
+  ],  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
+   
+  
 })
 export class RegistrationModule { }

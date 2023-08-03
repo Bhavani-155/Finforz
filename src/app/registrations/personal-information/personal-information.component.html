@@ -43,12 +43,12 @@
 
 <div class="did-floating-label-content">
   <input
-    class="did-floating-input"
+    [ngClass]="{'did-floating-input': floatdata, 'alter-input': alterdata}"
     type="text"
     [(ngModel)]="formValues.uinfin"
     placeholder=" "
   />
-  <label class="did-floating-label h-font-xs"
+  <label class="did-floating-label h-font-xs" 
     >NRIC / Identification Document No. (Passport)</label
   >
 </div>
