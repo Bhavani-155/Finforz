@@ -38,7 +38,7 @@ export class PersonalInformationComponent {
     this.stepperService.next(8);
   }
   back() {
-    this.stepperService.next(7);
+    this.stepperService.next(1);
   }
 
   getPersonDetails(authCode: any) {

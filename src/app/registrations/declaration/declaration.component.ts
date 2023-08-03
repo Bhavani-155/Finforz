@@ -2,16 +2,15 @@ import { Component } from '@angular/core';
 import { StepperService } from 'src/app/services/stepper.service';
 
 @Component({
-  selector: 'app-investment-knowledge',
-  templateUrl: './investment-knowledge.component.html',
-  styleUrls: ['./investment-knowledge.component.scss']
+  selector: 'app-declaration',
+  templateUrl: './declaration.component.html',
+  styleUrls: ['./declaration.component.scss']
 })
-export class InvestmentKnowledgeComponent {
-
+export class DeclarationComponent {
   constructor(private stepperService : StepperService){}
   next()
   {
-    this.stepperService.next(11);
+    this.stepperService.next(13);
   }
   back()
   {

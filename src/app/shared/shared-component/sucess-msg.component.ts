@@ -9,6 +9,6 @@ export class SucessMsgcomponent implements OnInit {
   constructor(public stepperService: StepperService) {}
 
   next() {
-    this.stepperService.next(4);
+    this.stepperService.next(5);
   }
 }

@@ -13,6 +13,8 @@ export class SignatureComponent implements AfterViewInit {
   private signaturePad!: SignaturePad;
   imageUrl: any = null;
   signatureImage: any;
+  selectedTab:any='draw'
+  selectedImage: any;
   constructor(private stepperService : StepperService){}
 
   ngAfterViewInit() {
@@ -33,6 +35,13 @@ export class SignatureComponent implements AfterViewInit {
     this.getBase64(file).then((data: string) => {
       this.imageUrl = data;
     });
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.selectedImage = e.target.result;
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
   }
 
   getBase64(file: File): Promise<string> {
@@ -45,10 +54,13 @@ export class SignatureComponent implements AfterViewInit {
   }
   next()
   {
-    this.stepperService.next(3);
+    this.stepperService.next(1);
   }
   back()
   {
     this.stepperService.next(11);
+  }
+  changeTab(val) {
+    this.selectedTab = val;
   }
 }
