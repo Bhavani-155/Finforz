@@ -54,7 +54,7 @@ export class SignatureComponent implements AfterViewInit {
   }
   next()
   {
-    this.stepperService.next(1);
+    this.stepperService.next(4);
   }
   back()
   {

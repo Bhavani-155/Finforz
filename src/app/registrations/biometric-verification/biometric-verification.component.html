@@ -5,18 +5,18 @@
   </div>
   <div *ngIf="documentUpload">
     <div class="did-floating-label-content">
-      <div class="did-floating-label-content">
+      <!-- <div class="did-floating-label-content">
         <select (change)="onChange($event)"  class="did-floating-input h-font-xs"
           onclick="this.setAttribute('value', this.value);" value="">
           <option *ngFor="let data of options" value="data.id">{{data.name}}</option>
         </select>
         <div class="select_arrow"></div>
         <label class="did-floating-label h-font-xs">Document type</label>
-      </div>
+      </div> -->
       <div>
         <h4 *ngIf="!passportView && !selfi">Passport front</h4>
         <h4 *ngIf="passportView && !selfi">Passport back</h4>
-        <h4 *ngIf="selfi">Selfi</h4>
+        <h4 *ngIf="selfi">Selfie</h4>
       </div>
 
       <!-- <div *ngIf="NRIC"> -->
@@ -64,7 +64,7 @@
         <div class="col-6" *ngFor="let imgData of arrayData; let i = index">
           <h4 *ngIf="i == 0">Passport</h4>
           <h4 *ngIf="i == 1" class="hide-space">Passport</h4>
-          <h4 *ngIf="i == 2">Selfi</h4>
+          <h4 *ngIf="i == 2">Selfie</h4>
           <img class="imgView" [src]="imgData">
         </div>
       </div>

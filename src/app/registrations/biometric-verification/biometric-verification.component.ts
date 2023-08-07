@@ -45,7 +45,7 @@ export class BiometricVerificationComponent {
     this.stepperService.next(1);
   }
   next() {
-    this.stepperService.next(7);
+    this.stepperService.next(8);
   }
 
   onFileSelected(event: any, type: any) {
