@@ -10,7 +10,7 @@ export class RegularityInfoComponent {
   constructor(private stepperService : StepperService){}
   next()
   {
-    this.stepperService.next(15);
+    this.stepperService.next(16);
   }
   back()
   {
