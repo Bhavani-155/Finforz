@@ -30,6 +30,7 @@
     "@ionic/angular": "^7.0.10",
     "@ionic/pwa-elements": "^3.2.2",
     "@ionic/storage-angular": "^4.0.0",
+    "angularx-qrcode": "^16.0.1",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.3",
     "capacitor-native-biometric": "^4.2.2",

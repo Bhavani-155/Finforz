@@ -13,11 +13,11 @@ import { InvestmentKnowledgeComponent } from './investment-knowledge/investment-
 import { RegularityInfoComponent } from './regularity-info/regularity-info.component';
 import { SignatureComponent } from './signature/signature.component';
 import { SharedModule } from '../shared/shared-component/shared.module';
-import {WebcamModule} from 'ngx-webcam';
+import { WebcamModule } from 'ngx-webcam';
 import { Camera } from '@capacitor/camera';
 import { CameraPlugin } from '@capacitor/camera';
 
-import { CameraOptions,CameraResultType } from '@capacitor/camera';
+import { CameraOptions, CameraResultType } from '@capacitor/camera';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
@@ -26,9 +26,10 @@ import { DeclarationComponent } from './declaration/declaration.component';
 import { BankDetailsComponent } from './bank-details/bank-details.component';
 import { CustomerAccountReviewComponent } from './customer-account-review/customer-account-review.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { QrUploadDocumentComponent } from './qr-upload-document/qr-upload-document.component';
 import { FinancialInformationComponent } from './financial-information/financial-information.component';
 // import { ModalContentComponent } from './signup-popup/modal-content.component';
-
+import { QRCodeModule } from 'angularx-qrcode';
 
 @NgModule({
   declarations: [
@@ -46,9 +47,17 @@ import { FinancialInformationComponent } from './financial-information/financial
     DeclarationComponent,
     BankDetailsComponent,
     CustomerAccountReviewComponent,
-    FinancialInformationComponent
+    QrUploadDocumentComponent,
+    FinancialInformationComponent,
   ],
-  exports: [RegistrationRoutingModule,RegistrationComponent,SignupComponent,FormsModule,BrowserModule],
+  exports: [
+    RegistrationRoutingModule,
+    RegistrationComponent,
+    SignupComponent,
+    FormsModule,
+    BrowserModule,
+    FinancialInformationComponent,
+  ],
   imports: [
     CommonModule,
     RegistrationRoutingModule,
@@ -57,10 +66,9 @@ import { FinancialInformationComponent } from './financial-information/financial
     SharedModule,
     WebcamModule,
     BrowserModule,
+    QRCodeModule,
     IonicModule.forRoot(),
-  ],  providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
-   
-  
+  ],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
 })
-export class RegistrationModule { }
+export class RegistrationModule {}
