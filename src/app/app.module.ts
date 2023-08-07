@@ -3,35 +3,44 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignupComponent } from './modules/auth/containers/registration/signup-details/signup.component';
-import { OtpEmailComponent } from './modules/auth/containers/registration/signup-details/email-verification/otp-email/otp-email.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
-import { SignupPopupComponent } from './modules/auth/containers/registration/signup-popup/signup-popup.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { RegistrationComponent } from './modules/auth/containers/registration/registration.component';
+import { RegistrationModule } from './registrations/registration.module';
+import { IonicModule } from '@ionic/angular';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MenuComponent } from './menu/menu.component';
+import { IonicStorageModule } from '@ionic/storage-angular';
+import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared-component/shared.module';
+import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions/ngx';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent,
-    OtpEmailComponent,
-    SignupPopupComponent,
-    RegistrationComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // other imports
+    RegistrationModule,
+    HttpClientModule,
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
     AlertModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
+    IonicModule.forRoot(),
+    IonicStorageModule.forRoot(),
+    FormsModule,
+    // SwipeModule,
+    FormsModule,
+    ReactiveFormsModule,
+    SharedModule
   ],
-  providers: [],
+  providers: [AndroidPermissions],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

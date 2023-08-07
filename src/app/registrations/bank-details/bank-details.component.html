@@ -1,0 +1,31 @@
+<div>
+    <h4 class="f-red">Bank Details</h4>
+  </div>
+  <div class="did-floating-label-content">
+    <select
+      class="did-floating-input h-font-xs"
+      onclick="this.setAttribute('value', this.value);"
+      value=""
+    >
+      <option value="2">DBS Bank</option>
+
+      <option value="1">OCBC Bank</option>
+      <option value="3">United Overseas Bank </option>
+    </select>
+    <div class="select_arrow"></div>
+    <label class="did-floating-label h-font-xs">Bank Name</label>
+  </div>
+  <div class="did-floating-label-content mt-4">
+    <input class="did-floating-input" type="number" placeholder=" " />
+    <label class="did-floating-label h-font-xs">Account Number</label>
+  </div>
+  <div class="did-floating-label-content mt-4">
+    <input class="did-floating-input" type="text" placeholder=" " />
+    <label class="did-floating-label h-font-xs">Account Name</label>
+  </div>
+  <!-- <div>
+    <input class="button h-font-xs" type="submit" (click)="next()" value="Register" />
+  </div> -->
+  <div class="btn-footer">
+    <input class="button h-font-xs" type="submit" (click)="next()" value="Register" />
+  </div>
