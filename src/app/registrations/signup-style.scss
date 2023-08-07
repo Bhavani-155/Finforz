@@ -884,7 +884,11 @@ input[type="file"] {
   margin: 10px 0 20px 0;
 }
 
-$sides: (Top, Bottom, Left, Right);
+.alter-input{
+  height: 65px !important;
+}
+
+$sides: (top, bottom, left, right);
 
 /* margin/padding class name --> pt-10, mt-10 */
 
@@ -892,7 +896,7 @@ $sides: (Top, Bottom, Left, Right);
 
   @each $side in $sides {
 
-    .m#{str-slice($side, 0, 1)}-#{$i} {
+    .ma#{str-slice($side, 0, 1)}-#{$i} {
 
       margin-#{$side}: #{$i}rem;
 
@@ -903,6 +907,6 @@ $sides: (Top, Bottom, Left, Right);
 .btn-footer {
   position: fixed;
   right: 6%;
-  bottom: 4%;
+  bottom: 8px;
   left: 6%;
 }

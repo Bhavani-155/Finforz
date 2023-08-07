@@ -2,7 +2,7 @@
 <div>
   <h4 class="f-red">Add Signature</h4>
 </div>
-<div class="h-font-xs f-red mb-3 mT-1">
+<div class="h-font-xs f-red mb-3 mat-1">
     By accepting this disclosure, I understand that my handwritten signature has the same effect as the electronic signature below
 </div>
 <div class="container  mb-3">
@@ -10,7 +10,7 @@
     <div>
       <!-- Toggle Buttons -->
       <div class="btn-group btn-group-toggle d-flex justify-content-center" data-toggle="buttons">
-        <label class="btn tgl-btn active mR-1" (click)="changeTab('draw')">
+        <label class="btn tgl-btn active mar-1" (click)="changeTab('draw')">
           <input type="radio" name="toggleBox" id="showBox"> Draw
         </label>
         <label class="btn tgl-btn" (click)="changeTab('image')">
@@ -40,8 +40,8 @@
       (change)="onFileSelected($event)" accept="image/*"
     />
   </div>
-  <div class="btn-footer">
-<button *ngIf="selectedTab !== 'image'" class="btn cancelBtn-small mt-4 mb-4 p-2 h-font-xs width-100" (click)="clearSignature()">
+  <div class="btn-footer mt-4 ">
+<button *ngIf="selectedTab !== 'image'" class="btn cancelBtn-small mb-4 p-2 h-font-xs width-100" (click)="clearSignature()">
     Sign Again <i class="bi bi-arrow-right-short"></i>
   </button>
 <button class="btn btn-primary mt-4 mb-4 customBtn h-font-xs width-100" (click)="next()">
