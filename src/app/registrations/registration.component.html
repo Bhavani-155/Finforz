@@ -10,6 +10,36 @@
       <h3>{{ stepperService.title }}</h3>
       <p>{{ stepperService.subTitle }}</p>
     </div>
+<<<<<<< HEAD
+    <div class="reg-form col-lg-6 col-sm-12">
+      <div class="form_wrapper">
+        <div class="form_container">
+          <div class="row clearfix">
+            <div
+              class="progress"
+              [style.width]="stepperService.barWidth + '%'"
+            ></div>
+            <div *ngIf="stepperService.currentStep === 1">
+              <app-signup></app-signup>
+            <!-- <app-signature></app-signature> -->
+
+            </div>
+            <div *ngIf="stepperService.currentStep === 2">
+              <app-otp-verification></app-otp-verification>
+            </div>
+            <div *ngIf="stepperService.currentStep === 3">
+              <app-password></app-password>
+            </div>
+           <div *ngIf="stepperService.currentStep === 4">
+              <app-sucess-msg></app-sucess-msg>
+            </div>
+             <div *ngIf="stepperService.currentStep === 5">
+              <app-document-home></app-document-home>
+            </div>
+            <!-- <div *ngIf="stepperService.currentStep === 5">
+              <app-singpass-login></app-singpass-login>
+            </div> -->
+=======
   </div>
   <div class="reg-form col-lg-6 col-sm-12">
     <div class="form_wrapper">
@@ -21,6 +51,7 @@
           ></div>
           <div *ngIf="stepperService.currentStep === 1">
             <app-signup></app-signup>
+>>>>>>> 410adfb78c14318898d6a5b2c36b55dd30f208bc
           </div>
           <div *ngIf="stepperService.currentStep === 2">
             <app-otp-verification></app-otp-verification>
