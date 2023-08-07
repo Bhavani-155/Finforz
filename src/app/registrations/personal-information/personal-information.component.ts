@@ -35,7 +35,7 @@ export class PersonalInformationComponent {
     });
   }
   next() {
-    this.stepperService.next(8);
+    this.stepperService.next(9);
   }
   back() {
     this.stepperService.next(1);
