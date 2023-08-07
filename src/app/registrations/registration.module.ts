@@ -38,7 +38,7 @@ import { QRCodeModule } from 'angularx-qrcode';
     DeclarationComponent,
     BankDetailsComponent,
     CustomerAccountReviewComponent,
-    // QrUploadDocumentComponent,
+    QrUploadDocumentComponent,
   ],
   exports: [
     RegistrationRoutingModule,
@@ -54,7 +54,7 @@ import { QRCodeModule } from 'angularx-qrcode';
     FormsModule,
     SharedModule,
     BrowserModule,
-    // QRCodeModule,
+    QRCodeModule,
   ],
 })
 export class RegistrationModule {}
