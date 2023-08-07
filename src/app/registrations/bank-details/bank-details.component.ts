@@ -14,6 +14,6 @@ export class BankDetailsComponent {
   }
 
   next() {
-    this.stepperService.next(13);
+    this.stepperService.next(14);
   }
 }

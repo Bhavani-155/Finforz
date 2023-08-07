@@ -1,6 +1,11 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { StepperService } from 'src/app/services/stepper.service';
+import { Subject, Observable } from 'rxjs';
+import { WebcamImage, WebcamInitError, WebcamUtil } from 'ngx-webcam';
+import { CameraOptions, CameraResultType } from '@capacitor/camera';
+import { Plugins } from '@capacitor/core';
 
+const { Camera } = Plugins
 @Component({
   selector: 'app-biometric-verification',
   templateUrl: './biometric-verification.component.html',
@@ -9,29 +14,45 @@ import { StepperService } from 'src/app/services/stepper.service';
 export class BiometricVerificationComponent {
   isCameraOpen: boolean = false;
   isPictureCaptured: boolean = false;
+  documentUpload: boolean = true;
 
-constructor(private stepperService : StepperService){}
+  public showWebcam = true;
+  public allowCameraSwitch = true;
+  public multipleWebcamsAvailable = false;
+  public deviceId: string;
+  preview: boolean = false;
+  passportView: boolean = false;
+  NRIC: boolean = false;
 
-  docFront:any = 'File Name';
-  docBack:any = 'File Name';
+  selfi: boolean = false;
+  capture: boolean = true;
+  retake: boolean = false;
+
+  constructor(private stepperService: StepperService) { }
+
+  docFront: any = 'File Name';
+  docBack: any = 'File Name';
+  src: string = "";
+  RegistrationContinue: boolean = false;
+  arrayData: any = [];
+  imgURL: any;
+  options = [{ id: 1, name: 'Passport' }, { id: 2, name: 'NRIC' }]
+
   @ViewChild('videoElement') videoElement!: ElementRef;
   @ViewChild('canvasElement') canvasElement!: ElementRef;
 
-  back()
-  {
+  back() {
     this.stepperService.next(1);
   }
-  next()
-  {
+  next() {
     this.stepperService.next(7);
   }
-  
-  onFileSelected(event: any,type: any) {
-    console.log(event.target.files[0].name)
+
+  onFileSelected(event: any, type: any) {
     if (type == 'docFront') {
-     this.docFront = event.target.files[0].name;
-    }else if (type == 'docBack') {
-     this.docBack = event.target.files[0].name;
+      this.docFront = event.target.files[0].name;
+    } else if (type == 'docBack') {
+      this.docBack = event.target.files[0].name;
     }
   }
   startCamera() {
@@ -44,9 +65,9 @@ constructor(private stepperService : StepperService){}
       })
       .catch(err => console.error('Error accessing camera:', err));
   }
-  
+
   captureAndSave() {
-    this.isPictureCaptured =  true;
+    this.isPictureCaptured = true;
     const video: HTMLVideoElement = this.videoElement.nativeElement;
     const canvas: HTMLCanvasElement = this.canvasElement.nativeElement;
     const context: CanvasRenderingContext2D = canvas.getContext('2d')!;
@@ -75,5 +96,77 @@ constructor(private stepperService : StepperService){}
     }
 
     return new Blob([ab], { type: mimeString });
+  }
+
+
+  public ngOnInit(): void {
+    WebcamUtil.getAvailableVideoInputs()
+      .then((mediaDevices: MediaDeviceInfo[]) => {
+        this.multipleWebcamsAvailable = mediaDevices && mediaDevices.length > 1;
+      });
+  }
+  onChange(value: any) {
+    if (value.target.value == "1") {
+      this.passportView = false;
+    } else {
+      this.NRIC = true;
+      this.preview = true;
+    }
+  }
+  getCamera() {
+    let options: CameraOptions = {
+      quality: 100,
+      resultType: CameraResultType.DataUrl,
+      saveToGallery: true,
+      height: 500, // Set desired height here
+      width: 600,  // Set desired width here
+      allowEditing: true,
+    }
+    Camera['getPhoto'](options).then((result: any) => {
+      if (result.dataUrl) {
+        this.src = result.dataUrl;
+        this.arrayData.push(result.dataUrl);
+        this.RegistrationContinue = true;
+        if (this.arrayData.length == 1) {
+          this.capture = false;
+          this.retake = true;
+        } else if (this.arrayData.length == 2) {
+          this.capture = false;
+          this.retake = true;
+
+        } else if (this.arrayData.length == 3) {
+          this.capture = false;
+          this.retake = true;
+        }
+      }
+    }, (err: any) => {
+    })
+  }
+  retakeImg() {
+    if (this.arrayData.length == 1) {
+      this.arrayData = [];
+    }
+    else if (this.arrayData.length == 2 || this.arrayData.length == 3) {
+      this.arrayData.pop();
+    }
+    this.getCamera();
+  }
+  nextImg() {
+    this.RegistrationContinue = false;
+    this.src = '';
+    this.passportView = true;
+    this.retake = false;
+    this.capture = true;
+
+    if (this.arrayData.length == 2) {
+      this.selfi = true;
+    }
+    if (this.arrayData.length == 3) {
+      this.documentUpload = false;
+      this.previewImage();
+    }
+  }
+  previewImage() {
+    this.RegistrationContinue = false;
   }
 }
