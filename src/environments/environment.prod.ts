@@ -1,6 +1,6 @@
 export const environment = {
   title: 'RTSG',
   production: true,
-  baseUrl: '',
+  baseUrl: 'https://rtsg.com',
   logoUrl: '',
 };

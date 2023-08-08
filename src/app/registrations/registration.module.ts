@@ -30,9 +30,11 @@ import { QrUploadDocumentComponent } from './qr-upload-document/qr-upload-docume
 import { FinancialInformationComponent } from './financial-information/financial-information.component';
 // import { ModalContentComponent } from './signup-popup/modal-content.component';
 import { QRCodeModule } from 'angularx-qrcode';
+import { MenuComponent } from '../menu/menu.component';
 
 @NgModule({
   declarations: [
+    MenuComponent,
     RegistrationComponent,
     SignupComponent,
     OtpVerificationComponent,
