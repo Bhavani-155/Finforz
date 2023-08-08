@@ -5,16 +5,17 @@ import { WebcamImage, WebcamInitError, WebcamUtil } from 'ngx-webcam';
 import { CameraOptions, CameraResultType } from '@capacitor/camera';
 import { Plugins } from '@capacitor/core';
 
-const { Camera } = Plugins
+const { Camera } = Plugins;
 @Component({
   selector: 'app-biometric-verification',
   templateUrl: './biometric-verification.component.html',
-  styleUrls: ['./biometric-verification.component.scss']
+  styleUrls: ['./biometric-verification.component.scss'],
 })
 export class BiometricVerificationComponent {
   isCameraOpen: boolean = false;
   isPictureCaptured: boolean = false;
   documentUpload: boolean = true;
+  documentText: any = 'Passport';
 
   public showWebcam = true;
   public allowCameraSwitch = true;
@@ -28,15 +29,18 @@ export class BiometricVerificationComponent {
   capture: boolean = true;
   retake: boolean = false;
 
-  constructor(private stepperService: StepperService) { }
+  constructor(private stepperService: StepperService) {}
 
   docFront: any = 'File Name';
   docBack: any = 'File Name';
-  src: string = "";
+  src: string = '';
   RegistrationContinue: boolean = false;
   arrayData: any = [];
   imgURL: any;
-  options = [{ id: 1, name: 'Passport' }, { id: 2, name: 'NRIC' }]
+  options = [
+    { id: 1, name: 'Passport' },
+    { id: 2, name: 'NRIC' },
+  ];
 
   @ViewChild('videoElement') videoElement!: ElementRef;
   @ViewChild('canvasElement') canvasElement!: ElementRef;
@@ -57,13 +61,14 @@ export class BiometricVerificationComponent {
   }
   startCamera() {
     this.isCameraOpen = true;
-    navigator.mediaDevices.getUserMedia({ video: true })
-      .then(stream => {
+    navigator.mediaDevices
+      .getUserMedia({ video: true })
+      .then((stream) => {
         const video: HTMLVideoElement = this.videoElement.nativeElement;
         video.srcObject = stream;
         video.play();
       })
-      .catch(err => console.error('Error accessing camera:', err));
+      .catch((err) => console.error('Error accessing camera:', err));
   }
 
   captureAndSave() {
@@ -98,19 +103,21 @@ export class BiometricVerificationComponent {
     return new Blob([ab], { type: mimeString });
   }
 
-
   public ngOnInit(): void {
-    WebcamUtil.getAvailableVideoInputs()
-      .then((mediaDevices: MediaDeviceInfo[]) => {
+    WebcamUtil.getAvailableVideoInputs().then(
+      (mediaDevices: MediaDeviceInfo[]) => {
         this.multipleWebcamsAvailable = mediaDevices && mediaDevices.length > 1;
-      });
+      }
+    );
   }
   onChange(value: any) {
-    if (value.target.value == "1") {
+    if (value.target.value == '1') {
       this.passportView = false;
+      this.documentText = 'Passport';
     } else {
       this.NRIC = true;
       this.preview = true;
+      this.documentText = 'NRIC';
     }
   }
   getCamera() {
@@ -119,34 +126,34 @@ export class BiometricVerificationComponent {
       resultType: CameraResultType.DataUrl,
       saveToGallery: true,
       height: 500, // Set desired height here
-      width: 600,  // Set desired width here
+      width: 600, // Set desired width here
       allowEditing: true,
-    }
-    Camera['getPhoto'](options).then((result: any) => {
-      if (result.dataUrl) {
-        this.src = result.dataUrl;
-        this.arrayData.push(result.dataUrl);
-        this.RegistrationContinue = true;
-        if (this.arrayData.length == 1) {
-          this.capture = false;
-          this.retake = true;
-        } else if (this.arrayData.length == 2) {
-          this.capture = false;
-          this.retake = true;
-
-        } else if (this.arrayData.length == 3) {
-          this.capture = false;
-          this.retake = true;
+    };
+    Camera['getPhoto'](options).then(
+      (result: any) => {
+        if (result.dataUrl) {
+          this.src = result.dataUrl;
+          this.arrayData.push(result.dataUrl);
+          this.RegistrationContinue = true;
+          if (this.arrayData.length == 1) {
+            this.capture = false;
+            this.retake = true;
+          } else if (this.arrayData.length == 2) {
+            this.capture = false;
+            this.retake = true;
+          } else if (this.arrayData.length == 3) {
+            this.capture = false;
+            this.retake = true;
+          }
         }
-      }
-    }, (err: any) => {
-    })
+      },
+      (err: any) => {}
+    );
   }
   retakeImg() {
     if (this.arrayData.length == 1) {
       this.arrayData = [];
-    }
-    else if (this.arrayData.length == 2 || this.arrayData.length == 3) {
+    } else if (this.arrayData.length == 2 || this.arrayData.length == 3) {
       this.arrayData.pop();
     }
     this.getCamera();
