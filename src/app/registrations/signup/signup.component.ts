@@ -43,7 +43,19 @@ export class SignupComponent {
   }
 
   ngOnInit() {
-    this.getBasicDetails();
+    this.signupModel = new SignupModel('','','','','','','','',''); // Initialize the user model with default values
+
+    this.signupForm = this.fb.group({
+      name: [this.signupModel.name, Validators.required],
+      nationality: [this.signupModel.nationality, Validators.required],
+      countryOfResidence: [this.signupModel.countryOfResidence, Validators.required],
+      residencialStatus: [this.signupModel.residencialStatus, Validators.required],
+      refrelCode: [this.signupModel.refrelCode, Validators.required],
+      mobile: [this.signupModel.mobile, Validators.required],
+      email: [this.signupModel.email, [Validators.required, Validators.email]],
+      isUsCitizen: [this.signupModel.isUsCitizen, Validators.required],
+      privacyPolicy: [this.signupModel.privacyPolicy, Validators.required],
+    });
     this.createRegistartionFormGroup();
     this.route.queryParams.subscribe((params) => {
       if (params['singpass']) {
@@ -66,13 +78,12 @@ export class SignupComponent {
       console.log(this.signupForm.value);
       this.signupModel = this.signupForm.value;
       console.log(this.signupModel);
-    } else {
+    }else {
       this.markFormGroupAsTouched(this.signupForm);
     }
-    this.next();
   }
   markFormGroupAsTouched(formGroup: FormGroup) {
-    Object.values(formGroup.controls).forEach((control) => {
+    Object.values(formGroup.controls).forEach(control => {
       control.markAsTouched();
 
       if (control instanceof FormGroup) {
