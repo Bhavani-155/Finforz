@@ -39,6 +39,7 @@ export class SignupComponent {
   }
 
   ngOnInit() {
+    this.getBasicDetails();
     this.createRegistartionFormGroup();
     this.route.queryParams.subscribe((params) => {
       if (params['singpass']) {
