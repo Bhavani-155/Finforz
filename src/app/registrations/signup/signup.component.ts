@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { StepperService } from 'src/app/services/stepper.service';
@@ -10,6 +9,7 @@ import {
   ActivatedRoute,
 } from '@angular/router';
 import { ApiServices } from 'src/app/services/auth.service';
+import { SignupService } from '../services/signup.service';
 
 @Component({
   selector: 'app-signup',
@@ -23,11 +23,10 @@ export class SignupComponent {
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private apiServices: ApiServices,
-   
-  ) {
-    
-  }
+    private signupService: SignupService
+  ) {}
 
+  customerId: any = '1234321';
   registerForm: FormGroup;
 
   createRegistartionFormGroup() {
@@ -46,6 +45,12 @@ export class SignupComponent {
         this.stepperService.next(7);
       }
     });
+  }
+
+  getBasicDetails() {
+    this.signupService
+      .getBasicDetails(this.customerId)
+      .subscribe((response: any[]) => {});
   }
 
   next(): void {
