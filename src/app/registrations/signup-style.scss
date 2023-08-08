@@ -96,6 +96,7 @@
   height: 95vh;
   overflow-y: auto;
   z-index: 1;
+  overflow-x: hidden;
   //   border-top: 5px solid $red;
   -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
@@ -218,8 +219,7 @@
       }
     }
 
-    &[type="checkbox"]
-    {
+    &[type="checkbox"] {
       border: 0;
       clip: rect(0 0 0 0);
       height: 1px;
@@ -229,7 +229,7 @@
       position: absolute;
       width: 1px;
     }
-    
+
     // &[type="radio"] {
     //   position: absolute;
     //   opacity: 0;
@@ -240,26 +240,26 @@
     // }
   }
 }
-input[type='radio'] {
-  -webkit-appearance:none;
-  width:12px;
-  height:12px;
-  border:1px solid $red;
-  border-radius:50%;
-  outline:none;
+input[type="radio"] {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border: 1px solid $red;
+  border-radius: 50%;
+  outline: none;
   margin-right: 10px;
 }
 
-input[type='radio']:before {
-  content:'';
-  display:block;
-  width:60%;
-  height:60%;
-  margin: 20% auto;    
-  border-radius:50%;    
+input[type="radio"]:before {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 60%;
+  margin: 20% auto;
+  border-radius: 50%;
 }
-input[type='radio']:checked:before {
-  background:$red;
+input[type="radio"]:checked:before {
+  background: $red;
 }
 
 .form_container {
@@ -699,8 +699,7 @@ select::-ms-expand {
   background-size: auto 130px;
   background-position: center;
 }
-.upload
-{
+.upload {
   background: transparent url(../../assets/img/upload.png) no-repeat;
   height: 160px;
   width: 332px;
@@ -863,19 +862,16 @@ input[type="file"] {
 .f-red {
   color: $font_red !important;
 }
-.f-light_gray
-{
+.f-light_gray {
   color: $light_gray;
 }
 .f-black {
   color: $black;
 }
-.f-grey-1
-{
+.f-grey-1 {
   color: $grey-1;
 }
-.bg-grey-1
-{
+.bg-grey-1 {
   background-color: $grey-1;
 }
 .error-message {
@@ -884,7 +880,7 @@ input[type="file"] {
   margin: 10px 0 20px 0;
 }
 
-.alter-input{
+.alter-input {
   height: 65px !important;
 }
 
@@ -893,16 +889,11 @@ $sides: (top, bottom, left, right);
 /* margin/padding class name --> pt-10, mt-10 */
 
 @for $i from 1 through 100 {
-
   @each $side in $sides {
-
     .ma#{str-slice($side, 0, 1)}-#{$i} {
-
       margin-#{$side}: #{$i}rem;
-
     }
   }
-
 }
 .btn-footer {
   position: fixed;
@@ -910,19 +901,18 @@ $sides: (top, bottom, left, right);
   bottom: 8px;
   left: 6%;
 }
-.text-danger
-{
+.text-danger {
   margin: -25px 0px 19px 2px;
   font-size: 12px;
 }
 .did-floating-label-content.required .did-floating-label:after {
-  content:"*";
-  color:red;
+  content: "*";
+  color: red;
   margin-left: 3px;
 }
 
 .red-astrick:after {
-  content: '*';
+  content: "*";
   color: red;
   margin-left: 3px;
 }
