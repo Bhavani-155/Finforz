@@ -280,8 +280,8 @@ input[type='radio']:checked:before {
     &:before {
       content: "";
       display: inline-block;
-      width: 1em;
-      height: 1em;
+      width: 18px;
+      height: 13px;
       margin-right: 1em;
       vertical-align: -2px;
       border: 2px solid $grey;
