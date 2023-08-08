@@ -20,7 +20,7 @@ import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
+    
   ],
   imports: [
     BrowserModule,
