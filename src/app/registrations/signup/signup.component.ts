@@ -69,6 +69,7 @@ export class SignupComponent {
     } else {
       this.markFormGroupAsTouched(this.signupForm);
     }
+    this.next();
   }
   markFormGroupAsTouched(formGroup: FormGroup) {
     Object.values(formGroup.controls).forEach((control) => {

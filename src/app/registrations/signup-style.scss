@@ -915,3 +915,14 @@ $sides: (top, bottom, left, right);
   margin: -25px 0px 19px 2px;
   font-size: 12px;
 }
+.did-floating-label-content.required .did-floating-label:after {
+  content:"*";
+  color:red;
+  margin-left: 3px;
+}
+
+.red-astrick:after {
+  content: '*';
+  color: red;
+  margin-left: 3px;
+}
