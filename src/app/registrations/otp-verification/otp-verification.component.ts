@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { StepperService } from 'src/app/services/stepper.service';
+import { OtpModel } from './otp.model';
 @Component({
   selector: 'app-otp-verification',
   templateUrl: './otp-verification.component.html',
@@ -14,9 +15,11 @@ export class OtpVerificationComponent implements OnInit {
   isVerified: boolean = false;
   time: any;
   canResend: boolean = false;
+  otpModel: OtpModel;
   constructor(public stepperService: StepperService, public router: Router) {}
   ngOnInit() {
     this.timer(2);
+    this.otpModel = new OtpModel()
   }
   tabChange(val: any, listner?: any) {
     let ele: any = document.getElementsByClassName('otp');

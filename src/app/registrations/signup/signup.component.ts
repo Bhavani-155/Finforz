@@ -78,6 +78,7 @@ export class SignupComponent {
       console.log(this.signupForm.value);
       this.signupModel = this.signupForm.value;
       console.log(this.signupModel);
+      this.next();
     }else {
       this.markFormGroupAsTouched(this.signupForm);
     }
