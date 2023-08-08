@@ -10,7 +10,7 @@ export class FinancialInformationComponent {
   constructor(private stepperService : StepperService){}
   next()
   {
-    this.stepperService.next(10);
+    this.stepperService.next(11);
   }
   back()
   {

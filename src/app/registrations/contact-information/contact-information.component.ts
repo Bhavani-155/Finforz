@@ -10,6 +10,6 @@ export class ContactInformationComponent {
   constructor(private stepperService : StepperService){}
   next()
   {
-    this.stepperService.next(9);
+    this.stepperService.next(10);
   }
 }
