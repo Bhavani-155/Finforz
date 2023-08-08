@@ -9,11 +9,8 @@ import {
   ActivatedRoute,
 } from '@angular/router';
 import { ApiServices } from 'src/app/services/auth.service';
-<<<<<<< HEAD
 import { SignupService } from '../services/signup.service';
-=======
 import { SignupModel } from './signup.model';
->>>>>>> f12208a0086b2642321646a50a4d468c4400b2a7
 
 @Component({
   selector: 'app-signup',
@@ -69,12 +66,12 @@ export class SignupComponent {
       console.log(this.signupForm.value);
       this.signupModel = this.signupForm.value;
       console.log(this.signupModel);
-    }else {
+    } else {
       this.markFormGroupAsTouched(this.signupForm);
     }
   }
   markFormGroupAsTouched(formGroup: FormGroup) {
-    Object.values(formGroup.controls).forEach(control => {
+    Object.values(formGroup.controls).forEach((control) => {
       control.markAsTouched();
 
       if (control instanceof FormGroup) {
