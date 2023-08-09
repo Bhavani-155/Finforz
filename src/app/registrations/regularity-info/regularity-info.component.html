@@ -24,7 +24,7 @@
     <div class="select_arrow"></div>
   </div>
   <div *ngIf="regularityForm.get('business').hasError('required') && regularityForm.get('business').touched"
-    class="text-danger">
+    class="cus-margin text-danger">
     Please fill the mandatory field
   </div>
 <div class="did-floating-label-content required response-20 mT-14">
@@ -40,7 +40,7 @@
     <label class="did-floating-label h-font-xs ">Are you or an immediate family member affiliated with or work for a US registered broker-dealer or FINRA? </label>
   </div>
   <div *ngIf="regularityForm.get('finra').hasError('required') && regularityForm.get('finra').touched"
-    class="text-danger">
+    class="cus-margin text-danger">
     Please fill the mandatory field
   </div>
   <div class="did-floating-label-content required response-35 mT-17">
@@ -58,7 +58,7 @@
     </label>
   </div>
   <div *ngIf="regularityForm.get('politically').hasError('required') && regularityForm.get('politically').touched"
-    class="text-danger">
+    class="cus-margin text-danger">
     Please fill the mandatory field
   </div>
   <div class="did-floating-label-content required response-35 mT-17">
@@ -76,7 +76,7 @@
     </label>
   </div>
   <div *ngIf="regularityForm.get('tradedCompany').hasError('required') && regularityForm.get('tradedCompany').touched"
-    class="text-danger">
+    class="cus-margin text-danger mb-4">
     Please fill the mandatory field
   </div>
   <input class="button h-font-xs" type="submit" value="Next" />
