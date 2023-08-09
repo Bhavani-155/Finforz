@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { StepperService } from 'src/app/services/stepper.service';
 import { ValidationHelper } from 'src/app/shared/util/validationhelper';
@@ -34,6 +34,7 @@ export class SignupComponent {
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private apiServices: ApiServices,
+    private renderer: Renderer2,
     private signupService: SignupService
   ) {}
 
@@ -62,7 +63,6 @@ export class SignupComponent {
       isUsCitizen: [this.signupModel.isUsCitizen, Validators.required],
       privacyPolicy: [this.signupModel.privacyPolicy, Validators.required],
     });
-    // this.createRegistartionFormGroup();
     this.route.queryParams.subscribe((params) => {
       if (params['singpass']) {
         this.stepperService.next(7);
@@ -73,23 +73,26 @@ export class SignupComponent {
   getBasicDetails() {
     this.signupService
       .getBasicDetails(this.customerId)
-      .subscribe((response: any[]) => {});
+      .subscribe((response: any[]) => {
+        //bind response to the form
+      });
   }
 
   next(): void {
     this.stepperService.next(2);
   }
+
   onSubmit() {
     if (this.signupForm.valid) {
-      // console.log(this.signupForm.value);
       this.signupModel = this.signupForm.value;
-      // console.log(this.signupModel);
       this.next();
     } else {
       this.markFormGroupAsTouched(this.signupForm);
       this.focusOnInvalidField();
+      this.scrollToFirstInvalidField();
     }
   }
+
   focusOnInvalidField() {
     if (this.signupForm.get('name').invalid) {
       this.nameInput.nativeElement.focus();
@@ -106,11 +109,18 @@ export class SignupComponent {
     }
   }
 
+  scrollToFirstInvalidField() {
+    const firstInvalidField = document.querySelector('.invalid-field');
+    if (firstInvalidField) {
+      firstInvalidField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
   markFormGroupAsTouched(formGroup: FormGroup) {
     Object.values(formGroup.controls).forEach((control) => {
       control.markAsTouched();
-
       if (control instanceof FormGroup) {
+        console.log(control);
         this.markFormGroupAsTouched(control);
       }
     });

@@ -19,7 +19,11 @@ export class OtpVerificationComponent implements OnInit {
   otpModel: OtpModel;
   otpForm: FormGroup;
   // emailOtpForm: FormGroup;
-  constructor(public stepperService: StepperService, public router: Router,public fb : FormBuilder) {}
+  constructor(
+    public stepperService: StepperService,
+    public router: Router,
+    public fb: FormBuilder
+  ) {}
   ngOnInit() {
     this.timer(2);
     this.otpModel = new OtpModel();
@@ -31,16 +35,8 @@ export class OtpVerificationComponent implements OnInit {
       digit3: ['', [Validators.required, Validators.pattern(/^\d$/)]],
       digit4: ['', [Validators.required, Validators.pattern(/^\d$/)]],
       digit5: ['', [Validators.required, Validators.pattern(/^\d$/)]],
-      digit6: ['', [Validators.required, Validators.pattern(/^\d$/)]]
+      digit6: ['', [Validators.required, Validators.pattern(/^\d$/)]],
     });
-    // this.emailOtpForm = this.fb.group({
-    //   email:[this.otpModel.email],
-    //   otp:['',Validators.required],
-    //   digit1: ['', [Validators.required, Validators.pattern(/^\d$/)]],
-    //   digit2: ['', [Validators.required, Validators.pattern(/^\d$/)]],
-    //   digit3: ['', [Validators.required, Validators.pattern(/^\d$/)]],
-    //   digit4: ['', [Validators.required, Validators.pattern(/^\d$/)]]
-    // });
   }
   tabChange(val: any, listner?: any) {
     let ele: any = document.getElementsByClassName('otp');
@@ -115,12 +111,12 @@ export class OtpVerificationComponent implements OnInit {
       this.otpModel = this.otpForm.value;
       console.log(this.otpModel);
       this.verifyOTP();
-    }else {
+    } else {
       this.markFormGroupAsTouched(this.otpForm);
     }
   }
   markFormGroupAsTouched(formGroup: FormGroup) {
-    Object.values(formGroup.controls).forEach(control => {
+    Object.values(formGroup.controls).forEach((control) => {
       control.markAsTouched();
 
       if (control instanceof FormGroup) {

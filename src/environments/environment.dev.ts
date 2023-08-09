@@ -1,7 +1,7 @@
 export const environment = {
   title: 'RTSG',
   production: false,
-  baseUrl: 'https://rtsg.com',
+  baseUrl: 'https://rtsg.com/api/v1',
   logoUrl: '',
   DEMO_APP_SIGNATURE_CERT_PRIVATE_KEY:
     './ssl/stg-demoapp-client-privatekey-2018.pem',
