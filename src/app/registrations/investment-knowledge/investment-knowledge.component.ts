@@ -39,12 +39,6 @@ export class InvestmentKnowledgeComponent {
         previousScore: [this.investmentModel.previousScore, Validators.required],
         financialInstitutions: [this.investmentModel.financialInstitutions, Validators.required],
       });
-     // this.createRegistartionFormGroup();
-    this.route.queryParams.subscribe((params) => {
-      if (params['singpass']) {
-        this.stepperService.next(7);
-      }
-    });
     }
     
   next()

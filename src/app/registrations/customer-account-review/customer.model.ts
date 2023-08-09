@@ -1,13 +1,12 @@
 export class CustomerModel {
     constructor(
-      public name: any,
-      public nationality: any,
-      public countryOfResidence: any,
-      public residencialStatus: any,
-      public refrelCode: any,
-      public mobile: any,
-      public email: any,
-      public isUsCitizen: any,
-      public privacyPolicy: any,
+      public investmentObjective: any,
+      public shareHolder: any,
+      public singaporeBrokerage: any,
+      public specifiedInvestment: any,
+      public higherQualification: any,
+      public financeQualification: any,
+      public workingExperience: any,
+      public educationProgram: any,
     ) {}
   }
