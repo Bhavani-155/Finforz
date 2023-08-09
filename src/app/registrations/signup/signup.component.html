@@ -38,10 +38,10 @@
   <div *ngIf="
       signupForm.get('countryOfResidence').hasError('required') &&
       signupForm.get('countryOfResidence').touched
-    " class="text-danger cus-margin">
+    " class="text-danger cus-margin mb-2">
     Country Of Residence is required.
   </div>
-  <div class="caption">
+  <div>
     <p class="red-astrick">Residential status</p>
     <label class="f-light_gray">
       <input type="radio" name="residencialStatus" value="yes" formControlName="residencialStatus"><b>PR</b>
@@ -79,10 +79,10 @@
     <input class="did-floating-input h-font-xs" type="text" placeholder=" " formControlName="email" />
     <label class="did-floating-label h-font-xs">Email Address</label>
   </div>
-  <div *ngIf="signupForm.get('email').hasError('required') && signupForm.get('email').touched" class="text-danger cus-margin">
+  <div *ngIf="signupForm.get('email').hasError('required') && signupForm.get('email').touched" class="text-danger cus-margin mb-3">
     Email is required.
   </div>
-  <div *ngIf="signupForm.get('email').hasError('email') && signupForm.get('email').touched" class="text-danger cus-margin">
+  <div *ngIf="signupForm.get('email').hasError('email') && signupForm.get('email').touched" class="text-danger cus-margin mb-3">
     Invalid email format.
   </div>
   <div class="caption">
