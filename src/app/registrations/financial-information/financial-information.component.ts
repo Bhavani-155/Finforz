@@ -43,12 +43,6 @@ export class FinancialInformationComponent {
       taxPayer: [this.finanaceModel.taxPayer, Validators.required],
       tinAvailable: [this.finanaceModel.tinAvailable, Validators.required],
     });
-   // this.createRegistartionFormGroup();
-    this.route.queryParams.subscribe((params) => {
-      if (params['singpass']) {
-        this.stepperService.next(7);
-      }
-    });
   }
 
   next(): void {
