@@ -16,8 +16,9 @@ export class SignupService {
       Authorization: `Bearer ${this.token}`,
     }),
   };
+
   baseUrl: any = environment.baseUrl;
-  apiUrl: any = this.baseUrl + '/api/v1/signup';
+  apiUrl: any = this.baseUrl + '/signup';
 
   // get customer basic info
   getBasicDetails(customerId: any) {
