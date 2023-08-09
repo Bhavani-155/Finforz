@@ -11,10 +11,10 @@
     <input class="did-floating-input h-font-xs" formControlName="name" type="text" placeholder="Name" />
     <label class="did-floating-label h-font-xs">Name(as per NRIC/Passport)</label>
   </div>
-  <div *ngIf="signupForm.get('name').hasError('required') && signupForm.get('name').touched" class="text-danger">
+  <div *ngIf="signupForm.get('name').hasError('required') && signupForm.get('name').touched" class="text-danger cus-margin">
     Name is required.
   </div>
-  <div class="did-floating-label-content required">
+  <div class="did-floating-label-content required mt-4">
     <select class="did-floating-input h-font-xs" onclick="this.setAttribute('value', this.value);"
       formControlName="nationality">
       <option value="2">Singapore</option>
@@ -28,7 +28,7 @@
   <div *ngIf="
       signupForm.get('nationality').hasError('required') &&
       signupForm.get('nationality').touched
-    " class="text-danger">
+    " class="text-danger cus-margin">
     Nationality is required.
   </div>
   <div class="did-floating-label-content required mt-4">
@@ -38,8 +38,8 @@
   <div *ngIf="
       signupForm.get('countryOfResidence').hasError('required') &&
       signupForm.get('countryOfResidence').touched
-    " class="text-danger">
-    CountryOfResidence is required.
+    " class="text-danger cus-margin">
+    Country Of Residence is required.
   </div>
   <div class="caption">
     <p class="red-astrick">Residential status</p>
@@ -52,7 +52,7 @@
   <div *ngIf="
       signupForm.get('residencialStatus').hasError('required') &&
       signupForm.get('residencialStatus').touched
-    " class="text-danger mt-3">
+    " class="text-danger cus-margin mt-3">
     Residencial Status is required.
   </div>
   <div class="did-floating-label-content required mt-4">
@@ -62,7 +62,7 @@
   <div *ngIf="
       signupForm.get('refrelCode').hasError('required') &&
       signupForm.get('refrelCode').touched
-    " class="text-danger">
+    " class="text-danger cus-margin">
     RefrelCode is required.
   </div>
   <div class="did-floating-label-content required mt-4">
@@ -72,17 +72,20 @@
   <div *ngIf="
       signupForm.get('mobile').hasError('required') &&
       signupForm.get('mobile').touched
-    " class="text-danger">
+    " class="text-danger cus-margin">
     Mobile Number is required.
   </div>
   <div class="did-floating-label-content required mt-4">
     <input class="did-floating-input h-font-xs" type="text" placeholder=" " formControlName="email" />
     <label class="did-floating-label h-font-xs">Email Address</label>
   </div>
-  <div *ngIf="signupForm.get('email').hasError('required') && signupForm.get('email').touched" class="text-danger">
+  <div *ngIf="signupForm.get('email').hasError('required') && signupForm.get('email').touched" class="text-danger cus-margin">
     Email is required.
   </div>
-  <div class="caption">
+  <div *ngIf="signupForm.get('email').hasError('email') && signupForm.get('email').touched" class="text-danger cus-margin">
+    Invalid email format.
+  </div>
+  <div class="mat-2">
     <p class="red-astrick">US citizen/Resident/Green Card Holder</p>
     <label class="f-light_gray">
       <input type="radio" formControlName="isUsCitizen" name="isUsCitizen" value="yes" /><b>Yes</b>
@@ -92,7 +95,7 @@
   <div *ngIf="
       signupForm.get('isUsCitizen').hasError('required') &&
       signupForm.get('isUsCitizen').touched
-    " class="text-danger mt-3">
+    " class="text-danger cus-margin mt-3">
     Us Citizen is required.
   </div>
 
@@ -104,7 +107,7 @@
   <div *ngIf="
       signupForm.get('privacyPolicy').hasError('required') &&
       signupForm.get('privacyPolicy').touched
-    " class="text-danger mt-0">
+    " class="text-danger cus-margin mt-0 mb-3">
     Please Agree Privacy and Policy.
   </div>
   
