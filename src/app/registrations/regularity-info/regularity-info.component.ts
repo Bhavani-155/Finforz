@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { StepperService } from 'src/app/services/stepper.service';
 
 @Component({
@@ -6,8 +7,13 @@ import { StepperService } from 'src/app/services/stepper.service';
   templateUrl: './regularity-info.component.html',
   styleUrls: ['./regularity-info.component.scss']
 })
-export class RegularityInfoComponent {
-  constructor(private stepperService : StepperService){}
+export class RegularityInfoComponent implements OnInit {
+  constructor(
+    private stepperService : StepperService,
+    public fb : FormBuilder
+    ){}
+  ngOnInit() {
+  }
   next()
   {
     this.stepperService.next(16);
