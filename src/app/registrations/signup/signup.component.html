@@ -67,7 +67,7 @@
       signupForm.get('countryOfResidence').hasError('required') &&
       signupForm.get('countryOfResidence').touched
     "
-    class="text-danger cus-margin"
+    class="text-danger cus-margin mb-2"
   >
     Country Of Residence is required.
   </div>
@@ -109,9 +109,7 @@
   </div>
   <div
     *ngIf="
-      signupForm.get('refrelCode').hasError('required') &&
-      signupForm.get('refrelCode').touched
-    "
+      signupForm.get('refrelCode').hasError('required') &&  signupForm.get('refrelCode').touched"
     class="text-danger cus-margin"
   >
     RefrelCode is required.
@@ -119,7 +117,7 @@
   <div class="did-floating-label-content required mt-4">
     <input
       class="did-floating-input h-font-xs"
-      type="text"
+      type="number"
       placeholder=" "
       formControlName="mobile"
     />
@@ -148,7 +146,7 @@
       signupForm.get('email').hasError('required') &&
       signupForm.get('email').touched
     "
-    class="text-danger cus-margin"
+    class="text-danger cus-margin mb-2"
   >
     Email is required.
   </div>
@@ -157,7 +155,7 @@
       signupForm.get('email').hasError('email') &&
       signupForm.get('email').touched
     "
-    class="text-danger cus-margin"
+    class="text-danger cus-margin mb-2"
   >
     Invalid email format.
   </div>

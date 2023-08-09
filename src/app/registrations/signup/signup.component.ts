@@ -58,7 +58,7 @@ export class SignupComponent {
       mobile: [this.signupModel.mobile, Validators.required],
       email: [
         this.signupModel.email,
-        [Validators.required, Validators.email, Validators.email],
+        [Validators.required, Validators.email],
       ],
       isUsCitizen: [this.signupModel.isUsCitizen, Validators.required],
       privacyPolicy: [this.signupModel.privacyPolicy, Validators.required],
@@ -94,19 +94,25 @@ export class SignupComponent {
   }
 
   focusOnInvalidField() {
-    if (this.signupForm.get('name').invalid) {
-      this.nameInput.nativeElement.focus();
-    } else if (this.signupForm.get('nationality').invalid) {
-      this.nationality.nativeElement.focus();
-    } else if (this.signupForm.get('countryOfResidence').invalid) {
-      this.countryOfResidence.nativeElement.focus();
-    } else if (this.signupForm.get('refrelCode').invalid) {
-      this.refrelCode.nativeElement.focus();
-    } else if (this.signupForm.get('mobile').invalid) {
-      this.mobile.nativeElement.focus();
-    } else if (this.signupForm.get('email').invalid) {
-      this.email.nativeElement.focus();
-    }
+    // if (this.signupForm.get('name').invalid) {
+    //   this.nameInput.nativeElement.focus();
+    // } else if (this.signupForm.get('nationality').invalid) {
+    //   this.nationality.nativeElement.focus();
+    // } else if (this.signupForm.get('countryOfResidence').invalid) {
+    //   this.countryOfResidence.nativeElement.focus();
+    // } else if (this.signupForm.get('refrelCode').invalid) {
+    //   this.refrelCode.nativeElement.focus();
+    // } else if (this.signupForm.get('mobile').invalid) {
+    //   this.mobile.nativeElement.focus();
+    // } else if (this.signupForm.get('email').invalid) {
+    //   this.email.nativeElement.focus();
+    // }
+    // this.nameInput.nativeElement.focus();
+    // this.nationality.nativeElement.focus();
+    // this.countryOfResidence.nativeElement.focus();
+    // this.refrelCode.nativeElement.focus();
+    // this.mobile.nativeElement.focus();
+    // this.email.nativeElement.focus();
   }
 
   scrollToFirstInvalidField() {

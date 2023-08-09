@@ -47,7 +47,7 @@ export class OtpVerificationComponent implements OnInit {
         ele[val - 2].focus();
       }
     } else if (ele[val - 1].value != '' && ele[val - 1].value) {
-      ele[val].focus();
+      val < 6 ? ele[val].focus() : '';
     } else if (ele[val - 1].value && ele[val - 1].value == '') {
       ele[val - 2].focus();
     }
