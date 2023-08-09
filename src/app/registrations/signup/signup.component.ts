@@ -54,7 +54,7 @@ export class SignupComponent {
         Validators.required,
       ],
       refrelCode: [this.signupModel.refrelCode, Validators.required],
-      mobile: [this.signupModel.mobile, Validators.required , Validators.minLength(10)],
+      mobile: [this.signupModel.mobile, Validators.required],
       email: [
         this.signupModel.email,
         [Validators.required, Validators.email],
