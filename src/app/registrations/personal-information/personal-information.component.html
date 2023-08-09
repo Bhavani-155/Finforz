@@ -44,7 +44,7 @@
   </div>
 
   <div class="did-floating-label-content required">
-    <input [ngClass]="{'did-floating-input': floatdata, 'alter-input': alterdata}" type="text"
+    <input class="did-floating-input alter-input" type="text"
     formControlName="idDocNo" placeholder=" " />
     <label class="did-floating-label h-font-xs">NRIC / Identification Document No. (Passport)</label>
     <div *ngIf="personalInfoForm.get('idDocNo').hasError('required') && personalInfoForm.get('idDocNo').touched" class="text-danger cus-margin">

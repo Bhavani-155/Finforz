@@ -44,7 +44,7 @@
   <h4 class="f-red">Financial Assessment</h4>
 
   <div class="did-floating-label-content">
-    <select [ngClass]="{'did-floating-input': floatdata, 'alter-input': alterdata}" onclick="this.setAttribute('value', this.value);" formControlName="usResident">
+    <select class="did-floating-input" onclick="this.setAttribute('value', this.value);" formControlName="usResident">
       <option>Yes</option>
       <option>No</option>
     </select>
@@ -77,7 +77,7 @@
     Taxpayer Identification Number is required.
   </div>
   <div class="did-floating-label-content">
-    <select class="did-floating-input" onclick="this.setAttribute('value', this.value);" formControlName="tinAvailable">
+    <select class="did-floating-input alter-input" onclick="this.setAttribute('value', this.value);" formControlName="tinAvailable">
       <option>1XXXX23</option>
       <option>1XXXX24</option>
       <option>1XXXX25</option>

@@ -24,11 +24,11 @@ export class ContactInformationComponent {
       state: [this.contactInfoModel.state, Validators.required],
       city: [this.contactInfoModel.city, Validators.required],
       postal_zipcode: [this.contactInfoModel.postal_zipcode, Validators.required],
-      mailSameAsPermanent: [this.contactInfoModel.mailSameAsPermanent, Validators.required],
+      mailSameAsPermanent: [this.contactInfoModel.mailSameAsPermanent],
       mailAddress: [this.contactInfoModel.mailAddress, Validators.required],
       mailState: [this.contactInfoModel.mailState, Validators.required],
       mailCity: [this.contactInfoModel.mailCity, Validators.required],
-      mailPostal_zipcode: [this.contactInfoModel.mailPostal_zipcode, [Validators.required, Validators.email]],
+      mailPostal_zipcode: [this.contactInfoModel.mailPostal_zipcode, [Validators.required]],
     });
   }
   next() {
@@ -46,16 +46,28 @@ export class ContactInformationComponent {
       this.contactInfoForm.controls["mailState"].updateValueAndValidity();
       this.contactInfoForm.controls["mailCity"].updateValueAndValidity();
       this.contactInfoForm.controls["mailPostal_zipcode"].updateValueAndValidity();
+
+      console.log(this.contactInfoForm.value);
+      
   
       this.contactInfoForm.controls['mailAddress'].disable();
       this.contactInfoForm.controls['mailState'].disable();
       this.contactInfoForm.controls['mailCity'].disable();
       this.contactInfoForm.controls['mailPostal_zipcode'].disable();
   }else{
-    this.contactInfoForm.controls['mailAddress'].setValue('');
+      this.contactInfoForm.controls['mailAddress'].setValue('');
       this.contactInfoForm.controls['mailState'].setValue('')
       this.contactInfoForm.controls['mailCity'].setValue('')
       this.contactInfoForm.controls['mailPostal_zipcode'].setValue('')
+      this.contactInfoForm.controls["mailAddress"].updateValueAndValidity();
+      this.contactInfoForm.controls["mailState"].updateValueAndValidity();
+      this.contactInfoForm.controls["mailCity"].updateValueAndValidity();
+      this.contactInfoForm.controls["mailPostal_zipcode"].updateValueAndValidity();
+            
+      this.contactInfoForm.controls['mailAddress'].reset({ value: '', disabled: false });
+      this.contactInfoForm.controls['mailState'].reset({ value: '', disabled: false });
+      this.contactInfoForm.controls['mailCity'].reset({ value: '', disabled: false });
+      this.contactInfoForm.controls['mailPostal_zipcode'].reset({ value: '', disabled: false });
       this.contactInfoForm.controls["mailAddress"].updateValueAndValidity();
       this.contactInfoForm.controls["mailState"].updateValueAndValidity();
       this.contactInfoForm.controls["mailCity"].updateValueAndValidity();
@@ -73,10 +85,14 @@ editVAlues(event){
 }
   onSubmit() {
     console.log("submit call");
+    if(!this.contactInfoForm.controls["mailSameAsPermanent"]?.value){
+      this.contactInfoForm.controls["mailSameAsPermanent"].setValue(false);
+       this.contactInfoForm.controls["mailSameAsPermanent"].updateValueAndValidity();
+       }
     console.log(this.contactInfoForm.value);
     
    console.log(this.contactInfoForm.valid)
-
+  
     if (this.contactInfoForm.valid) {
       console.log(this.contactInfoForm.value);
       this.contactInfoModel = this.contactInfoForm.value;

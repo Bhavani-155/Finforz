@@ -24,8 +24,6 @@ export class PersonalInformationComponent {
   authCodeForPersonAPI: any;
   personData: any = [];
   formValues: any = {};
-  floatdata: boolean = true;
-  alterdata: boolean = true;
   personalInfo: PersonalInfoModel;
   formBuilder: any;
   showSpouseInfo: boolean = false;
