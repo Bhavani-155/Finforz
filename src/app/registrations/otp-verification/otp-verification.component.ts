@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { StepperService } from 'src/app/services/stepper.service';
 import { OtpModel } from './otp.model';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-otp-verification',
   templateUrl: './otp-verification.component.html',
@@ -16,10 +17,30 @@ export class OtpVerificationComponent implements OnInit {
   time: any;
   canResend: boolean = false;
   otpModel: OtpModel;
-  constructor(public stepperService: StepperService, public router: Router) {}
+  otpForm: FormGroup;
+  // emailOtpForm: FormGroup;
+  constructor(public stepperService: StepperService, public router: Router,public fb : FormBuilder) {}
   ngOnInit() {
     this.timer(2);
-    this.otpModel = new OtpModel()
+    this.otpModel = new OtpModel();
+    this.otpModel.phone = '9087654321';
+    this.otpModel.email = 'xyz@gmail.com';
+    this.otpForm = this.fb.group({
+      digit1: ['', [Validators.required, Validators.pattern(/^\d$/)]],
+      digit2: ['', [Validators.required, Validators.pattern(/^\d$/)]],
+      digit3: ['', [Validators.required, Validators.pattern(/^\d$/)]],
+      digit4: ['', [Validators.required, Validators.pattern(/^\d$/)]],
+      digit5: ['', [Validators.required, Validators.pattern(/^\d$/)]],
+      digit6: ['', [Validators.required, Validators.pattern(/^\d$/)]]
+    });
+    // this.emailOtpForm = this.fb.group({
+    //   email:[this.otpModel.email],
+    //   otp:['',Validators.required],
+    //   digit1: ['', [Validators.required, Validators.pattern(/^\d$/)]],
+    //   digit2: ['', [Validators.required, Validators.pattern(/^\d$/)]],
+    //   digit3: ['', [Validators.required, Validators.pattern(/^\d$/)]],
+    //   digit4: ['', [Validators.required, Validators.pattern(/^\d$/)]]
+    // });
   }
   tabChange(val: any, listner?: any) {
     let ele: any = document.getElementsByClassName('otp');
@@ -41,6 +62,7 @@ export class OtpVerificationComponent implements OnInit {
   verifyOTP() {
     this.isVerified = true;
     clearInterval(this.time);
+    this.otpForm.reset();
     this.timer(2);
     if (this.currentTab == 'mobile') {
       this.next();
@@ -86,5 +108,24 @@ export class OtpVerificationComponent implements OnInit {
   }
   next() {
     this.stepperService.next(3);
+  }
+  onSubmit() {
+    if (this.otpForm.valid) {
+      console.log(this.otpForm.value);
+      this.otpModel = this.otpForm.value;
+      console.log(this.otpModel);
+      this.verifyOTP();
+    }else {
+      this.markFormGroupAsTouched(this.otpForm);
+    }
+  }
+  markFormGroupAsTouched(formGroup: FormGroup) {
+    Object.values(formGroup.controls).forEach(control => {
+      control.markAsTouched();
+
+      if (control instanceof FormGroup) {
+        this.markFormGroupAsTouched(control);
+      }
+    });
   }
 }
