@@ -44,7 +44,7 @@
   <h4 class="f-red">Financial Assessment</h4>
 
   <div class="did-floating-label-content">
-    <select class="did-floating-input" onclick="this.setAttribute('value', this.value);" formControlName="usResident">
+    <select [ngClass]="{'did-floating-input': floatdata, 'alter-input': alterdata}" onclick="this.setAttribute('value', this.value);" formControlName="usResident">
       <option>Yes</option>
       <option>No</option>
     </select>

@@ -14,6 +14,8 @@ export class FinancialInformationComponent {
   financeForm: FormGroup;
   finanaceModel: FinanaceModel
   formBuilder: any;
+  floatdata: boolean = true;
+  alterdata: boolean = true;
 
   constructor(
     private stepperService: StepperService,
