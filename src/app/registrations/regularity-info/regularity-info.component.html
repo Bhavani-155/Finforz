@@ -1,7 +1,8 @@
 <div>
     <h4 class="f-red">Regularity Information</h4>
 </div>
-<div class="grey-bold mt-3">Are you involved in the  business of or employed by the following activities or employers?
+<form [formGroup]="regularityForm" (ngSubmit)="onSubmit()">
+<div class="grey-bold red-astrick  mt-3">Are you involved in the  business of or employed by the following activities or employers?
 </div>
 <ul class="grey">
     <li>Money changers, remittance agents or pawn brokers</li>
@@ -11,10 +12,10 @@
     <li>Arms or weapon dealing</li>
     <li>Night clubs</li>
 </ul>
-<div class="did-floating-label-content response-35">
+<div class="did-floating-label-content  response-35">
     <select
       class="did-floating-input"
-      onclick="this.setAttribute('value', this.value);"
+      onclick="this.setAttribute('value', this.value);"  formControlName="business" 
       value=""
     >
       <option>Yes</option>
@@ -22,10 +23,14 @@
     </select>
     <div class="select_arrow"></div>
   </div>
-<div class="did-floating-label-content response-20 mT-14">
+  <div *ngIf="regularityForm.get('business').hasError('required') && regularityForm.get('business').touched"
+    class="cus-margin text-danger">
+    Please fill the mandatory field
+  </div>
+<div class="did-floating-label-content required response-20 mT-14">
     <select
       class="did-floating-input"
-      onclick="this.setAttribute('value', this.value);"
+      onclick="this.setAttribute('value', this.value);" formControlName="finra" 
       value=""
     >
       <option>Yes</option>
@@ -34,10 +39,14 @@
     <div class="select_arrow"></div>
     <label class="did-floating-label h-font-xs ">Are you or an immediate family member affiliated with or work for a US registered broker-dealer or FINRA? </label>
   </div>
-  <div class="did-floating-label-content response-35 mT-17">
+  <div *ngIf="regularityForm.get('finra').hasError('required') && regularityForm.get('finra').touched"
+    class="cus-margin text-danger">
+    Please fill the mandatory field
+  </div>
+  <div class="did-floating-label-content required response-35 mT-17">
     <select
       class="did-floating-input"
-      onclick="this.setAttribute('value', this.value);"
+      onclick="this.setAttribute('value', this.value);" formControlName="politically"
       value=""
     >
       <option>Yes</option>
@@ -48,10 +57,14 @@
         Are you or an immediate family currently or formally a politically exposed person or a public official or are you a close associate of such person? 
     </label>
   </div>
-  <div class="did-floating-label-content response-35 mT-17">
+  <div *ngIf="regularityForm.get('politically').hasError('required') && regularityForm.get('politically').touched"
+    class="cus-margin text-danger">
+    Please fill the mandatory field
+  </div>
+  <div class="did-floating-label-content required response-35 mT-17">
     <select
       class="did-floating-input"
-      onclick="this.setAttribute('value', this.value);"
+      onclick="this.setAttribute('value', this.value);" formControlName="tradedCompany"
       value=""
     >
       <option>Yes</option>
@@ -62,22 +75,9 @@
         Are you or an immediate family member a senior executive of or a 10% or greater share holder of a publicly traded company? 
     </label>
   </div>
-  <!-- <div class="row">
-    <div class="col-6">
-      <button class="btn btn-block mt-4 mb-4 cancelBtn" (click)="back()">
-        Complete Later
-      </button>
-    </div>
-    <div class="col-6">
-      <button
-        class="btn btn-primary btn-block mt-4 mb-4 customBtn h-font-xs"
-        (click)="next()"
-      >
-        Next Step
-        <i class="bi bi-arrow-right-short"></i>
-      </button>
-    </div>
-  </div> -->
-  <button class="btn btn-primary mt-4 mb-4 customBtn h-font-xs width-100" (click)="next()">
-    Next Step <i class="bi bi-arrow-right-short"></i>
-  </button>
+  <div *ngIf="regularityForm.get('tradedCompany').hasError('required') && regularityForm.get('tradedCompany').touched"
+    class="cus-margin text-danger mb-4">
+    Please fill the mandatory field
+  </div>
+  <input class="button h-font-xs" type="submit" value="Next" />
+</form>
