@@ -607,6 +607,14 @@ select.did-floating-select::-ms-expand {
   font-size: 13px;
 }
 
+select:focus {
+  -webkit-box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
+  -moz-box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
+  box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
+  border: 1px solid $red;
+  background: $white;
+}
+
 .did-floating-select:not([multiple]):not([size]) {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='6' viewBox='0 0 8 6'%3E%3Cpath id='Path_1' data-name='Path 1' d='M371,294l4,6,4-6Z' transform='translate(-371 -294)' fill='%23003d71'/%3E%3C/svg%3E%0A");
   background-position: right 15px top 50%;
@@ -901,12 +909,10 @@ $sides: (top, bottom, left, right);
   bottom: 8px;
   left: 6%;
 }
-.text-danger
-{
+.text-danger {
   font-size: 12px;
 }
-.cus-margin
-{
+.cus-margin {
   margin: -25px 0px -12px 2px;
 }
 .did-floating-label-content.required .did-floating-label:after {
