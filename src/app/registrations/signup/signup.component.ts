@@ -31,16 +31,16 @@ export class SignupComponent {
   ) {}
 
   customerId: any = '1234321';
-  registerForm: FormGroup;
+  // registerForm: FormGroup;
 
-  createRegistartionFormGroup() {
-    this.registerForm = this.fb.group({
-      nric: [
-        '',
-        [ValidationHelper.onlySpaceValidator, ValidationHelper.required],
-      ],
-    });
-  }
+  // createRegistartionFormGroup() {
+  //   this.registerForm = this.fb.group({
+  //     nric: [
+  //       '',
+  //       [ValidationHelper.onlySpaceValidator, ValidationHelper.required],
+  //     ],
+  //   });
+  // }
 
   ngOnInit() {
     this.signupModel = new SignupModel('','','','','','','','',''); // Initialize the user model with default values
@@ -52,11 +52,11 @@ export class SignupComponent {
       residencialStatus: [this.signupModel.residencialStatus, Validators.required],
       refrelCode: [this.signupModel.refrelCode, Validators.required],
       mobile: [this.signupModel.mobile, Validators.required],
-      email: [this.signupModel.email, [Validators.required, Validators.email]],
+      email: [this.signupModel.email, [Validators.required, Validators.email,Validators.email]],
       isUsCitizen: [this.signupModel.isUsCitizen, Validators.required],
       privacyPolicy: [this.signupModel.privacyPolicy, Validators.required],
     });
-    this.createRegistartionFormGroup();
+    // this.createRegistartionFormGroup();
     this.route.queryParams.subscribe((params) => {
       if (params['singpass']) {
         this.stepperService.next(7);

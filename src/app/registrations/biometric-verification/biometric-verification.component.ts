@@ -1,9 +1,11 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { StepperService } from 'src/app/services/stepper.service';
 import { Subject, Observable } from 'rxjs';
 import { WebcamImage, WebcamInitError, WebcamUtil } from 'ngx-webcam';
 import { CameraOptions, CameraResultType } from '@capacitor/camera';
 import { Plugins } from '@capacitor/core';
+import { BiometricModel } from './biometric-verification.model';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 const { Camera } = Plugins;
 @Component({
@@ -11,7 +13,7 @@ const { Camera } = Plugins;
   templateUrl: './biometric-verification.component.html',
   styleUrls: ['./biometric-verification.component.scss'],
 })
-export class BiometricVerificationComponent {
+export class BiometricVerificationComponent implements OnInit {
   isCameraOpen: boolean = false;
   isPictureCaptured: boolean = false;
   documentUpload: boolean = true;
@@ -28,8 +30,9 @@ export class BiometricVerificationComponent {
   selfi: boolean = false;
   capture: boolean = true;
   retake: boolean = false;
-
-  constructor(private stepperService: StepperService) {}
+  biometricModel: BiometricModel;
+  biometricForm: FormGroup;
+  constructor(private stepperService: StepperService,private fb : FormBuilder) { }
 
   docFront: any = 'File Name';
   docBack: any = 'File Name';
@@ -44,7 +47,18 @@ export class BiometricVerificationComponent {
 
   @ViewChild('videoElement') videoElement!: ElementRef;
   @ViewChild('canvasElement') canvasElement!: ElementRef;
-
+  
+  ngOninit()
+  {
+    this.biometricModel = new BiometricModel('','','');
+    this.biometricForm = this.fb.group(
+      {
+        docFront : ['',Validators.required],
+        docBack : ['',Validators.required],
+        selfie : ['',Validators.required]
+      }
+    )
+  }
   back() {
     this.stepperService.next(1);
   }
@@ -54,9 +68,9 @@ export class BiometricVerificationComponent {
 
   onFileSelected(event: any, type: any) {
     if (type == 'docFront') {
-      this.docFront = event.target.files[0].name;
+      this.biometricForm.controls['docFront'] = event.target.files[0].name;
     } else if (type == 'docBack') {
-      this.docBack = event.target.files[0].name;
+      this.biometricForm.controls['docBack'] = event.target.files[0].name;
     }
   }
   startCamera() {
