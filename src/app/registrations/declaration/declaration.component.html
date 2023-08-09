@@ -11,7 +11,7 @@
         </label>
     </div>
     <div *ngIf="declarationForm.get('fatcaDeclaration').hasError('required') && declarationForm.get('fatcaDeclaration').touched"
-    class="text-danger">
+    class="mt-2 text-danger">
     Please fill the mandatory field
   </div>
     <div class="mat-2">
@@ -22,7 +22,7 @@
         </label>
     </div>
     <div *ngIf="declarationForm.get('pepDeclaration').hasError('required') && declarationForm.get('pepDeclaration').touched"
-    class="text-danger">
+    class="mt-2 text-danger">
     Please fill the mandatory field
   </div>
     <div  class="mat-2">
@@ -33,7 +33,7 @@
         </label>
     </div>
     <div *ngIf="declarationForm.get('usTax').hasError('required') && declarationForm.get('usTax').touched"
-    class="text-danger">
+    class="mt-2 text-danger">
     Please fill the mandatory field
   </div>
     <div  class="mat-2">
@@ -44,7 +44,7 @@
         </label>
     </div>
     <div *ngIf="declarationForm.get('disclosure').hasError('required') && declarationForm.get('disclosure').touched"
-    class="text-danger">
+    class="mt-2 text-danger">
     Please fill the mandatory field
   </div>
     <div  class="mat-2">
@@ -55,7 +55,7 @@
         </label>
     </div>
     <div *ngIf="declarationForm.get('foreign').hasError('required') && declarationForm.get('foreign').touched"
-    class="text-danger">
+    class="mt-2 text-danger">
     Please fill the mandatory field
   </div>
     <!-- <div class="terms-and-conditions mat-2">
@@ -70,7 +70,7 @@
       <div *ngIf="
       declarationForm.get('termsConditions').hasError('required') &&
       declarationForm.get('termsConditions').touched
-    " class="text-danger cus-margin mt-0 mb-3">
+    " class="mt-2 text-danger cus-margin mt-0 mb-3">
     Please Agree Terms & Conditions.
   </div>
   <input class="button mat-3 h-font-xs" type="submit" value="Next" />
