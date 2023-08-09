@@ -41,7 +41,7 @@
     " class="text-danger">
     CountryOfResidence is required.
   </div>
-  <div class="mat-2">
+  <div class="caption">
     <p class="red-astrick">Residential status</p>
     <label class="f-light_gray">
       <input type="radio" name="residencialStatus" value="yes" formControlName="residencialStatus"><b>PR</b>
@@ -82,7 +82,7 @@
   <div *ngIf="signupForm.get('email').hasError('required') && signupForm.get('email').touched" class="text-danger">
     Email is required.
   </div>
-  <div class="mat-2">
+  <div class="caption">
     <p class="red-astrick">US citizen/Resident/Green Card Holder</p>
     <label class="f-light_gray">
       <input type="radio" formControlName="isUsCitizen" name="isUsCitizen" value="yes" /><b>Yes</b>

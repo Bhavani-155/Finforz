@@ -1,55 +1,62 @@
 <div>
-    <h4 class="f-red">Financial Information</h4>
-  </div>
+  <h4 class="f-red">Financial Information</h4>
+</div>
+<form [formGroup]="financeForm" (ngSubmit)="onSubmit()">
   <div class="did-floating-label-content mt-4">
-    <input class="did-floating-input" type="text" placeholder=" " />
+    <input class="did-floating-input" type="text" formControlName="employer" placeholder=" " />
     <label class="did-floating-label h-font-xs">Name of Your Employer</label>
   </div>
+  <div *ngIf="financeForm.get('employer').hasError('required') && financeForm.get('employer').touched"
+    class="text-danger">
+    Name of Your Employer is required.
+  </div>
   <div class="did-floating-label-content mt-4">
-    <input class="did-floating-input" type="text" placeholder=" " />
+    <input class="did-floating-input" type="text" formControlName="address" placeholder=" " />
     <label class="did-floating-label h-font-xs">Address of Employer</label>
   </div>
+  <div *ngIf="financeForm.get('address').hasError('required') && financeForm.get('address').touched"
+    class="text-danger">
+    Address of Employer is required.
+  </div>
   <div class="did-floating-label-content">
-    <select
-      class="did-floating-input"
-      onclick="this.setAttribute('value', this.value);"
-      value=""
-    >
+    <select class="did-floating-input" onclick="this.setAttribute('value', this.value);"
+      formControlName="employementSector">
       <option value="2">Marketing</option>
-  
       <option value="1">IT Sector</option>
       <option value="3">Medical</option>
     </select>
     <div class="select_arrow"></div>
     <label class="did-floating-label h-font-xs">Employment Sector</label>
   </div>
- 
+  <div *ngIf="financeForm.get('employementSector').hasError('required') && financeForm.get('employementSector').touched"
+    class="text-danger">
+    Employment Sector is required.
+  </div>
+
   <div class="did-floating-label-content mt-4">
-    <input class="did-floating-input" type="text" placeholder=" " />
+    <input class="did-floating-input" type="text" formControlName="monthlyIncome" placeholder=" " />
     <label class="did-floating-label h-font-xs">Monthly Income</label>
   </div>
+  <div *ngIf="financeForm.get('monthlyIncome').hasError('required') && financeForm.get('monthlyIncome').touched"
+    class="text-danger">
+    Monthly Income is required.
+  </div>
   <h4 class="f-red">Financial Assessment</h4>
- 
+
   <div class="did-floating-label-content">
-    <select
-      class="did-floating-input"
-      onclick="this.setAttribute('value', this.value);"
-      value=""
-    >
-      <option value="2">Yes</option>
-  
-      <option value="1">No</option>
+    <select class="did-floating-input" onclick="this.setAttribute('value', this.value);" formControlName="usResident">
+      <option>Yes</option>
+      <option>No</option>
     </select>
     <div class="select_arrow"></div>
     <label class="did-floating-label h-font-xs">Are you a US resident, citizen or green card holder?</label>
   </div>
-  
+  <div *ngIf="financeForm.get('usResident').hasError('required') && financeForm.get('usResident').touched"
+    class="text-danger">
+    Monthly Income is required.
+  </div>
   <div class="did-floating-label-content">
-    <select
-      class="did-floating-input"
-      onclick="this.setAttribute('value', this.value);"
-      value=""
-    >
+    <select class="did-floating-input" onclick="this.setAttribute('value', this.value);" formControlName="selectCountry">
       <option>India</option>
       <option>Singapore</option>
       <option>USA</option>
@@ -57,16 +64,20 @@
     <div class="select_arrow"></div>
     <label class="did-floating-label h-font-xs">Select your country/ region of residence </label>
   </div>
+  <div *ngIf="financeForm.get('selectCountry').hasError('required') && financeForm.get('selectCountry').touched"
+    class="text-danger">
+    Select your country is required.
+  </div>
   <div class="did-floating-label-content mt-4">
-    <input class="did-floating-input" type="text" placeholder=" " />
+    <input class="did-floating-input" type="text" formControlName="taxPayer" placeholder=" " />
     <label class="did-floating-label h-font-xs">Taxpayer Identification Number (TIN)</label>
   </div>
+  <div *ngIf="financeForm.get('taxPayer').hasError('required') && financeForm.get('taxPayer').touched"
+    class="text-danger">
+    Taxpayer Identification Number is required.
+  </div>
   <div class="did-floating-label-content">
-    <select
-      class="did-floating-input"
-      onclick="this.setAttribute('value', this.value);"
-      value=""
-    >
+    <select class="did-floating-input" onclick="this.setAttribute('value', this.value);" formControlName="tinAvailable">
       <option>1XXXX23</option>
       <option>1XXXX24</option>
       <option>1XXXX25</option>
@@ -74,9 +85,10 @@
     <div class="select_arrow"></div>
     <label class="did-floating-label h-font-xs">Please select the reason code if TIN is not available </label>
   </div>
-  
-  <!-- Rest of the Step 1 form fields -->
-  <button class="btn btn-primary mt-4 mb-4 customBtn h-font-xs width-100" (click)="next()">
-    Next Step <i class="bi bi-arrow-right-short"></i>
-  </button>
-  
+  <div *ngIf="financeForm.get('tinAvailable').hasError('required') && financeForm.get('tinAvailable').touched"
+    class="text-danger">
+    Select the reason code is required.
+  </div>
+
+  <input class="button h-font-xs" type="submit"  value="Next" />
+</form>
