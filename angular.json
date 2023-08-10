@@ -97,7 +97,7 @@
               "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "src/styles.scss",
-              "src/app/registrations/signup-style.scss",
+              "src/app/registration/signup-style.scss",
               {
                 "input": "node_modules/@ionic/angular/css/core.css"
               },

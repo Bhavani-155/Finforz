@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
-  // {
-  // path: '',
-  //   loadChildren: () => import('./registration/signup-details/basic-details/registration-routing.module').then(m => m.RegisterRoutingModule)
-  // },
+  { path: '', component: LayoutComponent },
+  ,
   {
-    path: '',
-      loadChildren: () => import('./registrations/registration-routing.module').then(m => m.RegistrationRoutingModule)}
+    path: 'registration',
+    loadChildren: () =>
+      import('./registration/registration-routing.module').then(
+        (m) => m.RegistrationRoutingModule
+      ),
+  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

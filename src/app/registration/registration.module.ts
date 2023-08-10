@@ -23,7 +23,7 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { PasswordComponent } from './password/password.component';
 import { DeclarationComponent } from './declaration/declaration.component';
-import { BankDetailsComponent } from './bank-details/bank-details.component';
+import { BankDetailsComponent } from './bank-detail/bank-details.component';
 import { CustomerAccountReviewComponent } from './customer-account-review/customer-account-review.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { QrUploadDocumentComponent } from './qr-upload-document/qr-upload-document.component';

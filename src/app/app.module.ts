@@ -8,7 +8,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { RegistrationModule } from './registrations/registration.module';
+import { RegistrationModule } from './registration/registration.module';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
@@ -16,12 +16,10 @@ import { IonicStorageModule } from '@ionic/storage-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared-component/shared.module';
 import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions/ngx';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    
-  ],
+  declarations: [AppComponent, LayoutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -38,7 +36,7 @@ import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions
     // SwipeModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [AndroidPermissions],
   bootstrap: [AppComponent],

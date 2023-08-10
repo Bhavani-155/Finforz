@@ -28,11 +28,9 @@ export class ModalContentComponent {
     }
   }
 
- 
-
   navigate() {
     this.doHide();
-    this.router.navigateByUrl('/signUp');
+    this.router.navigateByUrl('/registration/signUp');
   }
 
   doHide() {
@@ -107,7 +105,7 @@ export class ModalContentComponent {
 //   constructor(
 //     private modalService: BsModalService,
 //   ) {
-   
+
 //   }
 //   ngOnInit() {
 //     // Open the modal when the component loads
