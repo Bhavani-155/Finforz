@@ -13,40 +13,40 @@
       <form [formGroup]="otpForm" (ngSubmit)="onSubmit()" class="mt-2">
       <input
         class="otp mx-2"
-        type="number"
+        type="number" (keypress)="enterOTP($event)"
         (keydown.backspace)="tabChange(1,'backspace')"
         (input)="otpChange($event,1)" formControlName="digit1" onpaste="return false"
       />
       <input
         class="otp mx-2"
-        type="number"
+        type="number" (keypress)="enterOTP($event)"
         (input)="otpChange($event,2)" (keydown.backspace)="tabChange(2,'backspace')" formControlName="digit2" onpaste="return false"
       />
       <input
         class="otp mx-2"
-        type="number"
+        type="number" (keypress)="enterOTP($event)"
         (input)="otpChange($event,3)" (keydown.backspace)="tabChange(3,'backspace')" formControlName="digit3" onpaste="return false"
       />
       <input
         class="otp mx-2"
-        type="number"
+        type="number" (keypress)="enterOTP($event)"
         (input)="otpChange($event,4)" (keydown.backspace)="tabChange(4,'backspace')" formControlName="digit4" onpaste="return false"
       />
       <input
         class="otp mx-2"
-        type="number"
+        type="number" (keypress)="enterOTP($event)"
         (input)="otpChange($event,5)" (keydown.backspace)="tabChange(5,'backspace')" formControlName="digit5" onpaste="return false"
       />
       <input
         class="otp mx-2"
-        type="number"
+        type="number" (keypress)="enterOTP($event)"
         (input)="otpChange($event,6)" (keydown.backspace)="tabChange(6,'backspace')" formControlName="digit6" onpaste="return false"
       />
       <div *ngIf="(otpForm.get('digit1').hasError('required') && otpForm.get('digit1').touched) || (otpForm.get('digit2').hasError('required') && otpForm.get('digit2').touched) || (otpForm.get('digit3').hasError('required') && otpForm.get('digit3').touched) || (otpForm.get('digit4').hasError('required') && otpForm.get('digit4').touched) || (otpForm.get('digit5').hasError('required') && otpForm.get('digit5').touched) || (otpForm.get('digit6').hasError('required') && otpForm.get('digit6').touched)" class="text-danger mat-1">
         Please Enter Valid OTP
       </div>
     
-    <div class="resend-content mt-4">
+    <div class="mt-4">
       <p class="m-2 h-font-sm">
         Didn’t receive your OTP? wait <span class="timer"> {{display}} </span>
       </p>

@@ -107,7 +107,6 @@ export class OtpVerificationComponent implements OnInit {
   }
   onSubmit() {
     if (this.otpForm.valid) {
-      console.log(this.otpForm.value);
       this.otpModel = this.otpForm.value;
       console.log(this.otpModel);
       this.verifyOTP();
@@ -123,5 +122,9 @@ export class OtpVerificationComponent implements OnInit {
         this.markFormGroupAsTouched(control);
       }
     });
+  }
+
+  enterOTP(e:any) {
+    return (e.target.value).length == 0;
   }
 }
