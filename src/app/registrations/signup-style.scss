@@ -761,11 +761,8 @@ select::-ms-expand {
   margin: 0 auto;
   display: block;
   font-size: 12px;
-  &:hover {
-    background: darken($red, 7%);
-  }
-  &:focus {
-    background: darken($red, 7%);
+  &:hover, &:active, &:focus {
+    background: darken($red, 7%) !important;
   }
   &:disabled {
     background: lighten($color: $red, $amount: 7%);

@@ -42,19 +42,36 @@
     Monthly Income is required.
   </div>
   <h4 class="f-red">Financial Assessment</h4>
-
-  <div class="did-floating-label-content required">
+  <div>
+    <p class="red-astrick">Are you a US resident, citizen or green card holder?</p>
+    <input
+      type="radio"
+      id="usresidentyes"
+      formControlName="usResident"
+      name="usResident"
+      value="yes"
+    /><label class="f-light_gray" for="usresidentyes">Yes</label>
+    <input
+      id="usresidentno"
+      type="radio"
+      class="mal-1"
+      formControlName="usResident"
+      name="usResident"
+      value="no"
+    /><label class="f-light_gray" for="usresidentno">No</label>
+    <div *ngIf="financeForm.get('usResident').hasError('required') && financeForm.get('usResident').touched" class="text-danger">
+      Citizen information is required.
+    </div>
+  </div>
+  <!--<div class="did-floating-label-content required">
     <select class="did-floating-input" onclick="this.setAttribute('value', this.value);" formControlName="usResident">
       <option>Yes</option>
       <option>No</option>
     </select>
     <div class="select_arrow"></div>
     <label class="did-floating-label h-font-xs">Are you a US resident, citizen or green card holder?</label>
-  </div>
-  <div *ngIf="financeForm.get('usResident').hasError('required') && financeForm.get('usResident').touched"
-    class="text-danger cus-margin">
-    Monthly Income is required.
-  </div>
+  </div>-->
+  
   <div class="did-floating-label-content required">
     <select class="did-floating-input" onclick="this.setAttribute('value', this.value);" formControlName="selectCountry">
       <option>India</option>
