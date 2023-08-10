@@ -2,7 +2,7 @@
   <h4 class="f-red">Financial Information</h4>
 </div>
 <form [formGroup]="financeForm" (ngSubmit)="onSubmit()">
-  <div class="did-floating-label-content mt-4">
+  <div class="did-floating-label-content mt-4 required">
     <input class="did-floating-input" type="text" formControlName="employer" placeholder=" " />
     <label class="did-floating-label h-font-xs">Name of Your Employer</label>
   </div>
@@ -10,7 +10,7 @@
     class="text-danger cus-margin">
     Name of Your Employer is required.
   </div>
-  <div class="did-floating-label-content mt-4">
+  <div class="did-floating-label-content mt-4 required">
     <input class="did-floating-input" type="text" formControlName="address" placeholder=" " />
     <label class="did-floating-label h-font-xs">Address of Employer</label>
   </div>
@@ -18,7 +18,7 @@
     class="text-danger cus-margin">
     Address of Employer is required.
   </div>
-  <div class="did-floating-label-content">
+  <div class="did-floating-label-content required">
     <select class="did-floating-input" onclick="this.setAttribute('value', this.value);"
       formControlName="employementSector">
       <option value="2">Marketing</option>
@@ -33,7 +33,7 @@
     Employment Sector is required.
   </div>
 
-  <div class="did-floating-label-content mt-4">
+  <div class="did-floating-label-content mt-4 required">
     <input class="did-floating-input" type="text" formControlName="monthlyIncome" placeholder=" " />
     <label class="did-floating-label h-font-xs">Monthly Income</label>
   </div>
@@ -43,7 +43,7 @@
   </div>
   <h4 class="f-red">Financial Assessment</h4>
 
-  <div class="did-floating-label-content">
+  <div class="did-floating-label-content required">
     <select class="did-floating-input" onclick="this.setAttribute('value', this.value);" formControlName="usResident">
       <option>Yes</option>
       <option>No</option>
@@ -55,7 +55,7 @@
     class="text-danger cus-margin">
     Monthly Income is required.
   </div>
-  <div class="did-floating-label-content">
+  <div class="did-floating-label-content required">
     <select class="did-floating-input" onclick="this.setAttribute('value', this.value);" formControlName="selectCountry">
       <option>India</option>
       <option>Singapore</option>
@@ -68,7 +68,7 @@
     class="text-danger cus-margin">
     Region of Residence is required.
   </div>
-  <div class="did-floating-label-content mt-4">
+  <div class="did-floating-label-content mt-4 required">
     <input class="did-floating-input" type="text" formControlName="taxPayer" placeholder=" " />
     <label class="did-floating-label h-font-xs">Taxpayer Identification Number (TIN)</label>
   </div>
@@ -76,8 +76,8 @@
     class="text-danger cus-margin">
     Taxpayer Identification Number is required.
   </div>
-  <div class="did-floating-label-content">
-    <select class="did-floating-input alter-input" onclick="this.setAttribute('value', this.value);" formControlName="tinAvailable">
+  <div class="did-floating-label-content required">
+    <select class="did-floating-input" onclick="this.setAttribute('value', this.value);" formControlName="tinAvailable">
       <option>1XXXX23</option>
       <option>1XXXX24</option>
       <option>1XXXX25</option>
