@@ -12,6 +12,10 @@ export class PasswordComponent implements OnInit{
   passwordModel: PasswordModel;
   passwordForm: FormGroup;
   passwordPattern = '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$';
+  viewNewPassword:boolean = true;
+  viewConfirmPassword:boolean = true;
+  newPasswordType: string = 'password';
+  confirmPasswordType: string = 'password';
   constructor(
     private stepperService: StepperService,
     public fb : FormBuilder
@@ -36,6 +40,17 @@ export class PasswordComponent implements OnInit{
   next() {
     this.stepperService.next(4);
   }
+
+  toggleNewPassword() {
+    this.viewNewPassword = !this.viewNewPassword;
+    this.newPasswordType = this.viewNewPassword ? "password" : "type";
+  }
+
+  toggleConfirmPassword() {
+    this.viewConfirmPassword = !this.viewConfirmPassword;
+    this.confirmPasswordType = this.viewConfirmPassword ? "password" : "type";
+  }
+
   onSubmit() {
     if (this.passwordForm.valid) {
       console.log(this.passwordForm.value);
